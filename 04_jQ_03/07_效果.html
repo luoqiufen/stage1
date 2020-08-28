@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_效果</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 1)单击按钮1:让p显示/隐藏
+			$('.btn1').click(function(){
+				$('p').show(2000,function(){
+					// 回调函数
+					alert('显示完成')
+				});
+			})
+			$('.btn2').click(function(){
+				$('p').hide('fast');
+			});
+			$('.btn3').click(function(){
+				$('p').toggle('fast');
+			});
+
+			// 2)展开/收缩
+			$('.btn4').click(function(){
+				$('p').slideDown(2000);
+			});
+			$('.btn5').click(function(){
+				$('p').slideUp(1000);
+			});
+			$('.btn6').click(function(){
+				$('p').slideToggle(1000);
+			});
+
+			// 3)淡入/淡出
+			$('.btn7').click(function(){
+				$('p').fadeIn(1000);
+			});
+			$('.btn8').click(function(){
+				$('p').fadeOut(1000);
+			});
+			$('.btn9').click(function(){
+				$('p').fadeToggle(1000);
+			});
+
+			// 4)自定义
+			$('.btn10').click(function(){
+				/*$('p').animate({'width': '600px', 
+					'line-height': '40px',
+					'font-size':'30px',
+					'font-style':'italic',//不能显示
+					'text-indent':'2em',
+					'background':'skyblue'//不能显示
+				}, 2000)*/
+				$('p').animate({
+					'margin-left':'200px',
+				},1000,function(){
+					$('p').animate({
+						'margin-top':'300px'
+					},2000)
+				})
+			});
+		})
+
+	</script>
+	<style>
+		p{
+			width: 300px;
+			line-height: 40px;
+			border: 1px solid red;
+			background: #AEF6C1;
+		}
+	</style>
+</head>
+<body>
+	<div class="btns">
+		<input type="button" class="btn1" value="显示"> 
+		<input type="button" class="btn2" value="隐藏"> 
+		<input type="button" class="btn3" value="切换显示/隐藏"> 
+		<input type="button" class="btn4" value="展开"> 
+		<input type="button" class="btn5" value="收缩"> 
+		<input type="button" class="btn6" value="切换展开/收缩"> 
+		<input type="button" class="btn7" value="淡入"> 
+		<input type="button" class="btn8" value="淡出"> 
+		<input type="button" class="btn9" value="切换淡入/淡出"> 
+		<input type="button" class="btn10" value="自定义"> 
+	</div>
+	<p>蝴蝶是我，我就是蝴蝶.生命就像人家的魔法书，涂涂改改又是一年.蝴蝶是我，我就是蝴蝶.生命就像人家的魔法书，涂涂改改又是一年.蝴蝶是我，我就是蝴蝶.生命就像人家的魔法书，涂涂改改又是一年.蝴蝶是我，我就是蝴蝶.生命就像人家的魔法书，涂涂改改又是一年.蝴蝶是我，我就是蝴蝶.生命就像人家的魔法书，涂涂改改又是一年.蝴蝶是我，我就是蝴蝶.生命就像人家的魔法书，涂涂改改又是一年.蝴蝶是我，我就是蝴蝶.生命就像人家的魔法书，涂涂改改又是一年.</p>
+</body>
+</html>

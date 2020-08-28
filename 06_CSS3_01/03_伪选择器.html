@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_伪选择器</title>
+	<style>
+		/* 第二行加背景颜色 */
+		table tr:nth-child(2){
+			background: #A5E4F1;
+		}
+		/* 偶数行:2n/even/odd+1; */
+		table tr:nth-child(2n){
+			background: #ABA5F1;
+		}
+		table tr:nth-child(odd){
+			color: #F90707;
+			font-weight: bold;
+		}
+		table td:nth-child(3n-1){
+			background: #7DF3C7;
+		}
+
+	</style>
+</head>
+<body>
+	<table border="1" bordercolor="red" cellspacing="0" cellpadding="15">
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+			<td>1-3</td>
+			<td>1-4</td>
+			<td>1-5</td>
+			<td>1-6</td>
+		</tr>
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+			<td>1-3</td>
+			<td>1-4</td>
+			<td>1-5</td>
+			<td>1-6</td>
+		</tr>
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+			<td>1-3</td>
+			<td>1-4</td>
+			<td>1-5</td>
+			<td>1-6</td>
+		</tr>
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+			<td>1-3</td>
+			<td>1-4</td>
+			<td>1-5</td>
+			<td>1-6</td>
+		</tr>
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+			<td>1-3</td>
+			<td>1-4</td>
+			<td>1-5</td>
+			<td>1-6</td>
+		</tr>
+	</table>		
+</body>
+</html>

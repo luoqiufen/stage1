@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_事件</title>
+	<script>
+	// 档窗口完成之后回去做的事情
+	window.onload=function(){
+		console.log('浏览器窗口加载完成');
+		// 1)找到form
+		var form_obj=document.querySelector('form[name=login]');
+		console.log(form_obj);
+	}
+		
+	</script>
+</head>
+<body>
+	<input type="button" value="双击" ondblclick="alert('双击事件')">
+
+	<select name="" onchange="init()">
+		<option value="1">数学</option>
+		<option value="2">语文</option>
+		<option value="3">英语</option>
+		<option value="4">化学</option>
+	</select>
+
+	<script>
+		// 定义函数:选项变化时,打印内容
+		function init(){
+			console.log('内容改变了');
+		}
+
+	</script>
+
+	<form action="" name="login">
+		<p>用户名:<input type="text" name="uname"></p>
+		<p>密码:<input type="password" name="upass"></p>
+		<input type="submit">
+	</form>
+	<script>
+		// 1)找到form
+		var form1=document.forms['login'];
+		console.log(form1);
+		// 表单提交事件(属性)
+		form1.onsubmit=function(){
+			alert('提交内容')
+		}
+	</script>
+</body>
+</html>

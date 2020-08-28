@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_日期对象</title>
+</head>
+<body>
+	<p id="p1"></p>
+<script>
+	// js-获取事件(本地计算机时间)
+	// js-日期对象 Date
+	var today=new Date('2020-5-29');
+	console.log(today);//Fri May 29 2020 17:14:08 GMT+0800 (中国标准时间)
+	// 提取年份
+	var year=today.getFullYear();
+	console.log(year);
+	// 提取月份
+	var month=today.getMonth()+1;
+	console.log(month);//月份下标+1=月份;
+	// 提取星期几[周日-周六][0-6]
+	var week=today.getDay();
+	console.log(week);
+	
+	// 把数字week转换成中文
+	var arr=['日','一','二','三','四','五','六'];
+	week=arr[week];
+
+	// 提取日/天
+	var day=today.getDate();
+	console.log(day);
+
+	// 时
+	var H=today.getHours();
+	console.log(H);
+	// 分
+	var M=today.getMinutes();
+	console.log(M);
+	// 秒
+	var S=today.getSeconds();
+	console.log(S);
+
+	// xxxx年xx月xx日 周x xx:xx:xx
+	
+	p1.innerHTML=year+'年'+month+'月'+day+'日 周'+week+' '+H+':'+M+':'+S;
+	
+</script>
+	
+</body>
+</html>

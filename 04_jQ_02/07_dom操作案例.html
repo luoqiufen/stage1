@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_dom操作案例</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+	$(function(){
+		// 1)点击"全选/反选",选项全部选中/全部取消
+		$('input[name=all]').click(function(){
+			$('input[name=dream]').prop('checked',$('input[name=all]').prop('checked'));
+		})
+
+		// 2)四个选项全选中,全选选中,反之取消
+		$('input[name=dream]').click(function(){
+			var len = $('input[name=dream]:checked').length;
+			console.log(len);
+			var allLen = $('input[name=dream]').length;
+			console.log(allLen);
+			if(len==allLen){//全部选中
+				$('input[name=all]').prop('checked',true);
+			}else{//全选全选
+				$('input[name=all]').prop('checked',false);
+			}
+		})
+
+	})
+	</script>
+</head>
+<body>
+	<!-- 案例1 -->
+	<div class="">
+		<h3>2020年的愿望是:</h3>
+		<ul type="none">
+			<li><input type="checkbox" name="all">全选/反选</li>
+			<li><input type="checkbox" name="dream">钱包鼓一点</li>
+			<li><input type="checkbox" name="dream">加班少一点</li>
+			<li><input type="checkbox" name="dream">体重轻一点</li>
+			<li><input type="checkbox" name="dream">薪资多一点</li>
+		</ul>
+
+	</div>
+	
+</body>
+</html>

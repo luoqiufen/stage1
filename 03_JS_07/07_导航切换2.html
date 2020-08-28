@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_导航切换2</title>
+	<style>
+	body{
+		font-family: 微软雅黑;
+	}
+	.nav{
+		width: 550px;
+		line-height: 40px;
+	}
+	.nav a{
+		width: 100px;
+		display: inline-block;
+		background: #B2F7E7;
+		color: #333;
+		font-size: 16px;
+		text-decoration: none;
+		text-align: center;
+	}
+	.nav a.current{
+		background: #04A76D;
+		color: white;
+	}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<a href="#" class="current">百度</a>
+		<a href="#">新浪</a>
+		<a href="#">网易</a>
+		<a href="#">腾讯</a>
+		<a href="#">豆瓣</a>
+	</div>
+	<script>
+	// 单击a
+	// 被单击的a添加current类,其他a,没有current
+	
+	// 1)找到所有的a
+	var as_obj=document.querySelectorAll('.nav a');
+	console.log(as_obj);
+
+	// 2)循环遍历数组,找到每一个a:添加 onclick;
+	for(var k=0;k<as_obj.length;k++){
+		as_obj[k].onclick=function(){
+			// 1>所有的a标签,移除current类
+			for(var key=0;key<as_obj.length;key++){
+				as_obj[key].classList.remove('current');
+			}
+			// 2>给被单击的a,添加current类
+			console.log(this);// this->被单击的a 指向调用函数对象 
+			this.classList.add('current');
+
+			// 3)测试
+			console.log(this);
+			console.log(event);
+			console.log(event.srcElement);
+			console.log(event.target);
+
+		}
+	}
+	</script>
+</body>
+</html>

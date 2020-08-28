@@ -1,0 +1,97 @@
+第三章
+第三天
+
+一、数据类型：array数组
+	1.声明
+	- 值可以是任意类型
+	<script>
+		// 1)直接量
+		var arr1=[值1,值2,值3,...];
+		// 2)关键字
+		var arr2=new Array(值1,值2,值3,...);
+		// 3)先声明空数组,再添加值
+		var arr3=[],arr4=new Array();
+			arr3[0]='aa';arr3[1]='bb';
+	</script>
+
+	2.取值
+	<script>
+		// 根据下标取值
+		// 数组名[下标]
+		arr3[0];//'aa'
+
+		// 修改值
+		arr3[0]='cc';//'cc'
+	</script>
+
+	3.属性
+	<script>
+		// 数组名.length==最大数字下标+1;
+		arr3.length//2
+	</script>
+
+	4.方法
+	<script>
+		数组.indexOf(查找的值[,起始下标]);
+		var3=['aa','bb','cc','dd'];
+		arr3.indexOf('aa');//0
+		arr3.indexOf('aa',2);//2
+
+		数组.lastIndexOf(查找的值[,起始下标]);
+		arr3.lastIndexOf('aa');//2
+	</script>
+
+二、数据类型：undefined
+	只有一个值 undefined
+	<script>
+		var str;
+		console.log(str);//undefined
+	</script>
+
+三、数据类型：null
+	只有一个值 null
+	<script>
+	没有id='p1'的标签
+		var p1_obj=document.getElementById('p1');
+		console.log(p1_obj);//null
+	</script>
+
+四、流程语句1:switch分支
+	<script>
+		//语法:
+		switch(表达式/变量){
+			case 值1:结果1;break;
+			case 值2:结果2;break;
+			case 值3:结果3;break;
+			...
+			default:其他结果;
+		}
+	</script>
+
+五、流程语句2:for循环
+	<script>
+		for (var i = 5; i >= 0; i--) {
+			// 循环体
+		};
+
+		for (初始化变量; 满足的条件; 变换步长) {
+			// 循环体
+		};
+	</script>
+
+六、流程语句3:for-in循环
+	<script>
+	// key是变量:记录下标
+	// arr是数组变量
+		for(var key in arr){
+			//key是变量-->string类型 ==> Number(key)
+			//arr[key]是值
+		}
+
+		// 获取关联数组长度
+		var len=0;//记录长度
+		for(var key in arr){
+			len++;
+		}
+	</script>
+

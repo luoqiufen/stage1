@@ -1,0 +1,111 @@
+第三章
+第五天
+
+一、函数function
+	<script>
+		// 1)声明1:命名函数
+		function 函数名(参1,参2,...){
+			// 函数体
+		}
+
+		// 2)声明2:匿名函数
+		var aa=function(){
+			// 函数体
+		}
+
+		dom.onclick=function(){
+			// 单击之后去做的事情
+		}
+
+		// 调用才能执行函数体
+		函数名(值1,值2,...);
+		aa(值1,值2,...)
+
+	</script>
+
+二、参数
+	<script>
+		// 形参都是变量(可设初始值/默认值)
+		// 形参1:uname 
+		// 形参2:uage
+		// 形参3:school
+		function fnName(uname,uage,school){
+			document.write('姓名是:'+uname);
+			document.write('年龄是:'+uage);
+			document.write('学校是:'+school);
+		}
+
+		// 调用 
+		// 实参就是 值/数据
+		// 形参1:'apple'
+		// 形参2:18
+		// 形参3:'南京大学'
+		fnName('apple',18,'南京大学')
+
+		var uname='banana';
+		fnName(uname,20,'清华大学')
+	</script>
+
+三、作用域
+	1.变量作用域
+		1)全局变量:可以在任何地方访问
+			一直被留在内存里
+		2)局部变量:只能在函数内访问
+			用完即销毁
+		3)变量提升:函数调用之后,声明提前到函数外
+	<script>
+		// 例子:
+		var uname='apple';//全局变量
+		function fun(){
+			var age=15;//局部变量
+				school='北京大学';//变量提升
+			// 内部访问
+			console.log(uname);//'apple'
+			console.log(age);//15
+			console.log(school);//'北京大学'
+		}
+
+		console.log(uname)//'apple'
+		console.log(age)//引用错误
+		console.log(school)//引用错误
+
+		fun1();
+		console.log(school)//'北京大学'
+	</script>
+
+	2.函数作用域
+		1)全局函数:可以在任何地方调用
+		2)局部函数:只能在父函数体内调用
+
+
+四、return返回值
+	<script>
+		function fun(){
+			
+		}
+
+	</script>
+	return 特点:
+	 1)值可以是任意类型
+	 2)返回值可以用变量接收
+	 3)一个函数最终只能有一个返回值return,遇到return 跳出函数
+	 4)返回值是可有可无的
+	 5)表单提交:return ture/false
+
+五、DOM应用
+	1.获取dom元素
+		<input type="text" id="uname">
+		<div id="box"></div>
+		<script>
+			// 根据id名获取
+			console.log(uname);//input标签
+			console.log(box);//div标签
+		</script>
+
+	2.获取内容和值
+		<script>
+			uname.value;//用户名信息
+			box.innerHTML;//div的内容
+		</script>
+
+

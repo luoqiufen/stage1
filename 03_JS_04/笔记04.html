@@ -1,0 +1,133 @@
+第三章
+第四天
+
+一、循环语句：for
+	<script>
+		for(var i=1;i<=5;i++){
+			document.write('i:'+i)
+		}
+	</script>【先判断 后执行】
+
+二、循环语句:for-in(数组)
+	<script>
+		// key 是 string类型
+		var arr=['aa','bb','cc'];
+		for(var key in arr){
+			console.log(key+':'+att[key]);
+		}
+	</script>
+
+三、循环语句：while
+	<script>
+		初始化;
+		while(条件){//不分顺序
+			循环体;
+			变换步长;
+		}
+	</script>【先判断 后执行】
+	
+四、循环语句：do while 【先执行 后判断】
+	<script>
+		初始化;
+		do{
+			循环体;
+			变换步长
+		}while(条件);
+	</script>
+
+五、break和continue
+	<script>
+		// 1)break:终断,跳出流程语句
+		for(var i=1;i<=10;i++){
+			if(i==5){
+				break;
+			}
+			document.write(i+' ');
+		}
+		// 2)continue:继续,直接进入下一次循环
+		for(var i=1;i<=10;i++){
+			if(i==5){
+				continue;
+			}
+			document.write(i+' ');
+	}
+	</script>
+
+六、循环嵌套
+	<script>
+		for(var i=1;i<=5;i++){//外层
+			for(var j=0;j<=3;j++){//内层
+				document.write('i:'+i+'j:'+j+"<br>");
+			}
+		}
+	</script>
+
+七、多维数组
+	<script>
+		// 数组:值可以是任意数据类型
+		// 一维数组
+		var arr1=[10,'5',16,20,true]
+
+		var arr2=['apple',18,false,['a','b']]
+
+		// 学生信息
+		var stu=[
+			['1001','李晨','男',38,'一年级1班'],
+			['1002','baby','女',18,'一年级1班'],
+			['1003','郑凯','男',30,'一年级1班'],
+			['1004','陈赫','男',34,'一年级2班'],
+			['1005','邓超','男',36,'一年级2班']
+		];
+		console.log(stu);
+
+		// 循环遍历取值
+		for(var i=0;i<stu.length;i++){
+			console.log(stu[i]);
+			for(var j=0;j<stu[i].length;j++){
+				document.write(stu[i][j]+' ')
+			}
+			// 一个人的信息取完了,换行
+			document.write('<br>')
+		}
+
+		// 循环遍历取值,放在表格中
+		document.write('<table border=1 cellspacing=0 width=350 height=200>')
+			for(var k in stu){
+				console.log(stu[k]);
+				document.write('<tr>')
+				for(var z in stu[k]){
+					document.write('<td align=center>'+stu[k][z]+'</td>')
+				}
+				document.write('</tr>')
+			}
+		document.write('</table>')
+	</script>
+
+八、函数 function
+	1.什么是函数?
+		就是一个代码块(描述一个事情的流程或过程)
+		一次定义,多次使用(提高代码效率)
+
+	2.创建函数和调用(使用)
+		<script>
+			// 1)创建1:
+			function 函数名(参1,参2,...){
+				// 代码块,事情的流程...
+			}
+			// 调用:【声明前后都可以】
+			函数名(值1,值2,...);
+
+			// 创建2:
+			var 变量名=function(参1,参2,...){
+				// 代码块,事情的流程...
+			}
+			// 调用:【只能在声明之后调用】
+			函数名(值1,值2,...);
+
+			// 创建3：可以应用到DOM元素上
+			dom.onclick=function(){
+				
+			}
+			
+
+		</script> 

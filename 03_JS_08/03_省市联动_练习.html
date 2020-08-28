@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_省市联动_练习</title>
+</head>
+<body>
+	<div>
+		籍贯:
+		<select name="province"></select>
+		<select name="city"></select>
+	</div>
+
+	<script>
+		// 1)数据信息
+		var proArr=['江苏省','安徽省','浙江省','福建省'];
+		var cityArr=[
+			['南京市','无锡市','苏州市','常州市'],
+			['合肥市','黄山市','滁州市','蚌埠市'],
+			['杭州市','宁波市','温州市'],
+			['厦门市','福州市','莆田市','泉州市']
+		]
+
+		// 2)获取select标签
+		var pro=document.querySelector('select[name=province]');
+		var city=document.querySelector('select[name=city]');
+		console.log(pro,city);
+
+		// 3)往select里面添加省份/城市
+		function pro_city(arr,select){
+			for(var k=0;k<arr.length;k++){
+				select.innerHTML+='<option>'+arr[k]+'</option>';
+			}
+		}
+		pro_city(proArr,pro);
+		pro_city(cityArr[0],city);
+
+		// 4)点击省份,显示对应的城市
+		pro.onchange=function(){
+			var i=pro.selectedIndex;
+			// console.log(i);
+			city.innerHTML='';
+			pro_city(cityArr[i],city);
+		}
+
+	</script>
+</body>
+</html>

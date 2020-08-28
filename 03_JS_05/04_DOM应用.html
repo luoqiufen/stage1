@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_DOM应用</title>
+</head>
+<body>
+	<form action="">
+		行: <input type="text" name="rows" id="txt1" value="3">
+		列: <input type="text" name="cols" id="txt2">
+		<input type="button" value="创建" onclick="createTable()">
+	</form>
+	<div id="box">盒子</div>
+<script>
+	// 1)dom操作
+	// console.log(txt1.value);
+	// console.log(txt2.name);
+
+	// 定义一个函数:去创建表格
+	function createTable(){
+		alert('创建表格');
+		var rows=txt1.value;
+		var cols=txt2.value;
+		console.log(rows,cols);
+
+		var tabs='<table border=1 cellspacing=0 cellspadding=10>';
+			for(var i=1;i<=rows;i++){
+				tabs+='<tr>';
+				for(var j=1;j<=cols;j++){
+					tabs+='<td>'+i+'-'+j+'</td>';
+				}
+				tabs+='</tr>';
+			}
+		tabs+='</table>';
+		
+		// 把表格放到div盒子里
+		console.log(box);//div盒子
+		console.log(box.innerHTML);//div里的内容
+
+		box.innerHTML=tabs;
+	}
+
+	
+</script>	
+</body>
+</html>

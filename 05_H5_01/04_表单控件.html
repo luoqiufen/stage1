@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_表单控件</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<style>
+		.colorPicker{
+			width: 120px;
+			height: 120px;
+			border: 1px solid #333;
+			margin: 10px;
+			background: rgb(0,0,0);
+		}
+
+	</style>
+</head>
+<body>
+	<form action="index.php">
+		<p>
+			邮箱: <input type="email">
+		</p>
+		<p>
+			主页: <input type="url">
+		</p>
+		<p>
+			年龄: <input type="number" min="1" max="25" step="3">
+		</p>
+		<p>
+			生日: <input type="date">
+				<input type="month">
+				<input type="week">
+				<input type="time">
+		</p>
+		<p>
+			颜色: <input type="color">
+		</p>
+		<p>
+			<input type="submit">
+		</p>
+		<p>
+			<input type="range" min="0" max="100" step="10" value="10">
+		</p>
+	</form>
+
+	<!-- 自己定制拾色器 -->
+	<div class="colorPicker"></div>
+	<input type="text" value="rgb(0,0,0)">
+	<p>
+		red: <input name="color" type="range" min="0" max="255" value="0">
+	</p>
+	<p>
+		green: <input name="color" type="range" min="0" max="255" value="0">
+	</p>
+	<p>
+		blue: <input name="color" type="range" min="0" max="255" value="0">
+	</p>
+
+	<script>
+		// 需求,三个滑块在值变化时(onchange)
+		// 获取三个value,组合成rgb()添加给div背景
+		$('input[name=color]').change(function(){
+			// console.log($(this).val());
+			var r = $('input[name=color]').eq(0).val();
+			var g = $('input[name=color]').eq(1).val();
+			var b = $('input[name=color]').eq(2).val();
+			
+			var bgcolor='rgb('+r+','+g+','+b+')';
+			$('.colorPicker').css('background',bgcolor);
+			$('input[type=text]').val(bgcolor);
+		})
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_内容和值的操作</title>
+</head>
+<body>
+	<form action="index.php">
+		<p>用户名: <input type="text" name="uname" value="小明"></p>
+		<p>用户名: <input type="password" name="upass"></p>
+		<p>用户名: <input type="submit" value="登录"></p>
+	</form>
+	<div class="box">
+		<font color="red">内容操作</font>的盒子
+	</div>
+
+	<script>
+		// 1)找到用户名的输入框
+		var uname_obj=document.querySelector('input[name=uname]');
+		console.log(uname_obj);
+		// 获取用户信息
+		console.log(uname_obj.value);
+		uname_obj.value='小红';
+		uname_obj.value
+
+		// 2)div盒子
+		var div_obj=document.querySelectorAll('.box');
+		console.log(div_obj);
+		// div的内容
+		console.log(div_obj[0].innerHTML);//<font color="red">内容操作</font>的盒子
+		console.log(div_obj[0].innerText);//内容操作的盒子
+
+		div_obj[0].innerHTML+='<a href="">百度</a>'
+		div_obj[0].innerText+='<a href="">新浪</a>'
+	</script>
+
+</body>
+</html>

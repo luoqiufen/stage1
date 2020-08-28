@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_类名操作</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box1{
+			width: 300px;
+			border: 1px solid red;
+		}
+		.box2{
+			margin: 20px auto;
+			padding: 10px;
+		}
+		.box3{
+			line-height: 40px;
+			font-size: 18px;
+		}
+		.box3 a{
+			text-decoration: none;
+			color: #333;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<a href="">链接1</a>
+		<a href="">链接2</a>
+		<a href="">链接3</a>
+		<a href="">链接4</a>
+		<a href="">链接5</a>
+	</div>
+
+	<script>
+		// 1)找到div
+		var div_obj=document.querySelector('.box1')
+		console.log(div_obj);
+
+		// 2)操作类名
+		console.log(div_obj.className);//'box1'
+
+		// 添加 类名 box2
+		div_obj.className+=' box2';
+		div_obj.className+=' box3';
+
+		// 移除 box2(有bug)
+		console.log(div_obj.className);//'box1 box2 box3'
+
+		var now=div_obj.className.replace('box2 ','');
+
+		console.log(now);//'box1 box3'
+
+		div_obj.className=now;
+
+		console.log(div_obj.className);
+
+		// 移除所有的类
+		div_obj.className='';
+
+	</script>
+</body>
+</html>

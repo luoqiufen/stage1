@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_基本选择器2</title>
+	<style>
+		/* 1.属性选择器 */
+		[align=center]{
+			border: 1px solid red;
+		}
+		h1[align=center]{
+			border: 2px dashed blue;
+			background: skyblue;
+		}
+		input[name=uname]{
+			border: 1px solid red;
+			background: #DAF68F;
+		}
+		input[name=unick]{
+			border: 1px solid green;
+			background: #A6F4C2;
+		}
+		input[type=password]{
+			border: 1px solid orange;
+			background: #F4C7A6;
+		}
+		.txt{
+			width: 120px;
+		}
+	</style>
+</head>
+<body>
+	<p align="center">段落1</p>
+	<p align="right">段落2</p>
+	<h1 align="center">标题1</h1>
+	<form action="">
+		<p>
+			用户名:
+			<input class="txt" type="text" name="uname">
+		</p>
+		<p>
+			昵&nbsp;称:
+			<input class="txt" type="text" name="unick">
+		</p>
+		<p>
+			密&nbsp;码:
+			<input class="txt" type="password" name="upass">
+		</p>
+		<p>
+			<input type="submit">
+			<input type="reset">
+		</p>
+	</form>
+</body>
+</html>

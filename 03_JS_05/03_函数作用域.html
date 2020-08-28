@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_函数作用域</title>
+</head>
+<body>
+<script>
+	// aa()-全局函数
+	function aa(){
+		console.log('aa函数');
+	}
+	// bb()-全局函数
+	function bb(){
+		console.log('bb函数');
+		aa();
+		cc();
+		// cc()-局部函数
+		function cc(){
+			console.log('cc函数')
+		}
+	}
+
+aa();
+bb();
+cc();//引用错误
+
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_banner轮播图</title>
+	
+</head><style>
+		*{margin: 0;padding: 0;}
+		a{text-decoration: none;}
+
+		.bannerbox{
+			width: 600px;
+			border: 2px solid black;
+			margin: 20px auto;
+			position: relative;
+		}
+
+		/* 广告图 */
+		.bannerbox .imgs img{
+			/* width: 600px; */
+			display: none;
+		}
+
+		.bannerbox .imgs img:first-child{
+			display: block;
+		}
+
+		/* 左右按钮 */
+		.bannerbox .btns{
+			display: block;
+			width: 60px;
+			height: 50px;
+			background: rgba(20,20,20,0.5);
+			color: white;
+			font-weight: bold;
+			font-size: 40px;
+			text-align: center;
+			line-height: 50px;
+			border-radius: 40%;
+			position: absolute;
+			margin-top: -25px;
+		}
+		.bannerbox .btn-left{
+			left: 0;
+			top: 50%;		
+		}
+		.bannerbox .btn-right{		
+			right: 0;
+			top: 50%;
+		}
+
+		/* 圆点 */
+		.bannerbox .points{
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+		}
+
+		.bannerbox .points span{
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			color: white;
+			background: #7B7171;
+			/* 圆角 */
+			border-radius: 50%;
+		}
+
+	</style>
+<body>
+	<div class="bannerbox">
+		<!-- 1)广告图 -->
+		<div class="imgs">
+			<img src="img-轮播图/53f7fd9391f21.jpg">
+			<img src="img-轮播图/57d228e7f2cb1.jpg">
+			<img src="img-轮播图/57d228e1779f9.jpg">
+			<img src="img-轮播图/57d228e57985d.jpg">
+			<img src="img-轮播图/57d228ee3375d.jpg">
+		</div>
+
+		<!-- 2)左右按钮 -->
+		<a href="" class="btns btn-left">&lt;</a>
+		<a href="" class="btns btn-right">&gt;</a>
+		<!-- 3)底部圆点 -->
+		<div class="points">
+			<span class="point1">●</span>
+			<span class="point2">●</span>
+			<span class="point3">●</span>
+			<span class="point4">●</span>
+			<span class="point5">●</span>
+	</div>
+</body>
+</html>

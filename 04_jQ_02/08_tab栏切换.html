@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_tab栏切换</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 1)模拟数据
+			// 分类
+			var types = ['总榜','童书','亲子','考试','教材','名著'];
+			// 新闻列表信息
+			var newsArrr = [
+				['人间失格','人生海海','谁的青春不迷茫','山的那边','童年','在人间','我的大学'],
+				['童书1','童书2','童书3','童书4','童书5','童书6','童书7'],
+				['亲子1','亲子2','亲子3','亲子4','亲子5','亲子6','亲子7'],
+				['考试1','考试2','考试3','考试4','考试5','考试6','考试7'],
+				['教材1','教材2','教材3','教材4','教材5','教材6','教材7'],
+				['名著1','名著2','名著3','名著4','名著5','名著6','名著7']
+			]
+
+			// 2)显示数据信息
+			// 显示分类
+			var a = '';
+			for(var key in types){
+				a += '<a href="#">'+types[key]+'</a>';
+			}
+			$('.nav').html(a);
+			$('.nav a:first-child').addClass('current')
+
+			// 显示新闻列表(第一个类型的)
+			function showList(k){
+				var list = '<ul>';
+				for(var key in newsArrr[k]){
+					list += '<li>';
+					list += '<span>'+(Number(key)+1)+' . </span>';
+					list += '<a href="#">'+newsArrr[k][key]+'</a>'
+
+					list += '</li>';
+				}
+				list += '</ul>';
+				$('.news').html(list);
+			}
+			showList(0);
+			
+
+			// 3)点击分类:切换对应的列表信息
+			// 分类下标和新闻组合下标是对应的
+			$('.nav a').click(function(){
+
+				// 获取下标的方法 index()
+				var i=$(this).index()
+				console.log(i);
+				showList(i);
+			})
+
+		})
+
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		a{text-decoration: none;}
+		ul{list-style-type: none;}
+		body{font-family: 微软雅黑;}
+		.itemBox{
+			width: 350px;
+			border: 1px solid red;
+			margin: 10px;
+		}
+		.itemBox h3{
+			font-size: 18px;
+			line-height: 30px;
+			text-indent: 20px;
+		}
+		.itemBox .nav{
+			overflow: hidden;
+		}
+		.itemBox .nav a{
+			border: 1px solid #ccc;
+			width: 54px;
+			float: left;
+			text-align: center;
+		}
+		.itemBox .nav a.current{
+			background: #9CF0AB;
+		}
+		.itemBox .news li{
+			border-bottom: 1px dashed #CCC;
+			line-height: 40px;
+			margin: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="itemBox">
+		<h3>图书畅销榜</h3>
+		<div class="nav">
+			<!-- <a href="" class="current">总榜</a>
+			<a href="">童书</a>
+			<a href="">亲子</a>
+			<a href="">考试</a>
+			<a href="">教材</a>
+			<a href="">名著</a> -->
+		</div>
+		<div class="news">
+			<!-- <ul>
+				<li>
+					<span>1</span>
+					<a href="">人间失格</a>
+				</li>
+				<li>
+					<span>2</span>
+					<a href="">人间失格</a>
+				</li>
+				<li>
+					<span>3</span>
+					<a href="">人间失格</a>
+				</li>
+				<li>
+					<span>4</span>
+					<a href="">人间失格</a>
+				</li>
+			</ul> -->
+		</div>
+		
+	</div>
+	
+</body>
+</html>

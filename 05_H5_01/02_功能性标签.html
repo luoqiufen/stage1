@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_功能性标签</title>
+	<style>
+		input::-webkit-calendar-picker-indicator {
+			border: 1px solid red;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<!-- datalist -->
+	<input type="text" list="list1">
+	<datalist id="list1">
+		<option value="花瓣网">
+		<option value="花儿乐队">
+		<option value="花花">
+	</datalist>
+
+	<!-- details 定义细节 -->
+	<details>
+		<summary>标题1</summary>
+		<div>详细内容...</div>
+	</details>
+	<details>
+		<summary>标题2</summary>
+		<div>详细内容...</div>
+	</details>
+
+	<!-- mark -->
+	<mark style="background:#091DFF;">内容</mark>
+	<span style="background:red;">文字</span><br>
+
+	<!-- meter -->
+	<!-- low < optimum < high 黄-绿-黄 -->
+	<div>
+		<meter min="0" low="15" high="90" max="100" value="10" optimum="60"></meter><br>
+		<meter min="0" low="15" high="90" max="100" value="50"optimum="60"></meter><br>
+		<meter min="0" low="15" high="90" max="100" value="95"optimum="60"></meter><br>
+	</div>
+	<hr>
+	<!-- min < optimum < low 绿-黄-红 -->
+	<div>
+		<meter min="0" low="15" high="90" max="100" value="10" optimum="5"></meter><br>
+		<meter min="0" low="15" high="90" max="100" value="50"optimum="5"></meter><br>
+		<meter min="0" low="15" high="90" max="100" value="95"optimum="5"></meter><br>
+	</div>
+	<hr>
+	<!-- high < optimum < max 红-黄-绿 -->
+	<div>
+		<meter min="0" low="15" high="90" max="100" value="10" optimum="95"></meter><br>
+		<meter min="0" low="15" high="90" max="100" value="50"optimum="95"></meter><br>
+		<meter min="0" low="15" high="90" max="100" value="95"optimum="95"></meter><br>
+	</div>
+
+	<!-- progress -->
+	<progress max="100" value="10"></progress>
+	<script>
+		// 进度条:从0开始加载到100
+		// 提示:加载完成
+		var t=setInterval(function(){
+			var pro=document.querySelector('progress');
+			// console.log(pro.value);
+			if(pro.value==100){
+				clearInterval(t);
+				alert('加载完成');
+			}
+			pro.value++;
+		}, 50)
+
+	</script>
+</body>
+</html>

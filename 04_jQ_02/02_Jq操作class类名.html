@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_Jq操作class类名</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 给div添加box2 box3
+			$('.box1').addClass('box2 box3');
+			// 给div切换box4
+			$('.box1').toggleClass('box4 box2');
+
+			// box1 box3 box4
+			$('.box1').removeClass('box3 box4')
+			// $('.box1').removeClass();//移除所有
+			
+			//判断是否有box1
+			console.log($('div').hasClass('box1'));
+			console.log($('div').hasClass('box2'));
+
+
+		})
+
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box1{
+			width: 400px;
+			line-height: 30px;
+			border: 1px solid red;
+		}
+		.box2{
+			background: pink;
+			margin: 10px auto;
+		}
+		.box2 h3{
+			background: skyblue;
+			text-align: center;
+		}
+		.box4 p{
+			border: 1px dashed green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<h3>新闻标题1</h3>
+		<p>第1段</p>
+		<p>第2段</p>
+		<p>第3段</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_计时器</title>
+	<style>
+	p{
+		width: 500px;
+		height: 100px;
+		border: 1px solid red;
+	}
+	#p2{
+		border: 1px solid blue;
+	}
+	#p3{
+		border: 1px solid green;
+	}
+	#p3{
+		border: 1px solid orange;
+	}
+	</style>
+</head>
+<body> 
+	<p id="p1"></p>
+	<p id="p2"></p>
+	<p id="p3"></p>
+	<p id="p4"></p>
+
+
+	<script>
+		// 1)在页面上输出1-5的数
+		for(var i=0;i<=5;i++){
+			document.querySelector('#p1').innerHTML+=i+' ';
+		}
+
+		// 2)每隔1秒输出一个数,到5结束
+		var num1=1;
+		var t1=setInterval(function(){//去做一件事情
+			document.querySelector('#p2').innerHTML+=num1+' ';
+			if(num1<5){
+				num1++;
+			}else{
+				clearInterval(t1);
+			}
+		}, 1000)
+
+		// 3)setTimeout
+		var num2=1;
+		var t2=setTimeout(function(){//去做一件事情
+			document.querySelector('#p3').innerHTML+=num2+' ';
+			num2++;
+		}, 1000)
+
+		// 4)定义一个命名函数:从10 开始显示,到20结束
+		var num3=10;
+		function showNum(){
+			document.querySelector('#p4').innerHTML+=num3+' ';
+			if (num3<20){//允许+1
+				num3++;
+			}else{//不作处理,关闭计时器
+				clearInterval(t3);
+			}
+		}
+		var t3=setInterval(showNum, 1000);
+		
+	</script>
+	
+</body>
+</html>

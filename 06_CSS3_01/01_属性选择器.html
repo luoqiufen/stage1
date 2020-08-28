@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_属性选择器</title>
+	<style>
+		/* type属性 */
+		[type]{
+			width: 150px;
+			margin: 10px 0;
+		}
+		/* 单行文本框 */
+		[type=text]{
+			border: 1px solid red;
+		}
+		/* 名字开头是u */
+		[name^=u]{
+			background: #BCFABD;
+		}
+		/* 名字结尾是s */
+		[name$=s]{
+			background: #F6A9E1;
+		}
+		/* 名字包含te */
+		[name*=te]{
+			border: 3px solid green;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<form action="index.php">
+		<input type="text" name="uname"><br>
+		<input type="text" name="unick"><br>
+		<input type="text" name="utel"><br>
+		<input type="password" name="upass"><br>
+		<input type="password" name="repass"><br>
+	</form>
+</body>
+</html>

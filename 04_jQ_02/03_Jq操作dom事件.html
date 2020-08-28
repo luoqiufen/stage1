@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_Jq操作dom事件</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{font-family: 微软雅黑;}
+		a{text-decoration: none;color: #333;}
+		.nav{
+			width: 800px;
+			line-height: 40px;
+			border: 1px solid red;
+			margin: 20px auto;
+		}
+		.nav a{
+			width: 100px;
+			display: inline-block;
+			text-align: center;
+		}
+		.nav a.current{
+			color: white;
+			background: #AD4949
+
+		}
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		// 点击a,给当前a添加current,其他的去除
+		$('.nav a').click(function(event){
+			$('.nav a').removeClass('current');
+			this.classList.add('current');
+			// $(this).addClass('current');
+		})
+
+		// 失去焦点
+		// 用户名失去焦点
+		$('input[name=uname]').blur(function(){
+			var uname=$('input[name=uname]').val();
+			if(uname==''){
+				$('.mess').html('用户名不能为空');
+			}else if(uname.length<8){
+				$('.mess').html('用户名不能低于8位');
+			}else{
+				$('.mess').html('符合要求');
+				// 直接让密码框获得焦点
+				$('input[name=upass]').focus();
+			}
+		})
+
+		// 密码失去焦点
+				$('input[name=upass]').blur(function(){
+			var upass=$('input[name=upass]').val();
+			if(upass==''){
+				$('.mess').html('密码不能为空');
+			}else if(upass.length<8){
+				$('.mess').html('密码不能低于8位');
+			}else{
+				$('.mess').html('符合要求');
+			}
+		})
+	})
+	</script>
+</head>
+<body>
+	<!-- 导航条 -->
+	<p class="nav">
+		<a href="#" class="current">网易云音乐</a>
+		<a href="#">QQ音乐</a>
+		<a href="#">酷狗音乐</a>
+		<a href="#">虾米音乐</a>
+		<a href="#">酷我音乐</a>
+	</p>
+
+	<!-- 表单 -->
+	<form action="index.php">
+		<p class="mess" style="width:250px;height:30px;border:1px solid red";></p>
+		<p>用户名: <input type="text" name="uname"></p>
+		<p>密码: <input type="password" name="upass"></p>
+		<p><input type="submit" value="登录"></p>
+	</form>
+</body>
+</html>

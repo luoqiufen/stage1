@@ -1,0 +1,139 @@
+/*
+* @Author: Administrator
+* @Date:   2020-05-23 15:19:20
+* @Last Modified by:   13643
+* @Last Modified time: 2020-05-24 19:21:12
+*/
+*{padding: 0;margin: 0;}
+body{font-family: 微软雅黑,Arial;}
+ol{list-style: none;}
+a{color: black;text-decoration: none;}
+.left{float: left;}
+.right{float: right;}
+
+.bigbox{
+	width: 502px;
+	margin: 0 auto;
+	/* border: 1px solid red; */
+}
+
+.bigbox>h1{
+	background: url(imgs/sprite.png) no-repeat;
+	background-size: 42px;
+	line-height: 60px;
+	text-indent: 50px;
+	margin: 10px 0 10px 5px;
+}
+
+.bigbox ol{
+	border: 2px solid #ECECEC;
+	line-height: 72px;
+	font-size: 24px;
+}
+
+.bigbox ol .nav{
+	margin: 0;
+	line-height: 45px;
+	border-bottom: 0;
+	overflow: hidden;
+}
+
+.bigbox ol .nav a{
+	padding: 0 25px;
+	display: block;
+	float: left;
+	border-top: 4px solid transparent;
+	border-right: 2px solid #ECECEC;
+	border-bottom: 2px solid #ECECEC;
+}
+
+.bigbox .nav a:first-child{
+	border-top: 4px solid #4A7A6F;
+	font-weight: bold;
+	color: #4A7A6F;
+	border-bottom: 0;
+}
+
+.bigbox .nav a:last-child{border-right: 0;}
+
+.bigbox .nav a:hover{
+	border-top: 4px solid #4A7A6F;
+	font-weight: bold;
+	color: #4A7A6F;
+}
+
+.bigbox ol li{
+	margin-left: 20px;
+	border-bottom: 2px dotted #ECECEC;			
+}
+
+.bigbox ol li:after{
+	content: "";
+	clear: both;
+	display: block;		
+}
+
+.bigbox ol li>span{
+	float: left;
+	margin-left: 20px;
+	margin-right: 40px;
+	font-size: 35px;
+	font-family: 黑体;
+	font-weight: bold;
+}
+.bigbox ol li .red{color: #CE020E;}
+
+.bigbox ol li .item{
+	float: left;
+	position: relative;
+}
+
+.bigbox ol li .item:after{
+	content: "";
+	clear: both;
+	display: block;		
+}
+
+.bigbox ol li .box{
+	display: none;
+	position: relative;
+	left: -30px;
+	top: 0;
+	margin-top: 25px;
+	overflow: hidden;
+}
+
+.bigbox ol li .box .imgbox{
+	float: left;
+}
+
+.bigbox ol li .box .imgbox .m1{
+	position: absolute;
+	left: 120px;
+	top: 0;
+}
+
+.bigbox ol li .box .txt{
+	float: right;
+	width: 140px;
+	line-height: 38px;
+	margin-left: 20px;
+}
+
+.bigbox ol li .box .txt .p2{
+	color: #C10712;
+	font-weight: bold;
+	font-size: 25px;
+}
+.bigbox ol li .box .txt .p3{
+	text-decoration: line-through;
+	color: #A7A7A7;
+	font-weight: bold;
+	font-size: 25px;
+}
+.bigbox ol li .box .txt .p4{
+	color: #4A7A6F;
+}
+
+.bigbox ol li:hover .box{display: block;}
+.bigbox ol li:hover div span{display: none;}

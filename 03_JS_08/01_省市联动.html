@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_省市联动</title>
+</head>
+<body>
+	<div>
+		籍贯:
+		<select name="province"></select>
+		<select name="city"></select>
+	</div>
+	<script>
+		// 1)数据信息
+		var proArr=['江苏省','安徽省','浙江省','福建省'];
+		var cityArr=[
+			['南京市','无锡市','苏州市','常州市'],
+			['合肥市','黄山市','滁州市','蚌埠市'],
+			['杭州市','宁波市','温州市'],
+			['厦门市','福州市','莆田市','泉州市']
+		]
+		// console.log(proArr);
+		// console.log(cityArr);
+
+		// 2)获取select标签
+		var pro_sel=document.querySelector('select[ name=province]');
+		var city_sel=document.querySelector('select[ name=city]');
+		// console.log(pro_sel);
+		// console.log(city_sel);
+
+		// 3)显示数据
+		// 把省份显示到第一个select里
+		for(var k=0;k<proArr.length;k++){ 
+			pro_sel.innerHTML+='<option>'+proArr[k]+'</option>';
+		}
+		
+		// 把城市显示到第二个select里
+		for(var k=0;k<cityArr[0].length;k++){
+			city_sel.innerHTML+='<option>'+cityArr[0][k]+'</option>';
+			
+		}
+
+		// 4)省份发生变化时 onchange
+		pro_sel.onchange=function(){
+			// 当前省份?
+			// console.log('改变了省份');
+			var i=pro_sel.selectedIndex;//获得选中的option的下标 ->省份下标 ->对应的城市组下标
+			console.log(cityArr[i]);
+
+			// 先 清空城市列表
+			city_sel.innerHTML='';
+
+			// 再 显示到城市的下拉列表里
+			for(var k=0;k<cityArr[i].length;k++){
+				city_sel.innerHTML+='<option>'+cityArr[i][k]+'</option>';
+			}
+
+		}
+
+	</script>
+</body>
+</html>

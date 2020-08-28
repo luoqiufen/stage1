@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_比较运算案例</title>
+</head>
+<body>
+	<script>
+	// 需求1:弹出一个输入框,请输入数字
+	// 是否是偶数
+	/*var num=prompt("请输入数字");
+	console.log(num);
+	console.log(num%2==0);*/
+
+	// 需求2: 验证码:xY12wf
+	// 请输入验证码,不区分大小写
+	var str=prompt('请输入验证码');
+	console.log(str);
+	// 'xy12wf'='xY12wf' 先转换再比较
+	console.log(str.toLowerCase()=='xY12wf'.toLowerCase());
+
+
+	</script>
+</body>
+</html>

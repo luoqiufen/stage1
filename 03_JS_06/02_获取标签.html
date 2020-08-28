@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_获取标签</title>
+	<style>
+	.box{
+		width: 300px;
+		height: 100px;
+	}
+	.box1{background: #56D98E;}
+	.box2{background: #7A7AEF;}
+
+	</style>
+</head>
+<body>
+	<div class="box box1">盒子1</div>
+	<div class="box box2">盒子2</div>
+	<h1 name="t1">标题1</h1>
+	<h1 name="t2">标题1-2</h1>
+	<p id="p1">段落1</p>
+	<p id="p1">段落2</p>
+	<h3>标题3</h3>
+
+	<script>
+	// 1)根据id查找--只能找到第一个
+	console.log(document.getElementById('p1'));
+
+	// 2)根据标签名查找--数组
+	var eles=document.getElementsByTagName('p');
+	console.log(eles);//[p,p]
+	console.log(eles[1]);//段落2的p标签
+
+	console.log(document.getElementsByTagName('h3'));//[h3]
+
+	// 3)根据class类名找--数组
+	var divEle=document.getElementsByClassName('box');
+	console.log(divEle);//[div,div]
+
+	var divEle1=document.getElementsByClassName('box1');
+	console.log(divEle1);//[div]
+
+	// 4)根据name属性查找--数组
+	var h1_1=document.getElementsByName('t1');
+	console.log(h1_1);//[h1]
+
+	</script>
+</body>
+</html>

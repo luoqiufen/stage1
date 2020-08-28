@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_拓展</title>
+</head>
+<body>
+<script>
+// 取数组中最大值
+var arr=[12,25,23,32,26];
+function max(arr){
+	for(var i=1,max=arr[0];i<arr.length;i++){
+		(arr[i]>max)&&(max=arr[i]);//短路逻辑
+	}
+	return max;
+}
+console.log(max(arr));
+
+// 去除数组重复元素
+
+
+// 去除数组重复元素(hash)
+var arr1=[12,25,23,12,25,32,26];
+function aa(arr1){
+	for(var j=0,result=[],hash=[];j<arr1.length;j++){
+		if(hash[arr1[j]]==undefined){
+			result[result.length]=arr1[j];
+			hash[arr1[j]]=true;
+		}
+	}
+	return result;
+}
+console.log(aa(arr1));
+
+// 比较两个函数的执行速度
+// for(var k=0,arr2[];k<1000000;k++)
+
+
+</script>	
+</body>
+</html>

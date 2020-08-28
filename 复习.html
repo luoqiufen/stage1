@@ -1,0 +1,294 @@
+一、HTML
+	1.行标签和块标签
+		行:a,span,img,font,input,label,b,i...
+		块:div,p,h-h6,table,form,ul,li,nav,header,footer...
+
+	2.form
+		<form action="index.php" method="get/post" enctype="multipart/form-data" id="login"></form>
+
+		1) <input type="text" name="uname" value="默认值" placeholder="提示信息" maxlength="最大长度" readonly disabled>
+		2) <input type="password">	
+		3) <input type="number" min="最小值" max="最大值" value="默认值" step="步长">
+		4) <input type="date">
+		5) <input type="email" pattern="^[A-Za-z}\w{3,7}@(qq\163\126)\.com(\.cn)?$" required autofocus>
+		6) <input type="radio" name="gender" value="男" checked>男
+			<input type="radio" name="gender" value="女">女
+		7) <input type="checkbox" name="like" value="1" checked>
+			<input type="checkbox" name="like" value="2">
+		8) <select name="pro">
+				<option value="1">江苏省</option>
+				<option value="2" selected>安徽省</option>
+			</select>
+		9) 文件: <input type="file" multiple>
+		10) 多行文本域 <textarea cols="30" rows="10" style="resize:none;"></textarea>
+		11) <input type="range" value="5" min="0" max="100" step="5">
+		12) 数据列表 datalist
+			<input type="text" list="list1">
+			<datalist id="list1">
+				<option value="花瓣">
+				<option value="花儿与少年">
+			</datalist>
+		13) 按钮
+			<input type="submit">
+			<button>提交</button>
+			<input type="image" src="图片地址">
+			<!-- 重置 -->
+			<input type="reset">
+			<!-- 普通 -->
+			<input type="button">
+			
+			<!-- 提交表单外的控件 -->
+			<!-- form属性等于表单的id名 -->
+			<input type="text" name="uid" form="login">
+
+	3.功能性标签
+		1) <mark></mark>标记
+
+		2) 显示隐藏
+			<details>
+				<summary>标题</summary>
+				<p>详细内容...</p>
+			</details>
+		3) <meter></meter> 刻度条
+		4) <progress value="10" max="100"></progress> 进度条
+
+			属性:
+			data-*:自定义属性
+			contenteditable="true/false" 可否编辑内容
+
+二、CSS
+	1.使用位置
+		1) <p style="css样式"></p>
+		2) <style>
+			.选择器{样式}
+			</style>
+		3) <link rel="stylesheet" href="index.css">
+
+	2.CSS样式
+		1) 显示display
+			display:inline/inline-block/block/none;
+		2) 透明度
+			opacity:0-1;
+		3) visibility:hidden/visible;
+		4) 列表样式
+			list-style:circle inside;
+		5) 距离
+			margin: 0 auto;
+			padding: 10px;
+			width: 300;
+			
+			<!-- 1)width:内容大小 -->
+			box-sizing: content-box;
+			<!-- 1)width:整个盒子大小 -->
+			box-sizing: border-box;
+		6) 文字
+			font-size: 16px/2em/2rem;
+				em:参考父级
+				rem:参考根父级(html)
+			font-family: 宋体,Arial;
+			color: red/#ff0000/rgb(255,0,0)/rgba(255,0,0,1)/hsla(0,100%,50%,1);
+			font-weight: bold/normal;
+			font-style: italic/normal;
+			text-indent: 2em;
+			text-align: center;
+			line-height: 30px;
+			text-decoration: underline/overline/line-through/none;
+		7) 布局
+			上下行/左右列(在一层)
+				float: left/right;
+				clear: left/right/both;
+				-------------------------------
+				1) 给父级设置 height
+				2) 给父级 overflow:hidden
+				3) 给父级加小儿子
+					.son{clear:both;}
+				4) 给父级加小儿子(伪元素)
+					.father:after{
+						content:"";
+						display:block;
+						clear:both;
+					}
+				5) 给叔叔加清除浮动
+					p{clear:both;}
+			上下层
+				position: relative;
+				position: absolute;
+				position: fixed;
+
+				top/bottom/left/rigth: 0px;
+
+				居中:
+				top: 50%;
+				margin-top: -height/2;
+				left: 50%;
+				margin-left: -width/2;
+		8) overflow 文字溢出
+			overflow: hidden:
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		9) 光标/鼠标状态
+			cousor: default;箭头(默认)
+						text; 光标
+						pointer;手指 ***
+						help;帮助
+						wait;等待
+		10) CSS3样式
+			兼容处理前缀:
+			-moz- 	:firefox
+			-webkit- :safari/chrome
+			-o- 		:opera
+			-ms- 		:IE
+			<style>
+				transform: scale(2)
+				-moz-transform: scale(2)
+				-webkit-transform: scale(2)
+				-o-transform: scale(2)
+				-ms-transform: scale(2)
+			</style>
+
+			(1) 圆角
+				border-radius: 2px 3px 4px 5px;
+				border-radius: 50%;
+			(2) 盒子阴影
+				box-shadow:	2px 3px 2px 2px red inset,
+								2px 3px 2px 2px red inset;
+			(3) 文字阴影
+				text-shadow:2px 3px 2px blue;
+			(4) 背景
+				background:
+				url(图1) no-repeat,
+				url(图1) no-repeat right top;
+
+				渐变背景:
+				background-image:linear-gradient(90deg,#FF0 0%,#FF0000 50%,#00FF00 100%);(线性渐变)
+				background-image: -moz-radial-gradient( 50% 50%, circle closest-side, rgb(220,219,249) 0%, rgb(255,252,0) 38%, rgb(255,0,0) 100%);(镜像渐变)
+			(5) 自由变换
+				transform: sacle(1,1.5);
+				transform: rotate(45deg);
+				transform: translate(100px,200px);
+			(6) 过渡
+				transition: all 500ms
+			(7) 关键帧动画
+				@keyframes move{
+					from{
+						margin-top: 0;
+					}
+					to{
+						margin-left: 20px;
+						margin-top: 200px;
+					}
+				}
+
+				<!-- 调用动画 -->
+				p{
+					animation: move 1s infinate 2s;
+				}		
+
+三、JS
+	1.ECMAScript基础语法
+		1) 数据类型
+			String,Number,Boolean,array.function,null,undefined
+		2) 流程语句
+			(1)条件判断
+				if(){
+
+				}else if(){
+
+				}else{
+
+				}
+
+				switch(变量){
+				case 值:结果;break;
+				case 值:结果;break;
+				default:其他结果;
+				}
+
+				三目运算符:
+				? : ;
+				age>18?document.write('成年'):document.write('未成年');
+			(2)循环
+				for(var i=0;i<=5;i++){
+					//循环体
+				}
+
+				var j=1;
+					while(j<=5){
+						//循环体;
+						j++;
+					}
+
+					var m=1;
+					do{
+						//循环体;
+						m++;
+					}while(m<=5);
+
+					for(var key in arr){
+						// arr[key] 
+					}
+			(3)函数 function
+				function aa(){
+					//命名函数
+					return 值;
+				}
+
+				var aa = function(){
+					//匿名函数
+				}
+				dom.click = function(){
+
+				}
+
+	2.DOM
+	3.BOM
+
+四、DOM
+	原生dom操作(有属性和方法)
+		<script>
+			document.body.innerHTML;
+			document.querySelectorAll('.nav a');//加样式--必须循环处理
+			document.querySelectorAll('p1').onclick=function(){
+
+			}
+		</script>
+
+	jQdom操作(只有方法)
+		<script>
+			$('body').html();
+			$('.nav a').css('text-decoration','none');
+			$('.p1').click(function(){
+
+			});
+			$('.nav a').click(function(){
+				// 用法1
+				$('nav a').removeClass('current');
+				$('this').addClass('current');
+				// 用法2
+				$('this').addClass('current').siblings().removeClass('current');
+			});
+		</script>
+		<script>
+			// 在内部添加(在父级里添加儿子)
+			$('.father').append($('.son'));
+			$('.son').appendTo($('.father'));
+
+			// 兄弟级移动位置
+			$(A).after($(B));//在A后面添加B
+			$(A).insertAfter(B);//把A放入到B后面
+
+			// 删除
+			$(obj).empty();	//清空内容
+			$(obj).remove();  //移除整个dom
+			
+			// 5)复制
+			$(obj).clone();//只复制dom
+			$(obj).clone(true);//可以复制dom及dom事件处理
+		</script>
+
+五、计时器
+	setInterval();
+	setTimeout();
+
+六、Date日期 Math() RegExp()
+	

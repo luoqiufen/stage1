@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_无缝滚动</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		// 向上滚动一行
+		function moveUp(){
+			$('.list').animate({
+				marginTop: -40}
+			,1000,function(){
+				// alert('向上滚动一行结束');
+				// 把第一行移到列表末端
+				$('.list li:first-child').appendTo($('.list'));
+				// 把队伍位置还原到0
+				$('.list').css('margin-top',0);
+			})
+		}
+		moveUp();
+
+		// 无限循环滚动
+		 var t = setInterval(moveUp,1200);
+
+		 // 鼠标移入,暂停动画;移出,继续滚动
+		 $('.window').mousemove(function() {
+		 	clearInterval(t)
+		 }).mouseout(function() {
+		 	t = setInterval(moveUp,1200);
+		 });
+
+	})
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none}
+		.window{
+			width: 300px;
+			line-height: 40px;
+			height: 40px;
+			border: 2px solid red;
+			margin: 50px auto 0;
+			overflow: hidden;
+		}
+		.window ul{
+			/* border: 1px solid blue; */
+		}
+		.window ul li{
+			/* border-bottom: 1px dashed green; */
+			text-indent: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="window">
+		<ul class="list">
+			<li><a href="#">第1行</a></li>
+			<li><a href="#">第2行</a></li>
+			<li><a href="#">第3行</a></li>
+			<li><a href="#">第4行</a></li>
+			<li><a href="#">第5行</a></li>
+		</ul>
+	</div>
+
+	<!-- <marquee behavior="" direction="up"  style="background:skyblue;height:300px;width:500px;">
+		<div class="window">
+			<ul>
+				<li><a href="#">第1行</a></li>
+				<li><a href="#">第2行</a></li>
+				<li><a href="#">第3行</a></li>
+				<li><a href="#">第4行</a></li>
+				<li><a href="#">第5行</a></li>
+			</ul>
+		</div>
+	</marquee> -->
+</body>
+</html>

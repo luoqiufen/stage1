@@ -1,0 +1,56 @@
+/* CSS Document */
+<!-----------------road---------------------------->
+/*content-left2*/
+.left_2 .left_2_1 a,.left_3 .left_3_1 a{ color:black;}
+.left_2 .left_2_1 a:hover,.left_3 .left_3_1 a:hover{ color:red;}
+.left_2 .left_2_1 caption a,.hotshow .hotshow_5 a{font-size:15px;font-weight:bold; color:#669900; text-decoration:none;} 
+.left_2 .left_2_1 caption a:hover,.hotshow .hotshow_5 a:hover{color:red; text-decoration:underline;}
+.right_l_f #tp a{ color:white; font-size:15px; font-weight:bold;}
+.right_l_f #tf a{ color:white; font-size:12px; font-weight:bold;}
+.right_l_f #tp a:hover,.right_l_f #tf a:hover{ color:#FF6600;}
+.right_l_f #money a{ color:#FF6600; font-size:17px; font-weight:bold;}
+.right_l_f #money a:hover{ text-decoration:none;}
+.font_1 a,.font_2 a{ color:white; font-size:15px;}
+.font_1 a,.font_2 a:hover{ text-decoration:none;}
+.hotshow a{ font-size:14px; text-decoration:underline;}
+.hotshow_3 a{ color:#666666; font-size:12px; text-decoration:underline;}
+.hotshow_3 a:hover{ color:red;}
+.hotshow_4 a{ color:#003399; font-size:15px; font-weight:bold; text-decoration:none;}
+.hotshow_4 a:hover{ color:red; text-decoration:underline;}
+.hotshow .hotshow_6 a{ font-size:12px;color:#002aa4;text-decoration:none;}
+.hotshow .hotshow_6 a:hover{color:red;text-decoration:underline;}
+/* left_2_1*/
+.left_2 .left_2_1{ margin:10px 10px 10px 10px; line-height:20px;}
+.left_2 .left_2_1 td{width:85px;}
+.left_2 .left_2_1 caption{text-align:left;}
+
+/*content-left3*/
+.left_3 .left_3_1{ margin:15px 10px 10px 15px; line-height:23px;}
+.left_3 .left_3_1 td{ width:90px; background-repeat:no-repeat; padding-left:30px;}
+/*Right*/
+.content .main,.content .mainlist,.content .newlist{width:650px; margin:0px; padding:0px;padding-bottom:20px;float:right;}
+.right_l{ width:445px; height:216px; float:left; border:5px solid #CCCCCC;}
+.right_l_t{ width:420px; height:200px;background:url(images/pic2.jpg) no-repeat; /* z-index:1*/}
+.right_l_f{ width:410px;background:black; margin-top:-30px; line-height:20px;/* z-index:2*/}
+.font_1,.font_2{ width:24px; height:216px; background-color:#999999; float:left; text-align:center;}
+.font_1,.font_2{border-left:1px solid  white;}
+.font_1 span{ display:block;margin-top:25px;}
+.font_2 span{display:block;margin-top:59px;}
+.font_1{margin:5px 0 0 -53px;}
+.font_2{margin:5px 0 0 -30px;}
+/*content-right-top*/
+.main .left_1{ width:190px;height:225px;border:1px solid orange;background:#F3ECCF; float:right;}
+.main .left_1 h3{height:17px;padding:6px 15px;margin:0px;background-color:#FFCC99;color:red;border-bottom:1px solid orange;}
+.main .left_1 .pt{ margin:15px 5px 20px 5px;}
+.main .left_1 .pf{ line-height:20px; margin:10px 0 0 5px; font-size:14px;}
+/*content-right-container*/
+.hotshow{ width:650px; border:1px solid #0099FF; line-height:29px;margin-top:10px; }
+.hotshow td{ padding-left:15px; border-bottom:1px dashed #CCCCCC}
+.hotshow caption{line-height:28px; padding-left:10px;text-align:left;background:url(images/titbg3.gif) repeat-x;border:1px solid #0099FF;border-bottom:none; font-size:14px; font-weight:bold;}
+.hotshow  .hotshow_1{border-bottom:1px solid #CCCCCC; background-color:#EEEBD0}
+.hotshow_2{color:#FF6600; font-weight:bold; font-size:13px;}
+/*----------------*/
+.hotshow .hotshow_4{border-bottom:2px solid #003399 ;}
+.hotshow .hotshow_4,.hotshow .hotshow_5,.hotshow .hotshow_6{ background:url(images/titbg4.gif) repeat-x;}
+
+<!-------------------------mainlist------------------------>

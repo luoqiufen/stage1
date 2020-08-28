@@ -1,0 +1,128 @@
+第三章
+第六天
+
+一、DOM树
+	1.DOM是什么?
+		全称:Document Object Model
+			文档对象模型
+		提供了一些API(属性/方法)应用
+		js操作页面
+
+	2.DOM树结构
+		是一个树状的结构图
+		类似一个家族,html就是长老
+		作用:方便查找家族成员
+
+二、找到DOM
+	1.直接获取
+	<script>
+		document.title;
+		document.body;
+		document.head;
+	</script>
+
+	2.获取body里面的标签
+	<script>
+		// 1)根据id名查找 --找到第一个标签元素
+		document.getElementById(id);
+
+		// 2)根据标签名查找 --[数组]
+		document.getElementsByTagName(name);
+
+		// 3)根据class类名查找 --[数组]
+		document.getElementsByClassName(className);
+
+		// 4)根据name属性名 --[数组]
+		document.getElementsByName(name);
+
+
+		// 根据css选择器查找
+		 // (1)找一个
+		 document.querySelector(selectors);	
+		 // (2)找多个 [数组]
+		 document.querySelectorAll(selectors);	
+	</script>
+
+三、DOM属性
+	1.操作符
+	<script>
+		// 1)获取dom元素属性
+		elem.属性名;
+		// 2)修改属性
+		elem.属性名=新值;
+		// 3)清空属性值
+		elem.属性名='';
+	</script>
+
+	2.方法
+	<script>
+		// 1)获取属性
+		elem.getAttribute('属性名');
+		// 2)设置/修改属性
+		elem.setAttribute('属性名', '值');
+		// 3)删除/清空属性
+		elem.removeAttribute('属性名')
+
+	注意:
+	 1).操作符只能操作自带的dom属性
+	 	方法可以操作自定义的属性
+	 2)div.name=''//清空值
+		div.removeAttribute('name');//移除属性节点
+
+	</script>
+	-------------------------------------------
+
+	对dom值/内容 属性操作:
+	<script>
+		// 1)表单控件
+		input.value;//获取值
+		input.value=新值;//修改value值
+		input.value='';//清空值
+
+		// 2)双标记标签
+		div.innerHTML;//获取内容(识别html标签)
+		div.innerText;//获取内容(只识别文本)
+
+		div.innerHTML='<a href="">百度</a>';
+		div.innerText='百度';
+
+		div.innerHTML='';
+		div.innerText='';
+	</script>		
+
+四、DOM样式
+	<script>
+		// 1)行内style属性样式
+		elem.style;//样式数组集合
+		elem.style='width:100px;border border:1px solid red';//设置style属性
+
+		// 2)操作单个样式
+		elem.style.样式名;//获取样式
+		elem.style.样式名=值;//设置样式
+		elem.style.样式名='';//清空样式
+
+		elem.style.lineHeight='40px';
+
+	</script>
+
+五、DOM事件
+	事件:由用户 行为/标签本身的特征 所触发的事情
+	
+	类型:
+		1.onclick:鼠标单击
+
+		2.onblur:失去焦点
+
+		3.onfocus:获取焦点
+
+		4.onchange:(内容)发生改变
+
+	使用:
+	<input type="button" onclick="">
+	<input type="text" onblur="" onfocus="" onchange="">
+
+
+	<script>
+		
+
+	</script>

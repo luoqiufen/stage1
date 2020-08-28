@@ -1,0 +1,63 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-29 11:36:49
+ * @LastEditTime: 2020-07-02 19:58:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \wwwd:\web2004\1\code\03_JS_08\02_省市联动优化.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_省市联动优化</title>
+</head>
+<body>
+	<div>
+		籍贯:
+		<select name="province"></select>
+		<select name="city"></select>
+	</div>
+
+	<script>
+		// 1)数据信息
+		var proArr=['江苏省','安徽省','浙江省','福建省'];
+		var cityArr=[
+			['南京市','无锡市','苏州市','常州市'],
+			['合肥市','黄山市','滁州市','蚌埠市'],
+			['杭州市','宁波市','温州市'],
+			['厦门市','福州市','莆田市','泉州市']
+		]
+		// console.log(proArr);
+		// console.log(cityArr);
+
+		// 2)获取select标签
+		var pro_sel=document.querySelector('select[ name=province]');
+		var city_sel=document.querySelector('select[ name=city]');
+
+		// 封装函数:把数据显示到下拉列表里
+		// arr:数据
+		// select:下拉标签
+		function showMess(arr,select){
+			for(var k in arr){ 
+				var opt='<option value="'+k+'">'+arr[k]+'</option>';
+				select.innerHTML+=opt;
+			}
+		}
+
+		// 显示省份
+		showMess(proArr,pro_sel);
+		// 显示城市
+		showMess(cityArr[0],city_sel);
+
+		// 改变省份:切换对应的城市
+		pro_sel.onchange=function(){
+			var i=pro_sel.selectedIndex;// i:当前城市下标
+			console.log(i);
+			city_sel.innerHTML='';
+			showMess(cityArr[i],city_sel);
+		}
+		
+	</script>
+</body>
+</html>

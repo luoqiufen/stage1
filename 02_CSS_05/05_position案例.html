@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_position案例</title>
+	<style>
+		.item{
+			border: 2px solid #B2A5A5;
+			width: 145px;
+			position: relative;
+			float: left;
+		}
+
+		.item>img{
+			display: block;/* 底部无缝贴齐 */
+		}
+
+		.item .mask{
+			width: 145px;
+			height: 125px;
+			background: rgba(255,255,255,0.8);
+			line-height: 125px;
+			font-size: 12px;
+			color: green;
+			/* 绝对定位 */
+			position: absolute;
+			left: 0;
+			top: 0;
+			/* 隐藏 */
+			display: none;
+		}
+
+		/* 鼠标经过时候,mask显示 */
+		.item:hover .mask{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="item">
+		<img src="img2/picc_06.png" height="125" width="145">
+		<div class="mask">
+			上臂式血压计 HEM-7420
+		</div>
+	</div>
+	<div class="item">
+		<img src="img2/picc_03.png" height="125" width="145">
+		<div class="mask">
+			上臂式血压计 HEM-7420
+		</div>
+	</div>
+	<div class="item">
+		<img src="img2/picc_09.png" height="125" width="145">
+		<div class="mask">
+			上臂式血压计 HEM-7420
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+第一章 HTML
+第三天
+
+一.表格标签
+	<table>
+		<tr>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+	注: th和td都是列(单元格)
+		- th有文字加粗和居中效果
+
+	1.Table的属性
+		border="1"		边框大小
+		bordercolor="red" 边框颜色
+		cellspacing="0"	单元格外间距(设置0)
+		cellpadding="0"	单元格内间距
+		bgcolor="pink"	背景色
+		background="图地址"背景图
+		width="200" height="200" 宽 高
+		align="left/center/right" 水平位置
+
+	2.tr/td的属性
+		bgcolor="pink"	背景色
+		width="200" 	列宽(td)
+		height="200"  	行高(tr)
+		align="left/center/right" 水平位置
+		valign="top/middle/bottom" 垂直位置
+
+	3.合并单元格:td/th
+		colspan="合并列数"	左右列合并
+		rowspan="合并行数"	上下行合并
+
+		1)把合并的属性 加给开头的单元格td/th
+		2)被合并的单元格要从源代码 删除
+
+	table里划分结构:(对tr分组)
+		1)<thead></thead>
+		2)<tbody></tbody>
+		3)<tfoot></tfoot>
+	注: tbody可以用多个
+	
+	- 表格标题: 放第一行
+	<caption></caption>
+
+二.表单
+	作用: 收集信息
+	实际应用: 登录/注册/搜索
+	1.表单标签
+		<form action="数据提及的地址">
+			<!-- 提供用户填写的控件 -->
+		</form>
+		属性:
+		  1)action="后端页面地址"
+		  2)name="formName"	自定义
+		  3)method="get/post" 表单数据提交方式
+		  	get提交:默认
+		  			地址栏?传参
+		  	pos提交:隐藏提交
+
+		  	注:相比较而言,post比get安全一些
+		  		get方式比post快
+		  		get方式传递的数据没有post大
+
+		  4)enctype="multipart/form-data"
+		  	注:有文件上传时必须要设置
+
+	2.表单控件
+	  1)单行文本输入框
+	  	<input type="text">
+
+	  2)密码输入框
+	  	<input type="password">
+
+	  3)单选按钮:一组单选按钮，name名要一致
+	  	<input type="radio" name="gender">男
+		<input type="radio" name="gender">女
+
+	  4)多选按钮
+	  	<input type="checkbox" name="hobby">吃饭
+		<input type="checkbox" name="hobby">睡觉
+
+	  5)文字域(上传文件的控件)
+	  	<input type="file">
+
+	  6)多行文本域
+	  	<textarea cols="30" rows="10"></textarea>
+
+	  7)下拉列表/下拉选择框
+	  	<select>
+	  		<option value="">选项一</option>
+	  		<option value="">选项二</option>
+	  		<option value="">选项二</option>
+	  	</select>
+
+	  8)提交按钮
+	  	<input type="submit">
+	  	<button>botton提交</button>
+	  	<input type="image" src="../01_HTML_02/img/12.jpg" width="100">
+
+	  9)重置按钮(取消): 恢复到初始状态
+	  	<input type="reset">
+
+	  10)普通按钮(结合js实现功能效果)
+	  	<input type="button" value="添加">
+
+	  11)了解:隐藏域(单行文本框)
+	  	<input type="hidden">
+	  --------------------------------------------
+	  属性:
+	  	1)name="自定义名字"
+
+	  	2)value="默认值"
+	  	  - 数据提交的方式: name名=value值
+	  	  uname=王昭君&utel=4455641584&gender=male
+
+		  - 单选按钮radio
+		  	复选按钮checkbox
+		  	下拉列表选项option 要设置value值
+		  	一个组合value值要不同
+		-------------------------------------------
+		3)maxlength="10"	限制输入的最大字符数
+
+		4)readonly="readonly"	只读(文本框)
+
+		5)disabled="disabled"	禁用(按钮)
+		-------------------------------------------
+		radio/checkbox:
+		 	checked="checked"	默认选项
+
+		select里option:
+			selected="selected"	默认选项
+
+		file文件域
+			multiple="multiple" 允许多选
+
+		textarea多行文本域:
+			不允许重置大小
+			<textarea cols="30" rows="5" style="resize:none;"></textarea>
+
+三.页面内框架
+	<iframe src="页面地址" frameborder="0"></iframe>
+	- frameborder="0/1"	边框 0:无 1:有
+	- width="100" height="100"
+	- scrolling="auto/no"	滚动条:自动添加/无
+	
+四.了解:跑马灯标签
+	<marquee behavior="" direction=""></marquee>
+
+五.div,span标签
+	空盒子:放置任何内容
+	1.<div></div>	大盒子
+	2.<span></span>	小盒子
+
+晚自习作业：D:\web2004\第一阶段课前素材\web课堂
+			- 01_html_3\01－表格
+			- 01_html_3\02-form

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_导航切换</title>
+	<style>
+	body{
+		font-family: 微软雅黑;
+	}
+	.nav{
+		width: 550px;
+		line-height: 40px;
+	}
+	.nav a{
+		width: 100px;
+		display: inline-block;
+		background: #B2F7E7;
+		color: #333;
+		font-size: 16px;
+		text-decoration: none;
+		text-align: center;
+	}
+	.nav a.current{
+		background: #04A76D;
+		color: white;
+	}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<a href="#" class="current" onclick="init(0)">百度</a>
+		<a href="#" onclick="init(1)">新浪</a>
+		<a href="#" onclick="init(2)">网易</a>
+		<a href="#" onclick="init(3)">腾讯</a>
+		<a href="#" onclick="init(4)">豆瓣</a>
+	</div>
+	<script>
+	// 单击a
+	// 被单击的a添加current类,其他a,没有current
+	function init(index){
+		// alert('单击')
+		// 1)获取所有的a标签,移除current类
+		var a_obj=document.querySelectorAll('.nav a');
+		console.log(a_obj);
+
+		for(var k=0;k<a_obj.length;k++){
+			a_obj[k].classList.remove('current');
+		}
+		// 2)给被单击的a,添加current类
+		console.log(index);
+		a_obj[index].classList.add('current');
+	} 
+	</script>
+	
+	
+</body>
+</html>

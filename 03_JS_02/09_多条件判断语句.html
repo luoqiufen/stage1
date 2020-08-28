@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09_多条件判断语句</title>
+</head>
+<body>
+	<script>
+		// 需求:输入用户名信息
+		// - 不能为空
+		// - 长度4-10之间
+		// - 不能包含特殊符号@/#
+		
+		/*var uname=prompt('请输入用户名');
+		if(uname==''){
+			console.log('用户名不能为空');
+		}else if(!(uname.length>=4 && uname.length<=10)){
+			console.log('用户名长度在4-10之间');
+		}else if(uname.indexOf('@')!=-1 || uname.indexOf('#')!=-1){
+			console.log('用户名不能包含特殊符号');
+		}else{
+			console.log('用户名符合要求');
+		}
+		console.log(uname);
+		*/
+	
+		// 练习2:输入框,输入颜色:红色/蓝色/绿色
+		// 显示一个带填充色的盒子
+		var color=prompt('输入颜色:红色/蓝色/绿色');
+		console.log(color);
+		var bgcolor;//英文单词:颜色
+		if (color=='红色') {
+			bgcolor='red';
+			// document.write('<div style="width:150px;height:150px;background:red;"></div>');
+		}else if (color=='蓝色') {
+			bgcolor='blue';
+			// document.write('<div style="width:150px;height:150px;background:blue;"></div>');
+		}else if (color=='绿色') {
+			bgcolor='green';
+			// document.write('<div style="width:150px;height:150px;background:green;"></div>');
+		}else{
+			document.write('请输入正确颜色');
+		}
+		document.write('<div style="width:150px;height:150px;background:'+bgcolor+';"></div>');
+	</script>
+</body>
+</html>

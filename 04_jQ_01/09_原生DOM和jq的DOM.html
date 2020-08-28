@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09_原生DOM和jq的DOM</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+	$(function(){
+		// 原生DOM操作
+		var input1=document.querySelector('input[name=proName]');
+		input1.value='格林童话';
+
+		// jq DOM操作
+		$('input[name=price]').val(95);
+
+		// 特殊使用
+		// 原生的DOM,不能使用jq的方法
+		// input1.attr('readonly','readonly');//使用错误
+		
+		// $(原生DOM) =>jq的DOM
+		$(input1).attr('readonly','readonly');
+
+		// $(css选择器) =>原生DOM
+		$('input[name=price]')[0].maxLength=5;
+	})
+	</script>
+</head>
+<body>
+	<p>商品名: <input type="text" name="proName"></p>
+	<p>价格: <input type="text" name="price"></p>
+</body>
+</html>

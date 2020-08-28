@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div布局</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.row1{
+			height: 100px;
+			border: 1px solid red;
+			/* 水平居中 */
+			margin: 20px 50px;
+		}
+
+		.row2{
+			height: 120px;
+			border: 1px solid blue;
+			width: 600px;
+			margin: 10px auto;
+		}
+
+		.row3{
+			height: 150px;
+			border: 1px solid green;
+			width: 70%;
+			margin: 0 auto;
+		}
+
+		.row4{
+			width: 700px;
+			height: 500px;
+			border: 2px solid purple;
+			margin: 20px auto;
+		}
+
+		.row4 .box1{
+			width: 120px;
+			height: 120px;
+			background: #EE8484;
+			/* 浮动:漂浮在上方,不占位置; */
+			/* float: left; */
+		}
+
+		.row4 .box2{
+			width: 150px;
+			height: 150px;
+			background: skyblue;
+			/* 浮动 */
+			/* float: right; */
+		}
+
+		.row4 .box3{
+			width: 200px;
+			height: 200px;
+			background: #ECA571;
+			/* float: right; */
+		}
+
+	</style>
+</head>
+<body>
+	<div class="row1"></div>
+	<div class="row2"></div>
+	<div class="row3"></div>
+
+	<div class="row4">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+</html>

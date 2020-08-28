@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_目标选择器</title>
+	<style>
+		.list1,.list2,.list3{
+			width: 180px;
+			border: 1px solid red;
+			display: none;
+		}
+		.list2{
+			border: 1px solid blue;
+		}
+		.list3{
+			border: 1px solid green;
+		}
+		:target{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<a href="#news1">百度</a>
+		<a href="#news2">网易</a>
+		<a href="#news3">腾讯</a>
+	</div>
+	<ul class="list1" id="news1">
+		<li>百度新闻1</li>
+		<li>百度新闻2</li>
+		<li>百度新闻3</li>
+	</ul>
+	<ul class="list2" id="news2">
+		<li>网易新闻1</li>
+		<li>网易新闻2</li>
+		<li>网易新闻3</li>
+		<li>网易新闻4</li>
+	</ul>
+	<ul class="list3" id="news3">
+		<li>腾讯新闻1</li>
+		<li>腾讯新闻2</li>
+		<li>腾讯新闻3</li>
+		<li>腾讯新闻3</li>
+		<li>腾讯新闻4</li>
+	</ul>
+</body>
+</html>

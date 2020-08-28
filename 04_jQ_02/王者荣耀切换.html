@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+	// $(function(){
+	// 	//1)数据(部分信息，可自己去补充)
+	// 	// 英雄名 皮肤名 口头禅 小图 大图
+	// 	var arr = [
+	// 		['鲁班七号','机关造物','鲁班大师，智障250，膜拜，忌惮膜拜。','s_1.jpg','b_1.jpg'],
+	// 		['安琪拉','暗夜萝莉','生命就像人家的魔法书，涂涂改改又是一年','s_2.jpg','b_2.jpg'],
+	// 		['庄周','逍遥梦幻','蝴蝶是我，我就是蝴蝶','s_3.jpg','b_3.jpg'],
+	// 		['大乔','伊势巫女','守望着天空，大海，和你的回忆。','s_4.jpg','b_4.jpg'],
+	// 		['妲己','魅惑之狐','为什么会痛苦，一直微笑就好了','s_5.jpg','b_5.jpg']
+	// 	];
+
+	// })
+	
+
+	$(function(){
+			var arr = [
+				['鲁班七号','机关造物','鲁班大师，智障250，膜拜，忌惮膜拜。','s_1.jpg','b_1.jpg'],
+				['安琪拉','暗夜萝莉','生命就像人家的魔法书，涂涂改改又是一年','s_2.jpg','b_2.jpg'],
+				['庄周','逍遥梦幻','蝴蝶是我，我就是蝴蝶','s_3.jpg','b_3.jpg'],
+				['大乔','伊势巫女','守望着天空，大海，和你的回忆。','s_4.jpg','b_4.jpg'],
+				['妲己','魅惑之狐','为什么会痛苦，一直微笑就好了','s_5.jpg','b_5.jpg']
+			];
+
+			// 放进span
+			var hero='';
+			for(var i = 0;i<arr.length;i++){
+				hero += '<span><img src="hero/'+arr[i][3]+'"></img>'+arr[i][0]+'</span>';
+				$('.smallBox').html(hero);
+			}
+
+			// 显示文字和背景图
+			function showMess(j){
+				$('.bannerBox').css('background','url(hero/'+arr[j][4]+')');
+				$('.mask .p1').html(arr[j][1]);
+				$('.mask .t1').html(arr[j][0]);
+				$('.mask .p2').html(arr[j][2]);
+				$('.smallBox span').removeAttr('class');
+				$('.smallBox span').eq(j).addClass('current');
+			}
+			showMess(0);
+
+			// 点击小图切换信息
+			$('.smallBox span').click(function(){
+				var k = $(this).index();//span下标
+				showMess(k);	
+			})
+	})
+
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{font-family: 微软雅黑;}
+		.bannerBox{
+			width: 1200px;
+			height: 530px;
+			border:1px solid red;
+			margin:0 auto;
+			position: relative;
+		}
+		.bannerBox .mask{
+			width: 300px;
+			height: 510px;
+			background: rgba(0,0,0,0.3);
+			padding:10px 20px;
+			float: left;
+		}
+		.bannerBox .mask .p1{
+			margin-top: 50px;
+			color: #85DBE0;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 40px;
+		}
+		.bannerBox .mask .t1{
+			color: #fff;
+			font-size: 36px;
+			line-height: 80px;
+		}
+		.bannerBox .mask .p2{
+			color: #fff;
+			font-size: 18px;
+			line-height: 30px;
+		}
+		.bannerBox .smallBox{
+			border:1px solid red;
+			float: right;
+			position: absolute;
+			right: 10px;
+			bottom: 20px;
+		}
+		.bannerBox .smallBox span{
+			float: left;
+			width: 80px;
+			text-align: center;
+			color: white;
+			margin:0 3px;
+		}
+		.bannerBox .smallBox span.current img{
+			outline:1px solid #36F761;
+		}
+		.bannerBox .smallBox img{
+			width: 80px;height: 80px;
+		}
+	</style>
+</head>
+<body>
+<div class="bannerBox">
+	<div class="mask">
+		<p class='p1'></p>
+		<h3 class='t1'></h3>
+		<p class='p2'></p>
+	</div>
+	<div class="smallBox">
+		<!-- <span class='current'><img src="hero/s_1.jpg">鲁班七号</span>
+		<span><img src="hero/s_2.jpg">鲁班七号</span>
+		<span><img src="hero/s_3.jpg">鲁班七号</span>
+		<span><img src="hero/s_4.jpg">鲁班七号</span>
+		<span><img src="hero/s_5.jpg">鲁班七号</span>	 -->	
+	</div>
+</div>
+	
+</body>
+</html 

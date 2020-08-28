@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_正则表达式</title>
+</head>
+<body>
+	<form action="index.php">
+		文章内容: <textarea name="content" cols="20" rows="10"></textarea>
+		<p><input type="button" value="发布"></p>
+	</form>
+	<div class="box" style="width:300px;border:1px solid blue;"></div>
+
+
+
+	<script>
+		// 修饰符:
+		// i -不区分大小写
+		// g -全局匹配(可以匹配多处)
+		// m -多行匹配
+
+		// string的方法
+		// 替换 -replace(旧值,新值)
+		
+		var str1 = 'html语言基础,html标签结构,html属性';
+		console.log(str1.replace('html',"HTML"));//HTML语言基础,html标签结构,html属性
+		// 默认只替换一处
+		
+		console.log(str1.replace(/html/g,'HTML'));//HTML语言基础,HTML标签结构,HTML属性
+
+
+		// 案例:批量修改文章内容
+		var btn = document.querySelector('input[type=button]');
+		var con = document.querySelector('textarea');
+		var div_obj = document.querySelector('.box');
+
+		btn.onclick = function(){
+			// 要求:把英文换成红色
+			console.log(con.value)
+			
+			div_obj.innerHTML = con.value.replace(/html/g,'<font color=red>html</font>');
+		}
+
+	</script>
+</body>
+</html>

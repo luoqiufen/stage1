@@ -1,0 +1,171 @@
+/*
+* @Author: Administrator
+* @Date:   2020-05-19 09:41:18
+* @Last Modified by:   Administrator
+* @Last Modified time: 2020-05-19 19:10:45
+*/
+
+/* 初始化样式 */
+*{padding: 0;margin: 0;}
+ol,ul{list-style: none;}
+a{text-decoration: none;}
+body{
+	font-family: 微软雅黑,Arial;
+	font-size: 13px;
+	min-width: 1300px;
+}
+
+/* 公共类 */
+.autow{width: 1000px;margin: 0 auto;}
+.Left{float: left;}
+.Right{float: right;}
+.overflowH{overflow: hidden;}
+.father:after{content: "";display: block;clear: both;}
+
+/*导航 navBar */
+.navBar{
+	height: 50px;
+	background: #606060;
+	font-size: 20px;
+	line-height: 50px;
+}
+.navBar .con{
+	/* border: 1px solid red; */
+}
+.navBar .item{position: relative;}
+.navBar .item a{
+	padding: 0 20px;
+	/* border: 1px solid red; */
+	display: block;
+	text-align: center;
+}
+
+/* 一级 */
+.navBar .item>a{color: white;}
+.navBar .item>a:hover{color: black;}
+/* 二级 */
+.navBar .item ul{
+	background: #D1CDCD;
+	position: absolute;
+	width: 100%;/* (让二级和一级同宽) */
+	left: 0;
+	top: 50px;
+	display: none;
+	z-index: 10;
+}
+/* 鼠标经过item,让二级ul显示 */
+.navBar .item:hover ul{display: block;}
+
+.navBar .item ul a{color: black;}
+.navBar .item ul a:hover{color: white}
+
+/* 轮播 bannerBox */
+/* 广告图 */
+.bannerBox{
+	width: 1300px;
+	margin: 0 auto;
+	position: relative;
+	/* border: 1px solid red; */
+}
+.bannerBox .imgs img{
+	display: none;
+}
+.bannerBox .imgs img:first-child{display: block;}
+
+/* 左右按钮 */
+.bannerBox .prevbtn{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -40px;
+}
+.bannerBox .nextbtn{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -40px;
+}
+
+/* 圆点 points */
+
+.bannerBox .points{
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center; 
+	z-index: 6;
+}
+.bannerBox .points span{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: #C5C1C1;
+	margin: 5px;
+}
+
+/* 主内容 main */
+/* group */	
+.main{text-align: center;}
+.main .group{margin: 70px 0;}
+.main .group .box{
+	/* background: pink; */
+	width: 260px;
+	text-align: center;
+	float: left;
+	margin: 0 55px;
+}
+.main .group .box:nth-child(2){
+	margin: 0;
+}
+.main h3{
+	font-size: 18px;
+	line-height: 26px;
+}
+.main p{font-size: 16px;}
+
+/* picBox */
+.main .picBox{
+	/* background: pink; */
+}
+.main .picBox .leftbox{
+	width: 364px;
+	background: #C2F8F0;
+}
+.main .picBox .rightbox{
+	width: 636px;
+	background: #C2F8CB;
+}
+/* 图片切换模块 */
+.main .picBox .item{
+	position: relative;
+}
+.main .picBox .item img{display: block;}
+
+.main .picBox .item img:last-child{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none; /* 隐藏 */
+}
+.main .picBox .item:hover img:last-child{
+	display: block;
+}
+.main>h3{
+	margin: 100px 0 20px;
+}
+
+.main .picBox1{margin: 100px 0;}
+.main .picBox1 .item{
+	display: inline-block;
+	margin: 4px;
+}
+/* 底部 */
+.bottom hr{
+	border: 1px solid #5E5B5B;
+}
+
+.bottom p{
+	display: inline-block;
+	margin: 50px 40px 30px 30px;
+	font-size: 16px;
+}

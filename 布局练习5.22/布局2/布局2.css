@@ -1,0 +1,20 @@
+/*
+* @Author: 13643
+* @Date:   2020-05-24 19:23:14
+* @Last Modified by:   13643
+* @Last Modified time: 2020-05-24 22:12:15
+*/
+
+ul{list-style: none;}
+	.bigbox{
+		width: 600px;
+	}
+	form{
+		background: url(imgs/topbar_sprite4.png) no-repeat;
+		background-size: 576px 156px;
+	}
+	form input{
+		background: transparent;
+		border: 0;
+		outline: 0;
+	}

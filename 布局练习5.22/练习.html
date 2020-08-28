@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+// 练习1：用户购买商品，提供3个输入框，输入价格
+// 三个商品中有一个超过50元，或者总价超过100元，即可以打八五折，否则不打折
+// 根据用户输入的商品价格，判断是否打折
+
+// 练习1
+/*var price1=prompt('请输入价格');
+var price2=prompt('请输入价格');
+var price3=prompt('请输入价格');
+if (price1>50 || price2>50 || price3>50 || Number(price1)+Number(price2)+Number(price3)>100) {
+	document.write('满足消费条件,可打85折');
+}else{
+	document.write('消费金额未达到打折要求');
+}
+
+console.log(Number(price1)+Number(price2)+Number(price3))
+*/
+
+/* 练习2：输入 "考勤成绩" 和 "期末成绩"
+学校根据考勤成绩和期末成绩来决定学生是否可以毕业。
+	考勤成绩和期末成绩都在60分以上的学生可以顺利毕业
+	考勤和期末成绩都在60分以下，不能毕业，需要留级
+	考勤成绩小于60分，期末成绩大于60分，延迟毕业
+	考勤成绩大于60分，期末成绩小于60分，可补考
+*/
+
+// 练习2
+/*var check=prompt('请输入考勤成绩');
+var exam=prompt('请输入期末成绩');
+if(check>60&&exam>60){
+	document.write('成绩合格,可以顺利毕业!');
+}else if(check<60&&exam<60){
+	document.write('成绩太差,不能毕业,留级吧!')
+}else if(check<60&&exam>60){
+	document.write('延期毕业');
+}else{
+	document.write('补考!')
+}*/
+
+
+// 练习3：把以下新闻输出成一个无序列表,
+// 偶数行是粉色,奇数行是浅蓝色	
+var newList = [
+'紧急通知',
+'“三八节”女性旅游乐享半价优惠',
+'暂停旅游社业务公告',
+'九华山门票恢复全价',
+'“三八”节短线游走俏',
+'4月初去动物园看羊驼',
+'安徽省旅游指委召开会议号召...'
+];
+
+document.write('<ul>');
+	for(var len=0;len<newList.length;len++){
+	if(len%2==0){
+		document.write('<li style="background:#85ECF6">'+newList[len]+'</li>');
+	}else{
+		document.write('<li style="background:pink">'+newList[len]+'</li>');
+
+	}
+}
+	document.write('</ul>');
+
+
+
+// 练习4：在页面打印20-80之间能被3整除的整数，每5个一行
+
+/*for(i=20;i<=80;i++){
+	if(i%3==0&&(i-3)%5==0) {
+		document.write(i+'<br>') ;
+	}else if(i%3==0){
+		document.write(i+"&nbsp;") ;
+	}
+}*/
+
+var i=0;//第0个数
+for(a=20;a<=80;a++){
+	if(a%3==0){
+		i++//记录第几个数
+		document.write(a+"&nbsp;");
+		if(i%5==0){;
+		document.write('<br>');
+		}
+	}
+}
+
+
+// 练习5：求和运算,求1+2+3+4+...+100=?
+	var sum=0
+for(k=1;k<=100;k++){
+	sum=sum+k;	
+}
+document.write(sum);
+
+// 练习6：将数组中数字内容求和
+var attr = [12,34,2,5,76];
+	var m=0;
+	for(n=0;n<attr.length;n++){
+		m=m+Number(attr[n])
+	}
+document.write('<br>'+m);
+
+
+// 练习7：
+/*
+公园里有一只猴子和一堆桃子，猴子每天吃掉桃子总数的一半，把剩下一半中扔掉一个坏的。到第七天的时候，猴子睁开眼发现只剩下一个桃子。问公园里刚开始有多少个桃子？
+*/
+var sum2=1;
+for(j=2;j<=7;j++){
+	sum2=(sum2+1)*2;
+}
+document.write('<br>'+sum2);
+
+
+</script>	
+</body>
+</html>

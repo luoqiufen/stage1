@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_DOM属性</title>
+</head>
+<body>
+	<p class="p1" align="center" title="文章1">段落1</p>
+	<p class="p2" align="right">段落1</p>
+	<ul id="list1" type="circle">
+		<li title="">第1行</li>
+		<li title="">第2行</li>
+		<li title="">第3行</li>
+	</ul>
+
+
+	<script>
+		// 1)找段落1
+		var p1_obj=document.querySelector('.p1');
+		console.log(p1_obj);
+
+		// 获取align属性
+		console.log(p1_obj.align);
+
+		// 修改属性值
+		p1_obj.align='left';
+
+		// 清空属性值
+		p1_obj.title='';
+
+
+		// 2)找段落2
+		var p2_obj=document.querySelectorAll('.p2');
+		console.log(p2_obj);//包含了大量的属性信息
+		console.log(p2_obj[0].align);//right
+		console.log(p2_obj[0].className);//p2
+
+
+		// 3)找到ul
+		var ul_obj=document.querySelector('#list1');
+		console.log(ul_obj);
+		
+		// 获取列表符号类型
+		console.log(ul_obj.type);
+		
+		// 修改类型
+		ul_obj.type='square';
+
+		// 4)找到li
+		var lis_obj=document.querySelectorAll('#list1 li');
+		console.log(lis_obj);
+
+		// 给li添加title='新闻标题'
+		/*lis_obj[0].title='新闻标题';
+		lis_obj[1].title='新闻标题';
+		lis_obj[2].title='新闻标题';*/
+
+		for(var key=0;key<lis_obj.length;key++){
+			lis_obj[key].title='新闻标题'+(key+1)+'';
+		}
+		console.log(lis_obj[1]);
+		console.log(lis_obj[1].title);
+
+	</script>
+
+	<div class="box1">
+		<img src="img/a.gif" width="" height="" alt="" title="">
+		<img src="img/b.gif" width="" height="" alt="" title="">
+		<img src="img/c.gif" width="" height="" alt="" title="">
+		<img src="img/d.gif" width="" height="" alt="" title="">
+	</div>
+	<script>
+		// 找到图片,设置图片尺寸150*150
+		// 图片添加alt='格式受损坏'
+		// 				title='设计图1'(排序)
+						
+		var imgs=document.querySelectorAll('.box1 img');
+		console.log(imgs);
+
+		for(var k in imgs){
+			imgs[k].width=150;
+			imgs[k].height=150;
+			imgs[k].alt='格式受损坏';
+			imgs[k].title='设计图'+(Number(k)+1)+'';
+		}
+		console.log(imgs[0]);
+
+
+
+	</script>
+	
+
+</body>
+</html>

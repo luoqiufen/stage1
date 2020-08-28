@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_switch分支语句</title>
+</head>
+<body>
+	<script>
+		// 需求:弹出输入框,输入今天是星期几:
+		/*
+			星期一:去户外烧烤
+			星期二:去游乐园
+			星期三:去电影院看电影
+			星期四:去网吧开黑
+			星期五:去图书馆学习
+			星期六/天:在家睡觉
+		 */
+		
+		var week=prompt('今天是星期几?');
+		switch(week){
+			case'星期一':document.write('去户外烧烤');break;
+			case'星期二':document.write('去游乐园');break;
+			case'星期三':document.write('去电影院看电影');break;
+			case'星期四':document.write('去网吧开黑');break;
+			case'星期五':document.write('去图书馆学习');break;
+			default:document.write('在家睡觉');
+		}
+
+		//break:终止流程,跳到流程语句外面
+		
+		/*if(){
+
+		}else if(){
+
+		}else{
+
+		}*/
+		
+	</script>
+</body>
+</html>

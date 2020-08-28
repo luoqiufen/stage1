@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_表单提交验证1</title>
+</head>
+<body>
+	<form action="index.php" name="login" onsubmit="return checkForm()">
+		<p>
+			用户名: 
+			<input type="text" name="uname">
+			<span></span>
+		</p>
+		<p>
+			密码: 
+			<input type="password" name="upass">
+			<span></span>
+		</p>
+		<p><input type="submit" value="登录"></p>
+	</form>
+	<script>
+		// 定义函数,04_表单提交验证
+		// 验证成功:return true
+		// 验证失败:return false
+		function checkForm(){
+			// 开始做验证
+			// console.log(checkUname());//用户名验证结果
+			// console.log(checkUpass());//密码验证结果
+
+			if(checkUname()=='yes'&&checkUpass()==true){//允许提交
+				return true;
+			}else{//阻止提交
+				return false
+			}
+		}
+
+		// 定义函数,验证用户名
+		// 返回值:return 'yes' ->验证成功
+		// 返回值:return 'no' ->验证失败
+		function checkUname(){
+			var uname=document.querySelector('input[name=uname]');//用户名
+			var span=uname.nextElementSibling;
+			if(uname.value==''){
+				span.innerHTML='<font color=red>不能为空</font>';
+				return 'no';
+			}else if(uname.value.length<5||uname.value.length>10){
+				span.innerHTML='<font color=red>长度为5-10</font>';
+				return 'no';
+			}else if(uname.value.indexOf('@')!=-1){
+				span.innerHTML='<font color=red>不能包含特殊字符</font>';
+				return 'no';
+			}else{
+				span.innerHTML='<font color=green>用户名可以使用</font>';
+				return 'yes';
+			}
+		}
+
+		// 定义函数,验证密码
+		// 返回值:return true ->验证成功
+		// 返回值:return false ->验证失败
+		function checkUpass(){
+			var upass=document.querySelector('input[name=upass]');//密码
+			var span=upass.nextElementSibling;
+			if(upass.value==''){
+				span.innerHTML='<font color=red>不能为空</font>';
+				return false;
+			}else if(upass.value.length!=6){
+				span.innerHTML='<font color=red>密码必须为6位</font>';
+				return false;
+			}else{
+				span.innerHTML='';
+				return true;
+			}
+		}
+		
+		
+
+
+		// 定义函数,验证密码
+	</script>
+</body>
+</html>

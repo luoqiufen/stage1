@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_多维数组</title>
+</head>
+<body>
+<script>
+	// 多维数组
+	var arr2=['apple',18,false,['a','b']]
+	console.log(arr2);
+
+	console.log(arr2[3]);
+	console.log(arr2[3][0]);
+	console.log(arr2[3][1]);
+
+	var arr3=[
+		['red','blue','green'],
+		18,
+		[
+			['apple','banana','pear'],
+			['aa','bb','cc'],
+			'南京市'
+		]
+	];
+
+	console.log(arr3[2][0][1]);
+
+	// 需求:存储班级学生信息
+	var stu=[
+		['1001','李晨','男',38,'一年级1班'],
+		['1002','baby','女',18,'一年级1班'],
+		['1003','郑凯','男',30,'一年级1班'],
+		['1004','陈赫','男',34,'一年级2班'],
+		['1005','邓超','男',36,'一年级2班']
+	];
+	console.log(stu);
+
+	// 循环遍历取值
+	// 一个人的信息是一行
+/*
+	for(var i=0;i<stu.length;i++){
+		console.log(stu[i]);
+		for(var j=0;j<stu[i].length;j++){
+			document.write(stu[i][j]+' ')
+		}
+		// 一个人的信息取完了,换行
+		document.write('<br>')
+	}
+*/
+	// 循环遍历
+	// 呈现在表格里
+	document.write('<table border=1 cellspacing=0 width=350 height=200>')
+		for(var k in stu){
+			console.log(stu[k]);
+			document.write('<tr>')
+			for(var z in stu[k]){
+				document.write('<td align=center>'+stu[k][z]+'</td>')
+			}
+			document.write('</tr>')
+		}
+	document.write('</table>')
+	
+</script>	
+</body>
+</html>

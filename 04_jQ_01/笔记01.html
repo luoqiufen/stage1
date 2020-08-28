@@ -1,0 +1,214 @@
+JS内容:
+
+一、JS对象-算数对象 Math
+	<script>
+		// 1)向上取整
+		console.log(Math.ceil(10));//=>10
+		console.log(Math.ceil(10.01));//=>11
+		console.log(Math.ceil(10.98));//=>11
+		console.log(Math.ceil(-10.98));//=>-10
+
+		// 2)向下取整
+		console.log(Math.floor(11.50));//=>11
+		console.log(Math.floor(10.01));//=>10
+		console.log(Math.floor(10.98));//=>10
+		console.log(Math.floor(-10.98));//=>-11
+
+		// 3)四舍五入取整
+		console.log(Math.round(11.50));//=>12
+		console.log(Math.round(10.01));//=>10
+		console.log(Math.round(10.98));//=>11
+		console.log(Math.round(-10.98));//=>-11
+
+		// 4)幂运算
+		console.log(Math.pow(2,5));//32
+		console.log(Math.pow(2,3));//8
+		console.log(Math.pow(3,3));//27
+
+		// 5)随机数 [0,1)
+		// 大于等于0 小于1的随机小数
+		console.log(Math.random());
+
+		// 获取任意区间随机整数
+		function num(min,max){
+		return Math.round(Math.random()*(max-min)+min);	
+		}
+
+	</script>
+
+二、JS-计时器(控制时间)
+	作用:间隔一段时间去做什么事情
+	类似于闹钟
+	1)设置计时器
+	<script>
+		// 1s=1000ms 
+		// 1)间隔多久,循环去做一件事情
+		setInterval(func, 间隔时间:ms);
+		// 2)延迟多久,去做一件事情(只执行一次)
+		setTimeout(func, 延迟时间:ms);
+	</script>
+	2)清除计时器
+	<script>
+		// id: 计时器的数字编号,从1开始
+		// 建议给计时器命名
+		clearInterval(id);
+		clearTimeout(id);
+
+		// 设置计时器
+		var t1=setInterval(function(){},1000)
+		var t1=setInterval(aa(),1000);
+
+		function aa(){
+			// 间隔1秒去做的事情
+			
+			// 清除计时器
+			clearInterval(1);//第一个计时器
+			clearInterval(t1);//名字为t1的计时器
+
+		}
+	</script>
+
+三、JS对象-window
+	1)本地地址: window.location
+		跳转页面:
+		window.lacation.href='新的url地址'
+
+	2)历史记录: window.history
+		window.history.back();		回退1步
+		window.history.forward();	前进1步
+		window.history.go(2);		前进2步
+		window.history.go(-2);		回退2步
+
+--------------------------------------------
+
+第四章 jQuery
+第一天
+
+一、jQuery介绍
+	1.jQuery是什么?
+		是一个js文件
+		是一个js的轻量级应用框架
+		提供了"简化"的DOM操作
+
+	2.jQuery文件
+		jQuery-1.x.js
+		jQuery-2.x.js
+		jQuery-3.x.js
+		jQuery-3.x.min.js(压缩版/精简版)
+
+	3.怎么应用?
+		本地:引入jQ文件
+		<script src="jq/jquery-1.4.js"></script>
+		在线:引入jq文件
+		<script src="https://code.jquery.com/jquery-1.4.js"></script>
+
+二、jQuery的语法规则
+	<script>
+		// 方法:
+		$();
+		jQuery();
+	</script>
+
+三、加载方法
+	1.window.onload 加载时间方法(原生)
+	<script>
+		window.onload=function(){
+			// 加载完成去做...
+		}
+	</script>
+
+	2.jQ的ready方法
+	<script>
+		$(document).ready(function() {
+			
+		});
+	</script>
+
+	总结:
+		1)window.onload事件:
+			只能用一次
+			加载DOM树以及所有链接资源
+		2)jq的ready方法:
+			可以使用多次
+			加载DOM树
+		先ready再onload 
+
+四、DOM应用
+	1.查找DOM
+	<script>
+		$('css选择器');
+
+		// 1)标签选择器:
+			$('div');
+		// 2)class类
+			$('.box');
+		// 3)id选择器
+			$('#box');
+		// 4)属性选择器
+			$('input[name=uname]');
+		// 5)通配选择器
+			$('*')
+
+		// 1)迭代选择器
+			$('ul li');
+		// 2)并集选择器
+			$('ul,p,h1');
+		// 3)交集选择器
+			$('.p1 a.current');
+	</script>
+
+	2.操作属性 attr()
+	<script>
+		// 1)获取属性
+		$(obj).attr('属性名');
+		
+		// 2)设置属性
+		// 设置1个属性
+		$(obj).attr('属性名', '值');
+
+		// 设置多个属性
+		$(obj).attr({
+			属性名1: '值1',
+			'属性名2': '值2'
+		});
+
+		// 3)清空属性值
+		$(obj).attr('属性名','');
+		$(obj),removeAttr('属性名')
+	</script>
+
+	3.内容和值
+	<script>
+		// 1)内容
+			// 获取内容
+			$('div').html();
+			$('div').text();
+			//设置内容
+			$('div').html('值');
+			$('div').text('值');
+			//清空内容
+			$('div').html('');
+			$('div').text('');
+
+		// 2)值 -value值
+			// 获取value值
+			$('input').val();
+			// 设置value值
+			$('input').val('值');
+			// 清空value值
+			$('input').val('');
+	</script>
+
+	原生DOM和jQ的DOM
+	<script>
+	// 原生dom1
+	var dom1=document.querySelector('input');
+	// jq的DOM,可以用jq的方法
+	$(dom1);
+
+	// jq的DOM
+	$('input');
+	// 原生DOM,可以用原生的属性和方法
+	$('input')[0];
+
+	</script>

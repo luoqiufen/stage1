@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_类名操作2</title>
+	<style>
+	.box1{
+		width: 100px;
+		height: 100px;
+		border: 1px solid red;
+	}
+	.box2{
+		font-size: 20px;
+		text-align: center;
+		line-height: 100px;
+	}
+	.box3{
+		background: #BBFBD6;
+		margin: 100px auto;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		盒子内容
+	</div>
+
+	<script>
+		// 1)找到div
+		var div_obj=document.querySelector('.box1');
+		console.log(div_obj);
+
+		// 2)获取类名
+		console.log(div_obj.className);//'box1'
+		console.log(div_obj.classList);//['box1']
+
+		// 3)添加类名
+		// div_obj.className+=' box2 box3';//'box1 box2'
+		div_obj.classList.add('box2','box3');//'box1 box2 box3'
+
+		// 4)移除类名
+		div_obj.classList.remove('box2','box3');
+		// div_obj.className='';//清除所有类
+
+
+
+		// div class=box1
+		div_obj.classList.toggle('box2');
+		div_obj.classList.toggle('box3');
+		div_obj.classList.toggle('box1');
+
+	</script>
+</body>
+</html>

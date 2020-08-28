@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_form表单相关</title>
+</head>
+<body>
+	<!-- 登录 -->
+	<form action="" name="login">
+		<fieldset>
+		<legend>登录</legend>
+			<p>用户名: <input type="text" name="uname"></p>
+			<p>密码: <input type="password" name="upass"></p>
+			<p><input type="submit" value="登录"></p>
+		</fieldset>
+	</form>
+	
+	<form action="" name="register">
+		<fieldset>
+			<legend>注册</legend>
+			<p>用户名: <input type="text" name="uname"></p>
+			<p>密码: <input type="password" name="upass"></p>
+			<p>性别:
+				<input type="radio" name="gender" value="男" checked>男
+				<input type="radio" name="gender" value="女">女
+			</p>
+			<p>籍贯:
+			<select name="province">
+				<option value="1">浙江省</option>
+				<option value="2">江苏省</option>
+				<option value="3" selected>安徽省</option>
+			</select>
+			</p>
+			<p><input type="submit" value="注册"></p>
+		</fieldset>
+	</form>
+
+	<script>
+		// 1)获取表单
+		console.log(document.forms);
+		console.log(document.forms['login']);
+		console.log(document.forms['register']);
+
+		// 2)获取表单里的控件
+		console.log(document.forms['login']['uname']);
+		console.log(document.forms['login']['upass']);
+
+		console.log(document.forms['register']['gender']);
+		console.log(document.forms['register']['province']);
+		var select_obj=document.forms['register']['province'];//select标签
+		console.log(select_obj.options);//所有option选项的集合[option, option, option]
+
+		// 2)获取被选中的option 的下标
+		console.log(select_obj.options.selectedIndex);//2
+		console.log(select_obj.selectedIndex);//2
+
+		console.log(select_obj.value);//3
+
+		
+
+
+	</script>
+	
+</body>
+</html>

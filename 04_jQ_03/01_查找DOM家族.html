@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_查找DOM家族</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+	$(function(){
+		// 找到box2
+		$('.box2').css('background','#AEFAA5');
+		// $('.box2').children().children(':eq(2)').css('border','1px solid yellow');//.children()只能找到直接子级
+		$('.box2').find('a').css('border','1px solid yellow');
+
+		$('.box2').parent().css('border','3px solid black');
+		$('.box2').parents('body').css('border','3px dashed black');
+
+		$('.p3').prev().css('background','pink');
+		$('.p3').prevAll().css('background','pink');
+		$('.p3').prevUntil('h1').css('background','orange');
+
+		// 找兄弟
+		$('.p3').siblings().css('background','#F4F233');
+
+
+
+	})
+	</script>
+	<style>
+		.box1{
+			width: 500px;
+			height: 300px;
+			border: 2px solid blue;
+		}
+		.box2{
+			width: 300px;
+			border: 3px dashed red;
+		}
+		.box3{
+			width: 200px;
+			border: 2px dotted green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2">
+			<div class="box3">
+				<h1>标题1</h1>
+				<h2>标题2</h2>
+				<h5>标题5</h5>
+				<p3 class="p3">段落</p3>
+				<h3>标题3</h3>
+				<p>段落1</p>
+				<p>段落2</p>
+				<p>段落3</p>
+				<p>段落4</p>
+				<p>
+					<a href="#">文字1</a>
+					<a href="#">文字2</a>
+					<a href="#">文字3</a>
+				</p>
+			</div>
+			
+		</div>
+		
+	</div>
+</body>
+</html>

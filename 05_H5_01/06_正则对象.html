@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_正则对象</title>
+	<script>
+		// 功能:自定义验证(字符串)规则
+		// 1)创建正则对象
+		var reg1 = new RegExp('apple','i');
+		// 规则:字符串要包含'apple'
+		console.log(reg1);//  /apple/
+
+		var reg2 = /banana/i;
+		// 规则:字符串要包含'banana'
+		console.log(reg2);//  /banana/
+
+		// 检测 字符串 是否符合reg1 规范
+		console.log(reg1.test('gbananaj'));//false
+		console.log(reg1.test('gbaapplenanaj'));//true
+		console.log(reg1.test('gbaAPPLEanaj'));//true
+
+		// 检测 字符串 是否符合reg2 规范
+		console.log(reg2.test('gbananaj'));//true
+		console.log(reg2.test('gbgffhananaj'));//false
+		console.log(reg2.test('gbgBANANAnanaj'));//true
+
+		// ------------------------------------
+		// 用户名:可以有字母/数字
+		var uname_reg = /[A-z0-9]/;
+		// 包含有数字/字母 即可
+		console.log(uname_reg.test('hdfmma324'));//true
+		console.log(uname_reg.test('A'));//true
+
+		// 只能有数字/组合
+		var uname_reg2 = /^[A-z0-9]{5,8}$/;
+		// 必须满足[字符范围],并且是5-8位 
+
+		console.log(uname_reg2.test('dsf'));//false
+		console.log(uname_reg2.test('dsfv5'));//true
+		console.log(uname_reg2.test('dsffgdfg'));//true
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

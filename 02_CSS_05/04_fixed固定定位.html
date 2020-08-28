@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_fixed固定定位</title>
+	<style>
+		.father{
+			width: 600px;
+			height: 800px;
+			margin: 10px auto;
+			border: 1px solid orange;
+			background: #ECD9A5
+		}
+
+		.father .red{
+			width: 200px;
+			height: 100px;
+			background: red;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			z-index: 5;
+		}
+		.father .blue{
+			width: 300px;
+			height: 150px;
+			background: blue;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+		}
+		.father .green{
+			width: 500px;
+			height: 100px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="red"></div>
+		<div class="blue"></div>
+		<div class="green"></div>
+	</div>
+</body>
+</html>

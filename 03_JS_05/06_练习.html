@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//练习1:利用函数，计算任意区间整数的和
+
+function fun1(start,end){
+	// var min = Math.ceil(start);//取整
+	// var max = Math.floor(end);
+	
+	var min =parseInt(start);
+	var remain = start-min;//取整后余数
+	var max=parseInt(end);
+	
+	if(remain>0){
+		min=min+1;
+	}
+
+	var sum=0;
+	for(var i=min;i<=max;i++){
+		sum+=i;
+	}
+	return sum;
+}
+var sum=fun1(3,100);
+document.write(sum);
+
+document.write('<br><br><br><br><br>');	
+
+</script>	
+<!--练习2: -->
+商品数目:
+<input type="button" value="-" onclick="dec()">
+<input type="text" value="1" id="num">
+<input type="button" value="+" onclick="add()">
+<script>
+//需求:
+// 1）点击-按钮：数目-1	最少是1
+// 2）点击+按钮：数目+1	最多是20
+/**
+ * 点击减少
+ * [dec description]
+ * @return {[type]} [description]
+ */
+function dec(){
+	//根据id获取value值
+	var number=num.value;
+	if(number>1){//判断
+		number--;
+	}else{
+		alert('数量不能低于1');
+		return;
+	}
+	console.log(number);
+	// 根据id赋值
+	// document.getElementById("num").value=number;
+	num.value=number;
+}
+
+function add(){
+	var number=num.value;
+	if(number<20){
+		number++;
+	}else{
+		alert('数量不能超过20');
+		return;
+	}
+	// document.getElementById("num").value=number;
+	num.value=number;
+}
+
+document.write('<br><br><br><br><br>');
+
+</script>
+
+
+<!-- 练习3： -->
+用户名：<input type="text" name="uname" value="" id="uname">
+<input type="button" value="验证" onclick="check()">
+<p id="error" style="color:red;"><!-- 提示信息 --></p>
+<script>
+// 需求:点击按钮：验证用户名
+// - 不为空
+// - 不能使用特殊字符
+// - 必须在6-11位之间
+// - 不能使用已注册的用户
+
+var vip=['baby','angel','Jack','小明','小红'];
+function check(){
+	var userName=uname.value;
+	error.innerHTML='';
+	//不能为空
+	if(userName==''){
+		error.innerHTML='用户名不能为空';
+	}else if((userName.indexOf('$')!=-1) || (userName.indexOf('&')!=-1) || (userName.indexOf('@')!=-1)){
+		error.innerHTML='用户名不能使用特殊字符';
+	}else if(vip.indexOf(userName)!=-1){
+		error.innerHTML='用户名已存在，请重新输入';
+	}else if((userName.length<4)||(userName.length>10)){
+		error.innerHTML='用户名必必须在6-11位之间';
+	}
+}
+
+</script>
+</body>
+</html>

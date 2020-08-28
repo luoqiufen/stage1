@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//练习1:输入一个年份,判断是否是闰年	
+	var year=prompt('请输入年份');
+	console.log(year);
+	if(year%4==0 && year%100!=0 || year%400==0){
+		console.log('闰年');
+	}else{
+		console.log('平年');
+	}
+
+//练习2:输入验证码，参考验证码:xfK3sR
+// - 不能为空
+// - 不区分大小写
+	var code=prompt('请输入验证码');
+	console.log(code);
+	if(code=='') {
+		console.log('验证码不能为空');
+	}else if(code.toUpperCase()!='xfK3sR'.toUpperCase()){
+		console.log('验证码错误');
+	}else{
+		console.log('验证码正确');
+	}
+
+// 练习3:两个输入框
+// 第一次：输入新闻标题
+// 第二次: 输入颜色(自定义)
+// 标题要求: 
+//  - 不为空
+//  - 不少于6个字
+//  - 不能有@/#/$
+ 
+ 	var news=prompt("请输入新闻标题");
+ 	var color=prompt('请输入颜色');
+ 	console.log(news,color);
+ 	if(news==''){
+ 		console.log('标题不能为空');
+ 	}else if(news.length<6){
+ 		console.log('标题不少于六个字');
+ 	}else if(news.indexOf('@')!=-1 || news.indexOf('#')!=-1 || news.indexOf('$')!=-1){
+ 		console.log('标题不能有特殊字符');
+ 	}else{
+ 		document.write("<h1 style='color:"+color+"'>"+news+"</h1>")
+ 	}
+
+//练习4：以下程序执行的结果是
+// 自己梳理过程
+var rs1 = parseInt('10.34abc')+'15';
+var rs2 = parseFloat('12.3')-10 && 'abc'.length-3 && 15;
+var a = 10,b  = 20;
+	a += '5';
+	b -= ++a;
+// a:? b:?
+	
+	var rs1=10+'15';//1015
+
+	var rs2=true && false ;//false
+
+	a=a+'5';//10+'5'='105'
+	++a;//106
+
+	b-=106;
+	b=b-106;//-86
+
+
+
+
+</script>
+<!--  
+	可预习:数组和for循环
+	W3school手册-js对象-数组
+				 js教程-js for
+-->
+
+</body>
+</html>

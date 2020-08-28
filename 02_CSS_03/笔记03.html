@@ -1,0 +1,85 @@
+第二章 CSS
+第三天
+
+一、伪(类)选择器
+	<style>
+		/* 主要适用于段落 */
+		1> :first-line{}   首行
+		2> :first-letter{} 首字符
+
+		/* 添加伪元素 */
+		1> 在盒子头部添加一个子(伪)元素
+			:before{content:"文字内容";}
+		2> 在盒子末端追加一个子(伪)元素
+			:after{content:url(图片地址);}
+	</style>
+
+二、选择器的权重
+	!important>style属性>id选择器>属性选择器>=class类选择器>标签选择器>通配
+
+	情景描述:
+
+	1)同一个标签使用了不同选择器修饰;修饰了相同的样式,选择使用哪个样式
+	- 先比较权重,优先使用权重高的
+	- 权重一样,看先后顺序,后面的覆盖前面的
+
+	2)复合选择器
+	- 从最高位开始比较,计数
+	- 权重值一样,看顺序
+			比较权重: 		class类		标签
+		 .box1 .list a{}   	  2			  1
+			a:hover{}			  1			  1
+		.list a:hover{} 		  2			  1
+
+三、CSS样式
+	1.display 显示类型
+		1)display:inline; 行元素
+			不换行,无宽高
+			a,span,font,i,b,s,u...
+		2)display:inline-block; 行内块元素
+			不换行,有宽高
+			img,input,select...
+		3)display:block; 块元素
+			换行,有宽高
+			div,p,h1-h6,ul,ol,li,form...
+		4)display:none(隐藏)
+
+	2.overflow 溢出处理
+		overflow: visible;	显示
+		overflow: hidden;	 	隐藏
+		overflow: auto;	 	自动添加滚动条
+
+		- 案例
+		多余文字...处理
+		white-space: nowrap;		不换行
+		overflow: hidden;	 		溢出隐藏
+		text-overflow:ellipsis;	以...结束
+
+	3.外间距和内间距
+		1)margin外间距
+			margin-top:10px;		外上
+			margin-bottom:10px;	外下
+			margin-left:10px;		左外
+			margin-right:10px;	右外
+
+			padding: 10px 20px 30px 40px;	(上 右 下 左)
+			padding: 10px 20px 30px;		(上 左右 下)
+			padding: 10px 20px;				(上下 左右)
+			padding: 10px;						(上下左右)
+
+		2)padding内间距
+			padding-top/bottom/left/right;
+
+			盒子模型图
+				实际宽 = width+padding+border+margin;
+				实际高 = width+padding+border+margin;
+
+		预习:
+		1）div+CSS布局:浮动布局
+		D:\WEB2004\第一阶段课前素材\web课堂\01_html_1\APP
+		W3School离线手册(2015.07.17).chm
+		CSS->CSS定位->CSS浮动
+
+
+		02-CSS-3：
+			北青-布局分析

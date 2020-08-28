@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_文档处理</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 1)追加内容
+			/*
+			$('.father1').append($('.t1'));
+			$('.father1').append('<p>段落1</p>');
+
+			$('.t2').appendTo($('.father1'));
+			$('<span>盒子</span>').appendTo($('.father1'));
+			*/
+		
+			// 2)前面添加
+			$('.father1').prepend($('.t1'));
+			$('.t2').prependTo($('.father1'))
+
+
+			// 案例2
+			// 3)在h2后面放入h1
+			$('.box h2').after($('.box h1'));
+			// 把h3放到h4后面
+			$('.box h3').insertAfter($('.box h4'));
+
+			// 在h1后放入p段落1
+			$('.box h1').after('<p>段落1</p>');
+
+			// 在h1前面放入一个超链接a
+			$('.box h1').before('<a href="#">百度</a>');
+
+		})
+	</script>
+	<style>
+		.father1{
+			width: 200px;
+			height: 250px;
+			border: 1px solid red;
+		}
+		.t1{
+			width: 100px;
+			border: 1px solid blue;
+		}
+		.t2{
+			width: 90px;
+			border: 1px solid green;
+		}
+		
+		.box{
+			width: 400px;
+			border: 1px solid black;
+			margin-top: 20px;
+		}
+		.box h1{
+			background: #F6B7DC;
+		}
+		.box h2{
+			background: #E2BCFD;
+		}
+		.box h3{
+			background: #AEBBF6;
+		}
+		.box h4{
+			background: #A4F1E2;
+		}
+	</style>
+</head>
+<body>
+	<!-- 案例1 -->
+	<div class="father1">
+		爸爸1
+	</div>
+	<h1 class="t1">标题1</h1>
+	<h1 class="t2">标题2</h1>
+
+	<!-- 案例2 -->
+	<div class="box">
+		<h1>标题1</h1>
+		<h2>标题2</h2>
+		<h3>标题3</h3>
+		<h4>标题4</h4>
+	</div>
+</body>
+</html>

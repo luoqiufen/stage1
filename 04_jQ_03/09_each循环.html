@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09_each循环</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+	$(function(){
+		// 对以下题目进行排序:h3的span里显示题号
+		// 选项name=test题号
+		function sort(){
+			$('.box').each(function(index,el){
+				console.log(index);//数字下标
+				console.log(el);//div 原生dom
+				$(el).find('h3 span').text(index+1+')');
+				$(el).find('input').attr('name','test'+index+1);
+			})
+		}
+		sort();
+	})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<h3><span>1)</span>以下哪个是块元素?</h3>
+		<ul>
+			<li><input type="radio" name="test1" value="A">A:p</li>
+			<li><input type="radio" name="test1" value="B">B:a</li>
+			<li><input type="radio" name="test1" value="C">C:span</li>
+			<li><input type="radio" name="test1" value="D">D:img</li>
+		</ul>
+	</div>
+	<div class="box">
+		<h3><span>2)</span>以下哪个是行元素?</h3>
+		<ul>
+			<li><input type="radio" name="test2" value="A">A:div</li>
+			<li><input type="radio" name="test2" value="B">B:form</li>
+			<li><input type="radio" name="test2" value="C">C:span</li>
+			<li><input type="radio" name="test2" value="D">D:h</li>
+		</ul>
+	</div>
+	<div class="box">
+		<h3><span>3)</span>以下哪个是块元素?</h3>
+		<ul>
+			<li><input type="radio" name="test3" value="A">A:p</li>
+			<li><input type="radio" name="test3" value="B">B:a</li>
+			<li><input type="radio" name="test3" value="C">C:span</li>
+			<li><input type="radio" name="test3" value="D">D:img</li>
+		</ul>
+	</div>
+	<div class="box">
+		<h3><span>4)</span>以下哪个是块元素?</h3>
+		<ul>
+			<li><input type="radio" name="test4" value="A">A:p</li>
+			<li><input type="radio" name="test4" value="B">B:a</li>
+			<li><input type="radio" name="test4" value="C">C:span</li>
+			<li><input type="radio" name="test4" value="D">D:img</li>
+		</ul>
+	</div>
+</body>
+</html>

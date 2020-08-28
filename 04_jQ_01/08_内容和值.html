@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_内容和值</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			// 1)获取div内容
+			console.log($('.box1').html());
+			console.log($('.box1').text());
+
+			// 添加内容 百度
+			var now=$('.box1').html()+'<a href="#">百度</a>';
+			$('.box1').html(now);
+
+			// 清空内容
+			// $('.box1').html('');
+			
+			
+			// 2)获取input的value值
+			console.log($('input').val());
+			$('input').val('banana');
+			$('input').val('');
+
+
+			// 练习:把以下内容显示到下拉列表里
+			var arr=['语文','数学','英文','物理','化学'];
+
+			console.log($('select'));
+
+			/*for(var k=0;k<arr.length;k++){	
+				$('select').html($('select').html()+'<option>'+arr[k]+'</option>');
+			}*/
+
+			var opts='';
+			for(var key in arr){
+				opts+='<option>'+arr[key]+'</option>';
+				$('select').html(opts);
+			}	
+		})
+
+	</script>
+</head>
+<body>
+	<div class="box1">
+		<a href="#">新浪</a>
+	</div>
+	<input type="text" value="apple">
+	<p>课程: <select name="course"></select></p>
+</body>
+</html>

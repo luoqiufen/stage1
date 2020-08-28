@@ -1,0 +1,101 @@
+第四章 jQuery
+第三天
+
+一、查找DOM家族
+	<script>
+		// 1)找孩子
+		$(obj).children(selector);//只能找到直接子级
+		$(obj).find(selector);//所有子集,可隔代;括号里必须加参数
+
+		// 2)找父级
+		$(obj).parent(selector);//找爸爸 唯一父级
+		$(obj).parents(selector);//找祖先
+
+		// 3)找哥哥
+		$(obj).prev(selector);//找到前一个哥哥
+		$(obj).prevAll(selector);//找到所有哥哥
+		$(obj).prevUntil(selector);//找到哥哥,直到...停止
+
+		// 4)找弟弟
+		$(obj).next(selector);//找到后一个弟弟
+		$(obj).nextAll(selector);//找到所有弟弟
+		$(obj).nextUntil(selector);//找到弟弟,直到...停止
+
+		// 5)找兄弟
+		$(obj).siblings('selector');
+	</script>
+
+二、文档处理
+	<script>
+		// 1)添加内容(父子级关系)
+		// 如果有,就移动;如果没有,就添加
+		// 追加内容(末端)
+		$(爸爸).append(儿子);
+		$(儿子).appendTo(爸爸);
+
+		// 前置添加(头部)
+		$(爸爸).prepend(儿子);
+		$(儿子).prependTo(爸爸);
+
+		// 2)前后添加内容(兄弟级关系)
+		// 在前面添加内容
+		$(A).after(B);		在A后面放入B
+		$(A).insertAfter(B);把A放入到B后面
+
+		// 在后面添加内容
+		$(A).before(B);		在A前面放入B
+		$(A).insertBefore(B);把A放入到B前面
+
+
+		// 3)替换内容/标签
+		$('旧dom').replaceWith('新的');
+		$('新的').replaceAll($('旧的'));
+
+		// 4)删除
+		$(obj).empty();	//清空内容
+		$(obj).remove();//移除整个dom
+
+		// 5)复制
+		$(obj).clone();//只复制dom
+		$(obj).clone(true);//可以复制dom及dom事件处理
+	</script>
+
+三、效果
+	<script>
+		// 1)显示/隐藏
+		show();//显示
+		hide();//隐藏
+		toggle();//切换显示/隐藏
+		
+		// 2)滑动
+		slideDown();//展开
+		slideUp();//收起/折叠
+		slideToggle();//切换展开/收缩
+
+		// 3)淡入/淡出
+		fadeIn();//淡入
+		fadeOut();//淡出
+		fadeTo('slow/400/fast', 0.5, function() {
+			
+		});
+		fadeToggle();//切换淡入/淡出
+
+		// 4)自定义动画
+		animate({
+			param1: value1,
+			param2: value2},
+			speed, function() {
+			/* stuff to do after animation is complete */
+		});
+
+	</script>
+
+
+四、补充
+	<script>
+		function order(){
+		$('form span').each(function(index, el) {
+				$(el).text('工作经历'+(index+1)+':');
+			}
+		}
+	</script>

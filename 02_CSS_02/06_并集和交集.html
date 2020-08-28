@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_并集和交集</title>
+	<style>
+		/* 并集选择器:等同于公共类; */
+		.list1,.list2{
+			font-style: italic;
+			font-size: 18px;
+			font-family: 微软雅黑;
+		}
+
+		.list1{
+			width: 260px;
+			line-height: 30px;
+			border: 1px solid red
+		}
+
+		.list2{
+			width: 300px;
+			line-height: 28px;
+			border: 1px solid blue;
+		}
+
+		/* 交集选择器 */
+		p.t1{background: red;}
+		li.t_1{background: blue;}
+		li.t_2{background: orange}
+
+	</style>
+</head>
+<body>
+	<div class="list1">
+		<h1>标题1</h1>
+		<p class="t1">段落1</p>
+		<p>段落2</p>
+		<p>段落3</p>
+	</div>
+	<ul class="list2">
+		<li class="t1 t_1">新闻1</li>
+		<li>新闻2</li>
+		<li>新闻3</li>
+	</ul>
+	<ul class="list2">
+		<li class="t1 t_2">新闻1</li>
+		<li>新闻2</li>
+		<li>新闻3</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_函数的参数</title>
+</head>
+<body>
+<script>
+// 需求:生成一个任意层金字塔
+// 形参1:rows
+// 形参2:direction
+	function jinZt(rows,direction='left'){
+		console.log(rows);
+		console.log(direction);
+		document.write('<p align='+direction+'>')
+		for(var n=1;n<=rows;n++){
+			for(var m=1;m<=2*n-1;m++){
+				document.write('*');
+			}
+			document.write('<br>');
+		}
+		document.write('</p>')
+	}
+	// 调用:传值
+	// 实参1:10
+	// 实参2:center
+	jinZt(10,'center');
+
+
+	// string的API
+	// 形参1:substr
+	// 形参1:start=0
+	// str.indexOf('substr'[,start])
+	var str='applehfjshjf';
+	console.log(str.indexOf('p'))//1
+	console.log(str.indexOf('h',6))//9
+
+	// 需求:把新闻信息显示成一个列表
+	// 新闻信息随意指定
+	// 列表类型随意指定
+	// 偶数行变换色(自定义)
+	
+	var newList = [
+		'紧急通知',
+		'“三八节”女性旅游乐享半价优惠',
+		'暂停旅游社业务公告',
+		'九华山门票恢复全价',
+		'“三八”节短线游走俏',
+		'4月初去动物园看羊驼',
+		'安徽省旅游指委召开会议号召...',
+		'asdaa',
+		'adsfhrgl'
+	]
+
+	var newList1=[
+		'fa,hdjg',
+		'dsaadgfdsh',
+		'szdsjf',
+		'hadfsaf',
+		'dsahf'
+	]
+
+	var stu=[
+		['1001','李晨','男',38,'一年级1班'],
+		['1002','baby','女',18,'一年级1班'],
+		['1003','郑凯','男',30,'一年级1班'],
+		['1004','陈赫','男',34,'一年级2班'],
+		['1005','邓超','男',36,'一年级2班']
+	]
+
+	// 函数:生成新闻列表
+	// 参1: type ->列表符号类型
+	// 参2: color ->偶数行背景颜色
+	// 参3:content ->新闻内容
+	function news(type,color,content){
+		document.write('<ul type='+type+'>');
+			for(i=0;i<content.length;i++){
+				if(i%2==1){
+				document.write('<li style="background:'+color+'">'+content[i]+'</li>')
+				}else{
+					document.write('<li>'+content[i]+'</li>');
+				}
+			}
+		document.write('</ul>');
+	}
+	news('circle','skyblue',newList);
+
+
+
+</script>	
+</body>
+</html>

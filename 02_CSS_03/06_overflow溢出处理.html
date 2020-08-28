@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_overflow溢出处理</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 150px;
+			border: 2px solid orange;
+			font-size: 20px;
+			line-height: 24px;
+			/* 溢出处理 */
+			overflow: visible;/* 显示 */
+			overflow: hidden;/* 隐藏 */
+			overflow: auto;/* 自动添加滚动条 */
+		}
+		
+		/* 只有一行,多余的...省略 */
+		.p1{
+			width: 250px;
+			line-height: 30px;
+			border: 1px solid green;
+
+			/* 多余文字...处理 */
+			white-space: nowrap;/* 不换行 */
+			overflow: hidden;/* 溢出隐藏 */
+			text-overflow:ellipsis;/* 以...结束 */
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容</div>
+
+	<p class="p1">春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.春眠不觉晓,处处闻啼鸟.</p>
+</body>
+</html>

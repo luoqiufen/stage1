@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_字符匹配范围</title>
+</head>
+<body>
+<script>
+	// \w 等同于 [a-zA-z0-9]
+	console.log(/^\w$/.test('a'));//true
+	console.log(/^\w$/.test('K'));//true
+	console.log(/^\w$/.test('a'));//true
+	console.log(/^\w$/.test('_'));//true
+	console.log(/^\w$/.test('#'));//false
+
+	// _ 下划线
+	console.log(/^[a-zA-Z]$/.test('_'));//fasle
+	console.log(/^[A-z]$/.test('_'));//true
+
+	// 用户名
+	// 只能有数字,字母,_组合,必须以字母开头
+	// 长度6-8
+	var reg1 = /^[a-zA-Z][a-zA-Z0-9_]{5,7}$/
+	var reg2 = /^[a-zA-Z]\w{5,7}$/
+
+	console.log(reg1.test('_apple_12'));//false
+	console.log(reg2.test('apple_12'));//true
+
+	// 中文
+	// 用户名:中文4-6位
+	// \u4e00-\u9fa5
+	
+	var reg3 = /^[\u4e00-\u9fa5]{4,6}$/;
+	console.log(reg3.test('淘宝天猫'));//true
+	console.log(reg3.test('中'));//false
+	console.log(reg3.test('淘宝天猫a'));//false
+
+</script>
+
+	<form action="index.php">
+		<p>邮箱: <input type="email" pattern="^[A-z0-9]{6,8}@(163|126|qq)(\.com)(\.cn)?$"></p>
+		<input type="submit">
+	</form>
+</body>
+</html>

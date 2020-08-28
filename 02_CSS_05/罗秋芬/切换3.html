@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>切换3</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{background: #BFF1E2;}
+		a{text-decoration: none;color: #878484;display: inline-block;}
+		.nav{
+			width: 795px;
+			height: 30px;
+			display: inline-block;
+			background: #E3E4E5;
+			margin: 20px 0;
+		}
+		.nav>div{
+			display: inline-block;
+			line-height: 30px;
+			padding: 0 8px;
+			background: #E3E4E5;
+			position: relative;
+			border-right: 1px solid #8A8585;
+		}
+		/* 隐藏 */
+		.nav .hidden{
+			display: none;
+			position: absolute;
+			/* left:0; */
+			top: 30px; 
+			background: white;
+		}
+		.nav .hidden1{
+			width: 300px;
+			left:0;
+		}
+		.nav .hidden2{
+			width: 200px;
+			left:0;
+		}
+		.nav .hidden3{
+			width: 150px;
+			left:0;
+		}
+		.nav .hidden4{
+			width: 300px;
+			position: absolute;
+			right: -94px;
+			top: 30px;
+		}
+		/* 点击效果 */
+		.nav>div:hover .hidden{
+			display: block;
+		}
+		.nav>div:hover{background: white;}
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<div>
+			<div><a href="">北京</a></div>
+			<div class="hidden hidden1">
+				<a href="">北京</a>
+				<a href="">上海</a>
+				<a href="">天津</a>
+				<a href="">重庆</a>
+				<a href="">河北</a>
+				<a href="">山西</a>
+				<a href="">河南</a>
+				<a href="">辽宁</a>
+				<a href="">吉林</a>
+				<a href="">黑龙江</a>
+				<a href="">内蒙古</a>
+				<a href="">江苏</a>
+				<a href="">山东</a>
+				<a href="">安徽</a>
+				<a href="">浙江</a>
+			</div>
+		</div>
+
+		<div><a href="">你好，请登录</a></div>
+		<div><a href="">我的订单</a></div>
+
+		<div>
+			<div><a href="">我的京东</a></div>
+			<div class="hidden hidden2">
+				<a href="">待处理订单</a>
+				<a href="">消息</a>
+				<a href="">返修退换货</a>
+				<a href="">我的问答</a>
+				<a href="">降价商品</a>
+			</div>
+		</div>
+
+		<div><a href="">京东会员</a></div>
+
+		<div>
+			<div><a href="">企业采购</a></div>
+			<div class="hidden hidden3">
+				<a href="">企业购</a>
+				<a href="">商用场景馆</a>
+				<a href="">工业品</a>
+				<a href="">礼品卡</a>
+			</div>
+		</div>
+
+		<div><a href="">客户服务</a></div>
+
+		<div>
+			<div><a href="">网站导航</a></div>
+			<div class="hidden hidden4">
+				<a href="">特色主题</a>
+				<a href="">行业频道</a>
+				<a href="">生活服务</a>
+				<a href="">更多精选</a>
+				<a href="">行业频道</a>
+				<a href="">生活服务</a>
+				<a href="">更多精选</a>
+				<a href="">行业频道</a>
+				<a href="">生活服务</a>
+				<a href="">更多精选</a>
+				<a href="">更多精选</a>
+				<a href="">行业频道</a>
+				<a href="">生活服务</a>
+				<a href="">更多精选</a>
+				<a href="">行业频道</a>
+				<a href="">生活服务</a>
+				<a href="">更多精选</a>
+			</div>
+		</div>
+		<div><a href="">手机京东</a></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09_事件</title>
+</head>
+<body>
+	<form action="">
+		<p>用户名: <input type="text" name="uname" onfocus="fun1()" onblur="console.log('失去了焦点')" onchange="console.log('内容改变了')"></p>
+
+		<p>密 码: <input type="password" name="upass" ></p>
+		<p>密 码: <input type="botton" value="提交"></p>
+	</form>
+
+	<script>
+		// 失去焦点去做的事情
+		function fun1(){
+			console.log('获得了焦点');
+		}
+
+	</script>
+</body>
+</html>

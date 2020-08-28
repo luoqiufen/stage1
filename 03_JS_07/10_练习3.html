@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.menu{
+		width: 200px;
+		line-height: 40px;
+		border:1px solid red;
+		background: #FCD9D9;
+		padding-left: 0;
+		list-style:none;
+		text-indent: 20px;
+	}
+	.menu>li{
+		border-bottom: 1px dashed red;
+	}
+	.menu>li:last-child{
+		border: 0;
+	}
+	.menu a{
+		color: #333;
+		text-decoration: none;
+	}
+	/* 省份:文字加粗 18px 向右移20px; */
+	.menu>li>a{
+		font-weight: bold;
+	} 
+	/* 城市:文字居中/向右移 */
+	.menu ul{
+		background: #FBEEEE;
+		padding-left: 0;
+		list-style:none;
+		text-indent: 60px;
+		display: none;
+	}
+	.menu  li.current{
+		background: #C03838;
+		border-bottom: 0;
+	}
+	.menu  li.current>a{
+		color: white;
+	}
+	.menu  li.current ul{
+		display: block;
+	}
+	/* .menu>li:hover ul{
+		display: block;
+	} */
+
+	</style>
+</head>
+<body>
+<ul class="menu">
+	<li class="current">
+		<a href="">江苏省</a>
+		<ul>
+			<li><a href="">南京市</a></li>
+			<li><a href="">无锡市</a></li>
+			<li><a href="">苏州市</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">安徽省</a>
+		<ul>
+			<li><a href="">合肥市</a></li>
+			<li><a href="">黄山市</a></li>
+			<li><a href="">蚌埠市</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">浙江省</a>
+		<ul>
+			<li><a href="">杭州市</a></li>
+			<li><a href="">温州市</a></li>
+			<li><a href="">宁波市</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">福建省</a>
+		<ul>
+			<li><a href="">福州市</a></li>
+			<li><a href="">厦门市</a></li>
+			<li><a href="">莆田市</a></li>
+			<li><a href="">泉州市</a></li>
+		</ul>
+	</li>
+</ul>
+
+<script>
+//点击哪个省份，显示对应的城市，切换省份效果
+
+// 获取menu下面的li标签
+var province=document.querySelectorAll('.menu>li');
+console.log(province);
+
+
+for(var k=0;k<province.length;k++){
+	province[k].onclick=function(){
+		for(var i=0;i<province.length;i++){
+			province[i].classList='';
+		}
+		this.classList.add('current');
+	}
+}
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_操作css样式</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		// 1)给ul设置样式:宽200,行高40,边框
+		$('.list').css({
+			width:'200px',
+			lineHeight:'40px',
+			border:'1px solid red',
+			padding:0,
+			'list-style':'circle inside',
+		});
+
+		// 给每一行li添加虚线下边框
+		$('.list li').css('border-bottom','1px dashed blue');
+		$('.list li:last-child').css('border-bottom',0);
+
+		// 给超链接a去掉下划线,颜色#333;
+		$('.list li a').css({
+			'text-decoration':'none',
+			color:'#333',
+		})
+
+		// 获取a 的颜色
+		console.log($('.list li a').css('color'));
+
+		// 清除a的颜色
+		$('.list li a').css('color','');
+
+		
+
+	})
+	</script>
+</head>
+<body>
+	<ul class="list">
+		<li><a href="">新闻标题1</a></li>
+		<li><a href="">新闻标题2</a></li>
+		<li><a href="">新闻标题3</a></li>
+		<li><a href="">新闻标题4</a></li>
+		<li><a href="">新闻标题5</a></li>
+	</ul>
+</body>
+</html>

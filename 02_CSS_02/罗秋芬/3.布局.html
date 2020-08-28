@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局</title>
+	<style>
+		.bigbox{
+			width: 970px;
+			margin: 0 auto;
+		}
+
+		.top,.middle,.center{
+			overflow: hidden;
+		}
+
+		.top .b1{
+			width: 277px;
+			height: 103px;
+			background: red;
+			float: left;
+		}
+
+		.top .b2{
+			width: 137px;
+			height: 49px;
+			background: #00FF00;
+			float: right;
+		}
+
+		.top .b3{
+			width: 679px;
+			height: 46px;
+			background: #00FF00;
+			float: right;
+			margin-top: 8px;
+		}
+
+		.middle{
+			margin-top: 10px;
+		}
+
+		.middle .left{
+			width: 310px;
+			height: 435px;
+			background: #FFCC00;
+			float: left;
+		}	
+
+		.middle .center{
+			width: 450px;
+			margin-left: 10px;
+			float: left;
+		}
+
+		.middle .b1{
+			height: 240px;
+			margin-bottom: 10px;
+			background: #3399FF;
+		}
+		.middle .b2{
+			height: 110px;
+			margin-bottom: 10px;
+			background: #3399FF;
+		}
+
+		.middle .b3{
+			height: 30px;
+			margin-bottom: 10px;
+			background: #3399FF;
+		}
+
+		.middle .b4{
+			width: 650px;
+			height: 25px;
+			margin-bottom: 10px;
+			background: #339900;
+			float: left;
+			margin-left: 10px;
+		}
+
+		.middle .right{
+			width: 190px;
+			height: 400px;
+			float: right;
+			background: #CC3399;
+		}
+
+		.bottom{
+			width: 970px;
+			height: 35px;
+			background: #000099;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="bigbox">
+		<div class="top">
+			<div class="b1"></div>	
+			<div class="b2"></div>	
+			<div class="b3"></div>
+		</div>
+
+		<div class="middle">
+			<div class="left"></div>
+
+			<div class="center">
+				<div class="b1"></div>
+				<div class="b2"></div>
+				<div class="b3"></div>	
+			</div>
+
+			<div class="right"></div>
+			<div class="b4"></div>
+		</div>
+
+		<div class="bottom"></div>
+
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09_伪选择器</title>
+	<style>
+		.list1{
+			width: 200px;
+			border: 1px solid green;
+			line-height: 30px;
+			list-style-type: circle;
+			list-style-type: upper-roman;
+			list-style-position: inside;
+			list-style-image: url(img/ic3.gif);
+		}
+
+		/* 第一个li */
+		.list1 li:first-child{
+			background: #EED3D3;
+		}
+
+		/* 第三个 */
+		.list1 li:nth-child(3){
+			background: #E9D8FB;
+		}
+
+		/* 最后一个 */
+		.list1 li:last-child{
+			background: #C4F6F1;
+		}
+
+		.box1{
+			width: 300px;
+			border: 1px solid orange;
+		}
+
+		.box1 p:nth-child(2){
+			background: #F7FFAA
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="list1">
+		<li>第1行</li>
+		<li>第2行</li>
+		<li>第3行</li>
+		<li>第4行</li>
+		<li>第5行</li>
+		<li>第6行</li>
+		<li>第7行</li>
+		<li>第8行</li>
+	</ul>
+	<div class="box1">
+		<h3>标题3</h3>
+		<p>段落1</p>
+		<p>段落2</p>
+		<p>段落3</p>
+	</div>
+</body>
+</html>

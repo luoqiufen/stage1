@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_鼠标操作的伪选择器</title>
+	<style>
+		.p1{
+			width: 500px;
+			line-height: 30px;
+			border: 1px solid blue;
+		}
+
+		.p1 a:link{
+			text-decoration: none;
+			color: orange;		
+		}
+
+		.p1 a:hover{
+			color: #18FA18;
+		}
+
+		.p1 a:active{
+			color: red;
+		}
+
+		.p1 a:visited{
+			color: blue;
+		}
+
+		input[name=uname]{
+			border: 1px solid red;
+			outline: none;
+		}
+
+		input[name=uname]:focus{
+			background: #FDDADA
+		}
+
+		input[name=upass]{
+			border: 1px solid green;
+			outline: none;
+		}
+
+		input[name=upass]:focus{
+			background: #C9F9CE;
+		}
+
+		.box1{
+			width: 100px;
+			height: 100px;
+	 		border: 1px solid orange;
+		}
+
+		.box1:hover{
+			background: #F8D7BA
+		}
+
+	</style>
+</head>
+<body>
+	<p class="p1">
+		<a href="03_通配选择器.html">新闻1</a>
+		<a href="02_基本选择器2.html">新闻2</a>
+		<a href="04_基本选择器 练习.html">新闻3</a>
+		<a href="05_迭代选择器.html">新闻4</a>
+		<a href="06_并集和交集.html">新闻5</a>
+	</p>
+	<input type="text" name="uname">
+	<br>
+	<br>
+	<input type="password" name="upass">
+	<br>
+	<br>
+	<div class="box1"></div>
+</body>
+</html>

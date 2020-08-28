@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自运算</title>
+</head>
+<body>
+	<script>
+	 // 1)自增运算	++
+		var n=5;
+		console.log(n);//5
+			n++;
+		console.log(n);//6
+			++n;
+		console.log(n);//7
+			n+=1;
+		console.log(n);//9
+
+	 // 自减运算
+		var m=10;
+			m--;
+		console.log(m);//9
+			--m;
+		console.log(m);//8
+	 // -------------------------
+	 // 其他用法
+		console.log('----------');
+		var i=15,j=20;
+		 	i++;//16
+		 	--j;//19
+		var k,q;//i:16
+		k=++i;//i:17
+		//先运算+1得到17,再赋值给k
+		q=i++;//i:18
+		// 先赋值给q,再运算i++
+		console.log(k);//17
+		console.log(q);//17
+		console.log(i);//18
+
+		console.log('----------');
+		var a=10,b=18,c,d;
+			c=a--;//先赋值c:10,后运算a:9
+			d=--b;//先运算b:17,后赋值d:17
+		console.log(a,b,c,d);// 9 17 10 17
+
+
+	</script>
+</body>
+</html>

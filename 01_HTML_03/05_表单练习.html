@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_表单练习</title>
+</head>
+<body>
+	<form action="index.php">
+		<p>
+			姓名: <input type="text" name="uname" value="王昭君" maxlength="10" readonly="readonly">
+		</p>
+		<p>
+			电话: <input type="text" name="utel" value="utel" disabled="disabled">
+		</p>
+		<p>
+			性别: 
+			<input type="radio" name="gender" value="male" checked>男
+			<input type="radio" name="gender" value="female">女
+		</p>
+		<p>
+			专业: 
+			<input type="radio" name="major" value="1">计算机
+			<input type="radio" name="major" value="1" checked>医学
+			<input type="radio" name="major" value="1">会计
+		</p>
+		<p>
+			社团: 
+			<input type="checkbox" name="outdoor" value="1" checked>轮滑
+			<input type="checkbox" name="outdoor" value="2" checked>英语
+			<input type="checkbox" name="outdoor" value="3">辩论
+		</p>
+		<p>
+			学校地址:
+			<select name="" id="" name="city">
+				<option value="nj">南京市</option>
+				<option value="wx">无锡市</option>
+				<option value="nt" selected>南通市</option>
+				<option value="sz">苏州市</option>
+				<option value="nb">徐州市</option>
+			</select>
+			<select name="" id="" name="area">
+				<option value="xw">玄武区</option>
+				<option value="pk">浦口区</option>
+				<option value="jn">江宁区</option>
+				<option value="yht" selected>雨花台区</option>
+				<option value="gl">鼓楼区</option>
+			</select>
+			<input type="text" name="address">
+			详细地址
+		</p>
+		<p>
+			<input type="file" multiple>
+		</p>
+		<p>
+			评价:
+			<textarea cols="30" rows="5" style="resize:none;"></textarea>
+		</p>
+		<p>
+			<input type="submit">
+			<input type="reset" readonly disabled>
+		</p>
+	</form>
+</body>
+</html>

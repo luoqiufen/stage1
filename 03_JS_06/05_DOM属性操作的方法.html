@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_DOM属性操作的方法</title>
+</head>
+<body>
+	<hr class="line1" color="red" size="5" align="left" width="80%">
+
+	<script>
+		// 1)找到hr
+		var hr_obj=document.querySelector('.line1');
+		console.log(hr_obj);
+		// 获取属性
+		console.log(hr_obj.color);
+		console.log(hr_obj.getAttribute('size'));
+		// 修改设置
+		hr_obj.color='blue';
+		hr_obj.setAttribute('size', 10);
+		// 删除属性
+		hr_obj.width='';
+		hr_obj.removeAttribute('align');
+	</script>
+
+	<div class="box" data-name="item1">盒子</div>
+
+	<script>
+		// 找到div
+		var divbox=document.querySelector('.box');
+		console.log(divbox);
+
+		// 获取自定义属性
+		console.log(divbox.data-name);//NaN
+		console.log(divbox.getAttribute('data-name'));//item1
+
+	</script>
+
+</body>
+</html>

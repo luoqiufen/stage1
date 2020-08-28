@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_DOM家族应用</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+	$(function(){
+		// 1)点击a,当前元素添加current类,其他的去除
+		$('.nav a').click(function(){
+			$(this).addClass('current');
+			$(this).siblings().removeClass('current');
+		})
+
+		// 修饰menu的二级边框
+		$('.menu dt').prev().css('border-bottom',0);
+
+		// 默认:只显示第一组二级
+		$('.menu dd').css('display','none');
+		$('.menu dt:eq(0)')	.nextUntil('dt').css('display','block');
+		
+		// 交互:点击一级dt,切换显示对应的二级
+		$('.menu dt').click(function(){
+			$('.menu dd').css('display','none');
+			$(this).nextUntil('dt').css('display','block');
+		})
+	})
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+
+		/* 案例1 */
+		.nav{
+			width: 450px;
+			line-height: 40px;
+			background: pink;
+			margin: 20px auto;
+			border: 1px solid red;
+		}
+		.nav a{
+			width: 80px;
+			display: inline-block;
+			text-align: center;
+			text-decoration: none;
+			color: #333;
+		}
+		.nav a.current{
+			background: #E05A5A;
+			color: white;
+		}
+
+		/* 案例2 */
+		.menu{
+			width: 300px;
+			line-height: 40px;
+			border: 1px solid green;
+			margin: 20px auto;
+			background: #A0F09B;
+		}
+		/* 一级 */
+		.menu dt{
+			background: #077514;
+			text-indent: 20px;
+			color: white;
+		}
+		/* 二级 */
+		.menu dd{
+			border-bottom: 1px dashed green;
+			text-indent: 40px;
+		}
+		.menu dd:last-child{border-bottom: 0;}
+	</style>
+</head>
+<body>
+	<!-- 案例1 -->
+	<p class="nav">
+		<a class="current" href="#">新闻1</a>
+		<a href="#">新闻2</a>
+		<a href="#">新闻3</a>
+		<a href="#">新闻4</a>
+		<a href="#">新闻5</a>
+	</p>
+
+	<!-- 案例2 -->
+	<dl class="menu">
+		<dt>图书</dt>
+		<dd>童话</dd>
+		<dd>科幻</dd>
+		<dd>悬疑</dd>
+		<dd>名著</dd>
+
+		<dt>家电</dt>
+		<dd>电视</dd>
+		<dd>洗衣机</dd>
+		<dd>冰箱</dd>
+
+		<dt>玩具</dt>
+		<dd>玩偶</dd>
+		<dd>变形金刚</dd>
+		<dd>机器人</dd>
+	</dl>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_Jq的事件2</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 1)鼠标在div
+			// 悬停时显示table,离开时重新显示列表
+			$('.box').hover(function(){
+				console.log('移入');
+				var tab = '<table>';
+				for(var i=1;i<=3;i++){
+					tab += '<tr>';
+					for(var j=1;j<=3;j++){
+						tab += '<td>'+i+'-'+j+'</td>';
+					}
+					tab += '</tr>';
+				}		
+				tab += '</table>';
+
+				$('.box').html(tab);
+			},function(){
+				console.log('移出');
+				var list = '<ul>';
+				for(var k=1;k<=3;k++){
+					list += '<li>'+'第'+k+'行'+'</li>';
+				}
+				list += '</ul>';
+
+				$('.box').html(list);
+			})
+
+
+			// 2)鼠标经过小图，切换对应的大图显示，小图加边框
+			$('.picBox .smallbox img').hover(function(){
+			$('.picBox>img').attr('src',$(this).attr('src'));
+			// $('.picBox .smallbox img').removeClass('current');//移除所有小图的current类
+			// $(this).addClass('current');//当前的添加
+			});
+
+
+			// 3)box3:移入移出
+			$('.box3').mouseover(function(){
+			$('.box3').css('background','#F09D9D');
+			}).mouseout(function(){
+			$('.box3').css('background','#8BEDEC');
+			})	
+
+		})
+
+	</script>
+	<style>
+		.box{
+			width: 200px;
+			height: 100px;
+			border: 1px solid red;
+		}
+
+		.picBox{
+			width: 440px;
+			margin: 20px;
+			border: 1px solid blue;
+
+			overflow: hidden;
+		}
+		.picBox>img{
+			width: 440px;
+		}
+		.picBox .smallBox img{
+			width: 100px;
+			height: 100px;
+			border: 1px solid transparent;
+		}
+		.picBox .smallBox img:hover{
+			border: 1px solid red;
+		}
+
+
+		.box3{
+			width: 200px;
+			height: 200px;
+			border: 1px solid orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>第1行</li>
+			<li>第2行</li>
+			<li>第3行</li>
+		</ul>
+	</div>
+
+
+	<!-- 案例1 -->
+	<div class="picBox">
+		<img src="img/e.jpg">
+		<div class="smallBox">
+			<img class="current" src="img/b.gif">
+			<img src="img/c.gif">
+			<img src="img/bg_01.gif">
+			<img src="img/a.gif">
+		</div>
+	</div>
+
+
+	<!-- 案例2 -->
+	<div class="box3">
+		移入变红.移出变蓝
+	</div>
+
+</body>
+</html>

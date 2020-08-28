@@ -1,0 +1,13 @@
+/* CSS Document */
+
+.rfocus {float:left;width:456px;height:199px;padding:3px 0 3px 3px;background:#cfcfcf;margin-bottom:10px;overflow:hidden;}
+.rfocus .rfocuscur {float:left;width:397px;margin-right:1px;position:relative;overflow:hidden;}
+.rfocus .rfocuscur .rfocuscurb {width:377px;position:absolute;background:#000;top:154px;left:0px;margin:0;padding:5px 10px;filter:alpha(opacity=70);cursor:pointer;display:inline;}
+.rfocus .rfocuscur .rfocuscurb a,.rfocus .rfocuscur .rfocuscurb a:visited {color:#fff;}
+.rfocus .rfocuscur .rfocuscurb a:hover {color:#ff6600;text-decoration:underline;}
+.rfocus .rfocuscur .rfocuscurb h4 {font:bold 14px ;color:#fff;}
+.rfocus .rfocuscur .rfocuscurb h4 em {font:bold 14px;color:#ff6600;padding-left:10px;}
+.rfocus .rfocuscur .rfocuscurb div {display:block;font:normal 12px/20px;color:#fff;}
+.rfocus .rfocustt {float:left;width:26px;height:199px;background:url(../images/focusbg1.gif) no-repeat bottom #8e8e8e;margin-right:1px;cursor:pointer;overflow:hidden;}
+.rfocus .rfocustt h5 {width:22px;height:173px;font:normal 14px;layout-flow:vertical-ideographic;text-align:center;vertical-align:center!important;color:#fff;padding-right:4px;overflow:hidden;}
+.rfocus .rfocustt div {width:26px;height:26px;font-size:14px;color:#fff; text-align:center; line-height:26px;margin-bottom:3px;}

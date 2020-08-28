@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_undefined和null</title>
+</head>
+<body>
+	<p id="p1">段落1</p>
+	<script>
+		// 1)undefined类型:只有一个值 undefined
+		var str;
+		console.log(str);//undefined
+		console.log(typeof str);//undefined类型
+
+		// 2)null类型:只有一个值 null 空类型
+		// 用js获取页面里的一个标签元素
+		console.log(p1);
+		// console.log(p2); 变量必须先声明,才能引用
+		
+		var p_obj=document.getElementById('p1');
+		console.log(p_obj);
+
+		var p_obj2=document.getElementById('p2');
+		console.log(p_obj2);//null
+
+		// 比对undefined和null
+		console.log(undefined==null);//true
+		console.log(undefined===null);//false
+		
+		
+	</script>
+</body>
+</html>

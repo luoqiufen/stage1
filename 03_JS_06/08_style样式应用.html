@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_style样式应用</title>
+</head>
+<body>
+	<div class="nav" style="">
+		<a href="">百度</a>
+		<a href="">新浪</a>
+		<a href="">当当</a>
+		<a href="">网易</a>
+		<a href="">hao123</a>
+	</div>
+
+	<script>
+		// 修饰导航条
+		// 整个导航条左右居中
+		// a:无下划线,大小80*40 居中
+		
+		// div
+		var div_obj=document.querySelector('.nav');
+		console.log(div_obj);
+
+		div_obj.style.width='500px';
+		div_obj.style.margin='50px auto';
+		div_obj.style.border='1px solid red';
+		div_obj.style.textAlign='center';
+
+		// 超链接a
+		var a_obj=document.querySelectorAll('.nav a');
+		console.log(a_obj);
+
+		for(k=0;k<a_obj.length;k++){
+			a_obj[k].style.display='inline-block';
+			a_obj[k].style.textDecoration='none';
+			a_obj[k].style.width='80px';
+			a_obj[k].style.lineHeight='40px';
+			a_obj[k].style.textAlign='center';
+			a_obj[k].style.color='#081CFC';
+			a_obj[k].style.fontSize='22px';
+		}
+
+	</script>
+</body>
+</html>

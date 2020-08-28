@@ -1,0 +1,74 @@
+第三章 js
+第八天
+
+一、案例1:省市联动
+	1.事件:onsubmit(form的属性)
+	2.省份发生改变,去做...
+	3.找到当前省份,获取对应的城市
+		选中的option的 下标
+			select.selectedIndex;
+		选中的option的下标 ->省份下标 ->对应的城市组下标
+
+二、案例2:表单验证
+	1.事件:表单提交事件
+	2.点击提交按钮,触发:去做表单验证
+		return true	允许提交
+		return false 阻止提交
+	--------------------------
+	1)普通按钮,触发单击事件:去做验证
+	2)表单提交
+		form.submit();
+
+三、案例3:滚动条事件
+	<script>
+		浏览器的滚动条滚动时触发:
+		window.onscroll=function(){
+			// 获取滚动条垂直滚动距离
+			// 兼容写法
+			var top=window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop;
+		}
+	</script>
+
+-----------------------------
+四、JS对象-日期对象
+	<script>
+		// 1)获取日期对象
+		var date=new Date();//默认本地计算机时间
+		var date2=new Date('2020/5/30 17:43:50');//指定时间
+
+		// 2)提取事件
+		date1.getFullYear();年
+		date1.getMonth();月
+		date1.getDate();日
+		date1.getDay();周(下标)
+		// 处理周期:把数字week转换成中文
+		var week=tody.getDay();
+		var arr=['日','一','二','三','四','五','六'];
+		week=arr[week];
+
+		date1.getHours();时
+		date1.getMinutes();分
+		date1.getSeconds();秒
+		// ---------------------------
+		// 3)获取时间戳
+		var today=new Date();
+		var end=new Date('2020/11/11');
+
+		today.getTime();
+		end.getTime();
+
+	</script>
+
+五、JS对象-算数对象
+	Math.ceil() 上取整
+	Math.floor() 下取整
+	Math.round() 四舍五入
+	Math.random() 随机数
+
+六、计时器
+	JS-window-JS-Timing:
+	setInterval()
+	setTimeout()
+	
+	//js控制跳转页面
+	window.location.href='新的url地址';

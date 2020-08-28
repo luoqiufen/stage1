@@ -1,0 +1,128 @@
+第三章
+第二天
+
+一、自运算
+	<script>
+	 // 1)自增运算	++	默认+1
+		var i=5;
+			i++;//6
+			++i;//7
+			i+=1;//8
+			i=i+1;//9
+	 // 2)自减运算	--	默认-1 
+	 	var j=9;
+	 		j--;//8
+			--j;//7
+			j-=1;//6
+			j=j-1;//5
+
+		// 如果有赋值运算加入:
+		var a=14,b=20,c;
+			b=a++;//先赋值 b:14,再运算 a:15
+			c=++b;//先运算 b:15,再赋值 c:15
+	</script>
+
+二、比较运算符
+	<script>
+		// == 等于		(值相等)
+		// === 恒等于 	(值相等且类型一致)
+		// != 不等  	(值不等)
+		// !== 			(值不等或类型不一致)
+		// > >= 大于 大于等于
+		// < <= 小于 小于等于
+		
+		console.log(15=='15');//true
+		console.log(15==='15');//false
+
+		console.log(10!='8');//true
+		console.log(10!=='8');//true
+
+		console.log(6>'apple'.length);//true
+		console.log(6<'apple'.length);//false
+	</script>
+
+三、逻辑运算符
+	<script>
+		// 1)逻辑和 &&
+		- 所有条件都满足,才是true
+		true&&true -->true
+		true&&false-->false
+		// 2)逻辑或 ||
+		- 只要满足一个条件即可,为true
+		true||false -->true
+		false||false-->false
+		// 3)逻辑非 !
+		!true -->false
+		!false-->true 
+	</script>
+
+四、三目运算符
+	<script>
+		表达式?true的结果:false的结果;
+		uname.length>=5 && uname.length<=10?document.write('符合要求'):document.write('用户名长度在5-10之间');
+	</script>
+
+五、数据类型：Boolean类型
+	只有两个值:true false
+
+六、流程语句
+	1.单条件判断语句
+	<script>
+		// 语法1:
+		if(boolean){
+			// true的结果(自定义)
+		}
+
+		// 语法2:
+		if(boolean){
+			// true的结果(自定义)
+		}else{
+			// false的结果
+		}
+	</script>
+
+	2.多条件判断语句
+	<script>
+		// 语法:
+		if(条件1){
+			// 为true:结果1...
+		}else if(条件2){
+			// 为true:结果2...
+		}else if(条件3){
+			// 为true:结果3...
+		}else{
+			// false:其他结果
+		}
+
+	</script>
+
+七、补充：全局API方法
+	1.数据类型转换
+	<script>
+		// (显式)强制类型转换的方法
+		String(变量/值);
+		Number(变量/值);
+		Boolean(变量/值);
+		// 空字符串''和数值0,转换成false
+		// 其他都是true
+	</script>
+
+	2.检验数据类型
+	<script>
+		typeof(变量/值);
+		typeof 变量/值;
+	</script>
+
+	3.提取数值
+	<script>
+		parseInt(值);	提取整数
+		parseFloat(值);提取小数/浮点数
+
+		parseInt("10.35");//10.35
+		parseInt("10.35abc");//10
+
+		parseFloat("10.35");//10.35
+		parseFloat("10.35abc");//10.35
+
+		parseFloat("a10.35abc");//NaM
+	</script>

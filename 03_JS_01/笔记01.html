@@ -1,0 +1,187 @@
+第三章
+第一天
+
+一、Javascript介绍
+	1.JS是什么?
+		一门客户端脚本语言
+		弱类型语言
+
+	2.JS的功能
+		实现用户和页面之间的交互
+
+	3.JS语言的三大分类
+		ECMAScript语法基础(EC5版本)
+		DOM应用(操作html和css)
+		BOM应用(操作浏览器)
+
+	4.可以写在哪里?
+		1)可以直接运行在浏览器窗口里
+			F12->console 面板
+			- 仅供测试
+		2)可以写在标签的"属性"里
+			<input type="button" value="删除" onclick="js语句">
+		3)可以写在script双标记里
+			<script>
+				js语句
+			</script>
+		4)可以写在外部js文件里
+			index.js文件
+			index.html
+			 <script src="index.js"></script>
+	5.注释符号
+		html注释:
+		<!-- <p></p> -->
+		css注释:
+		<style>
+			/* css注释 */
+		</style>
+		js注释:
+		<script>
+			// 技术单行注释	-- ctrl+/
+			/*多行注释
+			多行注释*/			-- ctrl+shift+/
+		</script>
+
+二、Js语句
+	1.弹窗显示
+		<script>
+			alert("显示信息内容");
+			window.alert('显示信息内容');
+		</script>
+
+	2.显示到body页面里
+		<script>
+			document.write("显示的内容");
+		</script>
+
+	3.显示到浏览器的console面板里
+	 - 显示到控制台
+		<script>
+			console.log('显示的内容');
+		</script>
+	------------------------------------
+	4.弹出一个带"输入框"的窗口
+		<script>
+			prompt("提示用户输入的内容");
+		</script>
+
+	5.弹出一个询问窗口
+		<script>	
+			confirm("询问的问题?");
+		</script>
+
+三、Js变量
+	1.变量的作用:
+		存取(变化的)数据
+
+	2.声明和应用
+		<script>
+			// 声明变量
+			var 变量名1;
+			var 变量名2;
+			var 变量名2,变量名2;
+			// 存储值/赋值
+			变量名1 = 值;
+			变量名2 = 值;
+
+			// 简化写法
+			var 变量名1 = 值,变量名2 = 值,变量名3;
+		</script>
+
+	3.命名规则
+		严格区分大小写
+		必须以字母、下划线_或$开头,可以包含数字、字母、_、$
+		不能使用关键字
+		比如: var
+		-----------------------------
+		建议采用命名方式:多个单词 username
+		- 小驼峰命名:(建议变量使用)
+			userName
+		- 大驼峰命名:
+			UserName
+
+四、数据类型 
+	什么是数据类型?
+	- 根据功能操作不同信息,划分了数据类型
+	- 验证:typeof();
+
+	1.string类型:字符串类型
+		语法:
+		<script>
+			// 标识符:"字符串内容"/'字符串内容'
+			var str1 = 'apple';
+			var str2 = "<p></p>";
+			// 转义字符 \" \'
+			var str3 = "姓名:\"apple\";";
+	 		var str3 = '姓名:\'apple\';';
+		</script>
+
+		属性:
+		<script>
+			字符串.length;//字符串长度
+		</script>
+
+		方法:
+		<script>
+			// 1)(正序)查找字符
+			str.indexOf('查找的字符'[, 起始下标:0]);
+
+			// 2)(倒叙序)查找字符
+			str.lastIndexOf('查找的字符'[, 起始下标:0]);
+			/*- 结果:
+				1>找到了,返回字符对应的数字下标
+				2>没找到,返回-1*/
+
+			// 3)替换字符
+			str.repleace('旧值','新值');
+			// 结果:成功,当前只替换一次
+			
+			// 4)转化大写字母
+			str.toUpperCase();
+
+			// 5)转化小写字母
+			str.toLowerCase();
+		</script>
+
+	2.number类型:数值类型
+		语法:
+		<script>
+			var num1 = 20;
+			var num2 = 3.14;
+			var num3 = -20.56;
+		</script>
+		功能:可以实现运算
+		运算符:
+			1)数学运算: + - * / %(取余)
+			<script>
+				console.log(25+15.4);//40.4
+				console.log(25-15.4);//9.6
+				console.log(25*3);//75
+				console.log(25/5);//5
+				// % 取余(数) 商整数取余数
+				console.log(8%5);//商1余3
+				console.log(5%8);//商0余5
+			</script>
+
+			2)赋值运算: = += -= *= /= %=
+			<script>
+				var n =16; // 把16赋值给n
+					n += 5;//21 等同于n=n+5
+					n -= 11;//10
+					n *= 10;//100
+					n /= 5//20
+					n %= 3//2
+			</script>
+			---------------------
+			补充: + 的用法
+			字符相连,数值相加
+			<script>
+				console.log(15+20);//35
+				console.log("15"+20);1520
+			</script>
+			- * / %
+			<script>
+				console.log("15"-5);//10
+				console.log("abc15"-5);//NaN 非数值:Not a Number
+			</script>
+		

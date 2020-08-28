@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_操作类名案例</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none}
+		a{text-decoration: none;color: #333;}
+
+		.item{
+			width: 100px;
+			border: 1px solid red;
+		}
+
+		.item h3{
+			line-height: 40px;
+			text-indent: 10px;
+		}
+
+		.item ul{
+			line-height: 30px;
+			text-indent: 20px;
+		}
+
+		.item ul li{
+			border-bottom: 1px dashed #CCC;
+		}
+
+		.item ul li:last-child{
+			border-bottom: none;
+		}
+
+		/* 蓝色风格 */
+		.blue{border: 1px solid blue;}
+		.blue h3{background: #A5EDF1;}
+		.blue ul a{color: blue}
+		/* 橘色风格 */
+		.orange{border: 1px solid orange;}
+		.orange h3{background: #F1D5A5;}
+		.orange ul a{color: orange}
+	</style>
+</head>
+<body>
+	<p style='margin:10px;'>
+		<input type="button" value="蓝色" onclick="change('blue')">
+		<input type="button" value="橘色" onclick="change('orange')">
+	</p>
+	<div class="item">
+		<h3>百度新闻</h3>
+		<ul>
+			<li><a href="">百度新闻1</a></li>
+			<li><a href="">百度新闻2</a></li>
+			<li><a href="">百度新闻3</a></li>
+		</ul>
+	</div>
+
+	<script>
+		// 点击按钮,切换颜色风格
+		function change(Color){
+			var div_obj=document.querySelector('.item')
+			console.log(div_obj.classList);
+			div_obj.className='';
+			div_obj.classList.add('item',Color);
+		}
+
+
+	</script>
+</body>
+</html>

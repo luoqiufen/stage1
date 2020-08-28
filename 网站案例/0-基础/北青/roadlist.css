@@ -1,0 +1,71 @@
+/* CSS Document */
+/* border: 1px solid red;*/
+     
+.roadlist a,.newlist_1 a{ font-size:14px; text-decoration:underline;}
+.hotshow_3 a{ color:#666666; font-size:12px; text-decoration:underline;}
+.hotshow_3 a:hover{ color:red;}
+.hotshow_4 a{ color:#003399; font-size:15px; font-weight:bold; text-decoration:none;}
+.hotshow_4 a:hover{ color:red; text-decoration:underline;}
+
+.roadlist,.newlist_1{ width:650px;border:1px solid #0099FF;}
+.roadlist caption,.newlist_1 caption{line-height:28px; padding-left:10px;text-align:left;background:url(images/titbg3.gif) repeat-x; border:1px solid #0099FF;border-bottom:none; font-size:14px; font-weight:bold;}
+
+/*-------------------roadlist------------------------*/
+.roadlist td{ padding:5px 0 0 15px; border-bottom:none; line-height:24px;}
+.mainlist .roadlist .hotshow_1{ line-height:30px;border-bottom:1px solid #CCCCCC; background-color:#EEEBD0}
+.hotshow_2{color:#FF6600; font-weight:bold; font-size:13px;}
+#bottom{ border-bottom:1px dashed #CCCCCC; }
+#pagenum{ height:80px;line-height:80px; text-align:center; font-size:16px; font-weight:bold; color:black; border-bottom:none;}
+/*-------------------newslist------------------------*/
+/*.newlist_1{ width:650px;border:1px solid #0099FF; }*/
+.newlist_1 td{ padding:5px 0 0 15px; border-bottom:1px dashed #CCCCCC; line-height:35px; color:#666666}
+.newlist .newlist_1 .hotshow_1{ line-height:30px; color:black;border-bottom:1px solid #CCCCCC; background-color:#EEEBD0}
+.newlist_1 td ul{/* background:red;*/ width:500px; font-size:14px;}
+.newlist_1 td ul li{ list-style:square; list-style-position:inside;}
+.newlist_1 td ul li a{ text-decoration:underline;}
+
+/*--------------------------xcts-----------*/
+.xcts{ width:650px; margin:10px 0 10px 0; border:1px solid #7dc5d7;}
+/*-------------------------xcts-top---------------------*/
+.xcts-top{ width:650px; height:500ox;/*border:1px solid red; */background:url(images/rtibg1.gif) repeat-x center top;}
+.xcts-top h2{ height:65px;line-height:65px; text-align:center;/* display:block; background-color:red;*/}
+.xcts-top h2 strong{ color:#FF6633;}
+.xcts-top .img1{ border:1px solid #ccc; padding:5px; margin:10px 6px; display:block; float:left;}
+.xcts-top-tb{ margin:10px 0 10px 12px; width:326px; line-height:22px;}
+.xcts-top-tb td{ padding-left:4px;}
+#xcts-table td{ line-height:10px;}
+#xcts-top-t1{ text-align:left; color:#FF6633;}
+#xcts-top-t2{ border-bottom:1px dashed #ccc;}
+#xcts-top-t3{ color:#006600; font-family:"Arial Black", Arial; font-size:20px; font-weight:700; padding-top:12px;}
+#xcts-top-t3 strong{ font-size:12px;}
+#xcts-span1{ width:150px;display:block; float:left; margin:7px 0 9px 5px ; word-spacing:3px;
+ font-family:"Arial Black", Arial;font-size:36px; color:#FF6633; font-weight:900;}
+#xcts-span2{ width:60px;display:block; float:left;margin:15px 4px 0; text-decoration:line-through; color:#666;}
+
+
+
+.xcts h3{ background:url(images/titbg3.gif) repeat-x; height:28px; font-size:15px; line-height:28px; padding-left:15px;}
+.xcts ul,.xcts-xz ul{ margin:11px 10px;}
+.xcts ul li{/*height:40px;*/ line-height:25px; clear:both;}
+.xcts .xcts-ul li{  background:url(images/icon_star.gif) no-repeat left center; padding-left:20px;}
+
+/*-------------------------xcts-lvyou---------*/
+.xcts .p1{ height:25px; line-height:25px;/* border:1px solid red;*/ margin:15px 10px 7px 10px; font-size:15px; font-weight:bold; color:red;}
+.xcts .p1 span{ background:url(images/but3.gif) no-repeat; color:#fff; display:block; float:left; height:22px; line-height:22px; width:58px; text-align:center; font-size:14px; margin-right:15px;}
+.xcts .p2,.p3{ margin:5px 10px; line-height:23px;}
+.p3 strong{ color:#006600;}
+.xcts .xcts_li{ font-size:15px; font-weight:bold; color:#FF6600;}
+
+.xcts table{width:630px;/*line-height:30px;*/ margin:9px 10px;}
+.xcts .body01{/*height:90px; background-color:red;*/}
+.xcts .body01 td{/* margin:0; */padding:5px 0; text-align:center;}                          
+.xcts .body01 .xcts_td1{ background:url(images/but4.gif) no-repeat; color:#006600; width:77px; height:30px; line-height:30px; text-align:center; margin:0; padding:0}
+.xcts .body01 .xcts_td2{ background:url(images/but5.gif) no-repeat; color:#CCCC33; width:77px; height:30px; line-height:30px; text-align:center;}
+/*------------body02-----------------*/
+.xcts .body02 td{ line-height:30px; border-bottom:1px dashed #ccc;}
+.xcts .body02 th{ height:28px;line-height:28px; background-color:#E3F3CF; text-align:left;/* display:block; margin-top:10px; */padding-left:10px;}
+.xcts .body02 a{ text-decoration:underline;}
+.xcts .body02 span{ display:block;}
+.xcts .body02 #xcts-fu{ border-bottom:none;}
+
+

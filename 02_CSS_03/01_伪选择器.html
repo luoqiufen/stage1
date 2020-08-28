@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_伪选择器</title>
+	<style>
+		.p1{
+			width: 500px;
+			border: 1px solid red;	
+		}
+
+		/* 首行 */
+		.p1:first-line{
+			color: blue;
+		}
+
+		/* 首字符 */
+		.p1:first-letter{
+			font-size: 2em;
+			font-weight: bold;
+		}
+
+		.box1{
+			width: 400px;
+			border: 2px dashed green;
+			line-height: 30px;
+		}
+
+		/* before -在头部添加一个伪元素 */
+		.box1:before{
+			content:"我是文字";
+			border: 1px solid blue; 
+		}
+
+		.box1 span{
+			border: 1px solid orange;
+		}
+
+		/* after */
+		.box1:after{
+			content:url(images/pic4.jpg);
+			/* 图片不能改大小 */
+			width: 100px;
+			height: 100px;
+			background: pink; 
+		}
+
+
+	</style>
+</head>
+<body>
+	<p class="p1">段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1段落1</p>
+	<div class="box1"><span>span文字</span>段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2段落2</div>
+</body>
+</html>

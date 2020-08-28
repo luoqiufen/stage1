@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_侧边导航</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none;}
+		a{text-decoration: none;}
+
+		.menu{
+			width: 180px;
+			line-height: 36px;
+			margin: 20px;
+			border: 1px solid #25EB36;
+			text-align: center;
+		}
+		.menu a{
+			color: #894C4C;	
+		}
+		.menu>li{
+			border-bottom : 1px solid #25EB36;
+		}
+		.menu>li:last-child{
+			border-bottom:0;
+		}
+
+		/* 二级 */
+		.menu .category{
+			width: 400px;
+			height: 186px;
+			background: #AEFFB5;
+			position: absolute;
+			left: 181px;
+			top: -1px;
+			display: none;
+		}
+		.menu>li:hover .category{
+			display: block;
+		}
+		.menu>li:hover{
+			background: #AEFFB5;
+		}
+
+		/* 案例1 */
+		.menu1{position: relative;}
+
+		/* 案例2 */
+		.menu2>li{position: relative;}
+
+	</style>
+</head>
+<body>
+	<h1>案例1</h1>
+	<ul class="menu menu1">
+		<li>
+			<a href="">家用电器</a>
+			<div class="category">家用电器分类</div>
+		</li>
+		<li>
+			<a href="">手机/运营商</a>
+			<div class="category">手机/运营商分类</div>
+		</li>
+		<li>
+			<a href="">电脑/办公</a>
+			<div class="category">电脑/办公分类</div>
+		</li>
+		<li>
+			<a href="">家居/家具</a>
+			<div class="category">家居/家具分类</div>
+		</li>
+		<li>
+			<a href="">男装/女装</a>
+			<div class="category">男装/女装分类</div>
+		</li>
+	</ul>
+
+	<h1>案例2</h1>
+	<ul class="menu menu2">
+		<li>
+			<a href="">家用电器</a>
+			<div class="category">家用电器分类</div>
+		</li>
+		<li>
+			<a href="">手机/运营商</a>
+			<div class="category">手机/运营商分类</div>
+		</li>
+		<li>
+			<a href="">电脑/办公</a>
+			<div class="category">电脑/办公分类</div>
+		</li>
+		<li>
+			<a href="">家居/家具</a>
+			<div class="category">家居/家具分类</div>
+		</li>
+		<li>
+			<a href="">男装/女装</a>
+			<div class="category">男装/女装分类</div>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_文档处理2</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 1)替换
+			// 把box1里面的span替换成p{段落}
+			$('.box1 span').replaceWith('<p>段落</p>');
+			// a换成h1
+			$('<h1>标题</h1>').replaceAll($('.box1 a'));
+
+			// 2)删除
+			$('.box1 h1').empty();
+			$('.box1 h1').remove();
+
+			// 3)复制用户名一行
+			$('.box2 p').click(function(){
+				alert('单击');
+			})
+			$('.box2 p').clone(true).appendTo($('.box2'));
+
+		})
+
+	</script>
+	<style>
+		.box1{
+			width: 200px;
+			border: 1px solid blue;
+		}
+		.box2{
+			width: 300px;
+			border: 1px solid blue;
+			margin: 20px 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- 替换 -->
+	<div class="box1">
+		<span>文字1</span>
+		<span>文字2</span>
+		<span>文字3</span>
+		<a href="#">链接1</a>
+		<a href="#">链接2</a>
+		<a href="#">链接3</a>
+	</div>
+
+	<!-- 复制 -->
+	<div class="box2">
+		<p>用户名: <input type="text"></p>
+	</div>
+</body>
+</html>

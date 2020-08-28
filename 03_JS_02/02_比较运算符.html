@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_比较运算符</title>
+</head>
+<body>
+	<script>
+	  // ==		值相等
+	  // ===	值相等且类型一致
+		console.log(15==5+6);//false 假 错误 失败
+		console.log(15==10+5);//true 真 正确 成功
+		console.log(15=='15');//true
+
+		console.log(15==='15');//false
+
+	  // !=		值不等
+	  // !==	值相等或类型一致
+		console.log(8!=6);//true
+		console.log(8!='8');//false
+
+		console.log(8!=='8');//true	类型不一样
+		console.log(8!==6);//true	值不等
+		console.log(8!=='6');//true
+		console.log(8!==2+6);//false
+
+	  // > >=
+	 	console.log(15>'apple'.length);//true
+	 	console.log(5>='apple'.length);//true
+
+	</script>
+</body>
+</html>

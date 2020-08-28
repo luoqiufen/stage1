@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_伪元素选择器</title>
+	<style>
+		.box1{
+			width: 200px;
+			border: 2px solid red;
+			line-height: 40px;
+			position: relative;
+		}
+		.box1::selection{
+			color: white;
+			background: #113E03;
+		}
+		/* .box1::before{
+			content: '子元素1';
+			background: red;
+		}
+		.box1::after{
+			content: '子元素2';
+			background: orange;
+		} */
+
+		/* 鼠标经过:加一个半透明遮罩层; */
+		.box1:hover::after{
+			width: 100%;
+			height: 100%;
+			content:"半透明";
+			background: rgba(0,0,0,0.5);
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 16px;
+			text-align: center;
+			color: white;
+			line-height: 150px;
+		}
+
+		/* item */
+		.item{
+			width: 200px;
+			height: 160px;
+			border: 1px solid green;
+			margin: 10px;
+			position: relative;
+		}
+		.item img{
+			width: 200px;
+			height: 160px;
+		}
+		.item:hover::before{
+			width: 100%;
+			height: 100%;
+			content:"内容";
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: rgba(255,255,255,0.6);
+			text-align: center;
+			line-height: 160px;
+			color: purple;
+		}
+
+		.p1{
+			width: 200px;
+			height: 100px;
+			background: hsla(240,100%,30%,1);
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		CSS1-CSS2版本
+		CSS3:新的CSS版本
+		增加了新的样式和选择器
+		移动优先
+		PC端兼容性不一定,要去特殊处理
+	</div>
+
+	<div class="item">
+		<img src="css3/02-颜色/images/pic.jpg">
+	</div>
+	<div class="item">
+		<img src="css3/02-颜色/images/opacity.jpg">
+	</div>
+
+	<p class="p1">文字内容</p>
+</body>
+</html>

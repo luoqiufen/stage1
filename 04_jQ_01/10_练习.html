@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.4.js"></script>
+</head>
+<body>
+<form action="">
+	验证码: <input type="text" onblur="checkCode()"> 
+	<span onclick="danji()"><!-- 显示验证码 --></span>
+</form>	
+
+<script>
+//1）生成一个随机验证码显示到span里
+//	-1. 6位验证码
+//	-2.可以有数字，字母
+
+//2）点击span更新验证码	
+//3）输入框失去焦点做验证(不区分大小写)
+	function createCode(){
+		var arr=[0,1,2,3,4,5,6,7,8,9,'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
+
+		console.log(arr.length);//62
+
+		var code = '';
+		for(var i = 1;i<=6;i++){
+			var count = Math.round(Math.random()*(arr.length-1));
+			code += arr[count]
+		}
+		// 生成的验证码放进span
+		$('form span').html(code);
+	}
+	createCode();
+	
+
+
+	// 单击更新验证码
+	function danji(){ 
+		// location.reload();
+		createCode();
+	}
+
+	// 验证(不区分大小写)
+	function checkCode(){
+		var inputValue = $('form input').val();
+		console.log(inputValue);
+		var code = $('form span').text();
+
+		if(inputValue.toUpperCase()==code.toUpperCase()){
+			console.log('验证码正确');
+		}else{
+			console.log('验证码错误');
+		}
+	}
+
+
+
+</script>
+
+
+<!-- 预习：jq手册 -->
+
+</body>
+</html>

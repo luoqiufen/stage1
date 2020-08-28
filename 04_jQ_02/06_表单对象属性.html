@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_表单对象属性</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+		$(function(){
+			// 1)修饰可用按钮:蓝色背景,白色文字
+			$('input[type=button]:enabled').css({
+				'background':'#6BF6E1',
+				'color':'white',
+			})
+
+			$('input[type=button]:disabled').css({
+				'background':'#8C8B8B',
+				'color':'black',
+				'text-decoration':'line-through'
+			})
+
+			// 2)选中的爱好选项,
+			console.log($('input[name=like]:checked'))
+			
+			// 3)选择的课程
+			console.log($('select option:selected'))
+
+		})
+
+	</script>
+</head>
+<body>
+	<form action="index.php">
+		<p>用户名: <input type="text"></p>	
+		<p>密码: <input type="password"></p>
+		<p>爱好:
+			<input type="checkbox" name="like" value="1">吃饭
+			<input type="checkbox" name="like" value="2" checked>睡觉
+			<input type="checkbox" name="like" value="3">打豆豆
+			<input type="checkbox" name="like" value="4" checked>打游戏
+		</p>
+		<p>学科:
+			<select name="course">
+				<option value="1">语文</option>
+				<option value="2" selected>数学</option>
+				<option value="3">化学</option>
+				<option value="4">物理</option>
+			</select>
+		</p>
+
+		<p>
+			<input type="button" value="添加">
+			<input type="button" value="删除" disabled>
+			<input type="button" value="修改">
+		</p>
+
+	</form>
+</body>
+</html>

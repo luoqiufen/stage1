@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12_快捷键</title>
+</head>
+<body>
+	<!-- 5个超链接: a*5(Tab补全) -->
+	<a href=""></a>
+	<a href=""></a>
+	<a href=""></a>
+	<a href=""></a>
+	<a href=""></a>
+
+	<!-- 5行无序列表: ul>li*5(Tab)-->
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	<!-- 3行有序列表，内容是超链接: ol>li*3>a(Tab) -->
+	<ol>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ol>
+
+	<!-- 自定义列表 -->
+	<!-- dl>dt+dd -->
+	<dl>
+		<dt></dt>
+		<dd></dd>
+	</dl>
+	<!-- dl>dt+dd*3 -->
+	<dl>
+		<dt></dt>
+		<dd></dd>
+		<dd></dd>
+		<dd></dd>
+	</dl>
+	<!-- 多个组合
+	dl>(dt+dd*3)*3 -->
+	<dl>
+		<dt></dt>
+		<dd></dd>
+		<dd></dd>
+		<dd></dd>
+		<dt></dt>
+		<dd></dd>
+		<dd></dd>
+		<dd></dd>
+		<dt></dt>
+		<dd></dd>
+		<dd></dd>
+		<dd></dd>
+	</dl>
+
+	<!-- ul>li*2>ul>li*2>a -->
+	<ul>
+		<li>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</li>
+		<li>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</li>
+	</ul>
+	
+	<!-- 设置属性 -->
+	<!-- 5个超链接，打开在新窗口 -->
+	<!-- a[target="_blabk"]*5 -->
+	<a href="" target="_blabk"></a>
+	<a href="" target="_blabk"></a>
+	<a href="" target="_blabk"></a>
+	<a href="" target="_blabk"></a>
+	<a href="" target="_blabk"></a>
+
+	<!-- a[target="_new"][title="超链接"]*3 -->
+	<a href="" target="_new" title="超链接"></a>
+	<a href="" target="_new" title="超链接"></a>
+	<a href="" target="_new" title="超链接"></a>
+
+	<!-- 内容 -->
+	<!-- a{百度}*3 -->
+	<a href="">百度</a>
+	<a href="">百度</a>
+	<a href="">百度</a>
+
+	<!-- 超链接页码1-6 -->
+	<!-- a{$}*6 -->
+	<a href="">1</a>
+	<a href="">2</a>
+	<a href="">3</a>
+	<a href="">4</a>
+	<a href="">5</a>
+	<a href="">6</a>
+
+
+	<!-- ul>li*4>b{$}+a[target="_blank"] -->
+	<ul>
+		<li><b>1</b><a href="" target="_blank"></a></li>
+		<li><b>2</b><a href="" target="_blank"></a></li>
+		<li><b>3</b><a href="" target="_blank"></a></li>
+		<li><b>4</b><a href="" target="_blank"></a></li>
+	</ul>
+
+</body>
+</html>

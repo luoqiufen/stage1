@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_循环案例</title>
+</head>
+<body>
+<script>
+	for(var i=1;i<=5;i++){//外层
+		for(var j=0;j<=3;j++){//内层
+			document.write('i:'+i+' j:'+j+"<br>");
+		}
+	}
+	document.write('<hr>');
+
+
+	// 案例:输出一个4行3列的表格
+	document.write('<table border=1 cellspacing=0 width=250 height=180>');
+	for(var tr=1;tr<=4;tr++){//循环
+		document.write('<tr>');
+		for(var td=1;td<=3;td++){//循环td
+			document.write('<td>'+tr+'-'+td+'&nbsp;</td>');
+		}
+		document.write('</tr>');
+	}
+	document.write('</table');
+
+</script>
+
+
+</body> 
+</html> 

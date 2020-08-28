@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_变量作用域</title>
+</head>
+<body>
+<script>
+	// 变量作用域:作用的范围
+	console.log(uname);
+	// 全局变量:可以在任何地方访问
+	var uname='小明';//声明往前移,赋值留在原地
+	document.write(uname);
+
+	function fun1(){
+		uname='小蓝';
+		console.log(uname);
+	}
+	fun1();
+	console.log(uname);
+
+	function fun2(){
+		console.log(uname);
+	}
+	fun2();
+
+	// --------------------------------
+	var price=20;//全局变量
+
+	function aa(){//proName是局部变量
+		var proName='漫画书';
+		console.log('aa的商品:'+proName);
+		console.log('价格是:'+price);
+		price+=5;
+	}
+
+	function bb(){
+		var proName='科幻小说';
+		console.log('价格是:'+price);
+	}
+
+	aa();
+	bb();
+
+	// console.log(proName);//报引用错误
+	
+	// ----------------------------------------
+	
+	var num=10;//全局变量
+	var color='red';//全局变量
+
+	function init(){//var num;
+		console.log('函数:'+num);//undefined
+		console.log('颜色:'+color);//red
+		var num =12;//局部变量
+			address='南京';// var address会提升到函数外,调用函数才会提升
+		console.log(address);//南京
+	}
+	console.log(num);//10
+	// console.log(address);//引用错误
+
+	init();
+	// 函数调用之后才能访问address
+	console.log(address);//南京
+
+</script>
+</body>
+</html>

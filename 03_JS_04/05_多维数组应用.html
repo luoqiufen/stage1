@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_多维数组应用</title>
+	<style>
+		.list{
+			list-style: none;
+			width: 400px;
+			border: 1px solid blue;
+			line-height: 40px;
+		}
+		.list span{
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			background: #CCC;
+			text-align: center;
+			line-height: 20px;
+		}
+		.list label{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+<script>
+	// 把以下数据信息显示成列表结构
+	var news=[
+		['紧急通知','2012-3-21'],
+		['“三八节”女性旅游乐享半价优惠','2012-3-22'],
+		['暂停旅游社业务公告','2012-3-23'],
+		['九华山门票恢复全价','2012-3-24'],
+		['“三八”节短线游走俏','2012-3-25'],
+		['4月初去动物园看羊驼','2012-3-26']
+	];
+
+	// 1
+	document.write('<ol>');
+	for(var k in news){
+		document.write('<li><a href="#">'+news[k][0]+'</a><label style="float:right;">'+news[k][1]+'</label></li>');
+	}
+	document.write('</ol>');
+
+
+	// 2
+	document.write('<ul class="list"');
+	for(var k in news){
+		document.write('<li>');
+		document.write('<span>'+(Number(k)+1)+'</span> ');
+		document.write('<a href="#">'+news[k][0]+'</a>');
+		document.write('<label>'+news[k][1]+'</label>')
+	}
+	document.write('</ul>');
+
+</script>	
+</body>
+</html>

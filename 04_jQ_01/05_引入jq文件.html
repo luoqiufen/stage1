@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_引入jq文件</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+		document.write('<h1>段落1</h1>');
+
+		// 加载完成触发
+		window.onload=function(){
+			// 原生dom
+			// 获取div
+			var div_obj=document.querySelector('.box1');
+			console.log(div_obj);
+
+			// jq获取div
+			console.log($('.box1'));
+			console.log(jQuery('.box1'));
+		}
+
+		// jq的ready方法
+		$(document).ready(function($) {
+			// 1)原生dom-获取body
+			console.log(document.body);
+			// 2)jq-找body
+			console.log($('body'));
+		});
+
+		
+	</script>
+</head>
+<body>
+	<div class="box1">盒子1</div>
+</body>
+</html>

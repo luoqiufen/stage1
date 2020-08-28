@@ -1,0 +1,76 @@
+第二章 CSS
+第四天
+
+一、div+css布局
+	1.div布局
+		默认上下行,宽100%
+		(1个)盒子水平居中
+			margin-left:auto;
+			margin-right:auto;
+			margin: 0 auto;
+
+	2.浮动布局
+		1)float:left;	向左浮动
+		2)float:right;	向右浮动
+
+		特征:
+		1>参考对象:直接父元素
+		2>浮动的元素不占位置,漂浮在页面上方,脱离文档流
+		3>浮动盒子是无缝贴齐的
+
+	3.清除浮动(影响)
+		1)clear:left;	清除左浮动
+		2)clear:right;	清除右浮动
+		3)clear:both;	左右都清除
+
+二、解决浮动布局问题
+	问题:子元素浮动,父元素高度为0
+	<div class="father">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+
+	1)给father设置固定height=>子元素高
+		.father{height:300px;}
+		缺点:高度不能自适应
+
+	2)给father添加overflow,可实现高度自适应
+		.father{ overflow:hidden}
+		缺点:会与原来的溢出隐藏冲突
+
+	3)给父盒子的末端添加一个子盒子
+		<div class="father">
+			<div class="left"></div>
+			<div class="right"></div>
+			<!-- 添加一个儿子 -->
+			<div class="clearbox"></div>
+		</div>
+
+		<style>
+			.clearbox{
+				clear: both;
+			}
+		</style>
+
+	4)给父盒子的末端添加一个伪元素
+		<style>
+			.father:after{
+			content: "";
+			display: block;
+			clear: both;
+			}
+		</style>
+
+	5)给父盒子后面的元素,设置清除浮动
+		缺点:父盒子的高度依旧是0
+	<div class="father">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<p>叔叔</p>
+	<style>
+		p{clear: both;}
+	</style>
+	
+三、CSS样式
+	

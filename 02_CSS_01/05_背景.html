@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_背景</title>
+	<style>
+		p{
+			border: 1px solid red;
+			width: 300px;
+			height: 300px;
+			/* 背景色 */
+			background-color: #AA8CE7;
+		}
+		div{
+			border: 1px dotted blue;
+			width: 400px;
+			height: 400px;
+			/* 背景图 */
+			background-image: url(img/bg_01.gif);
+			/* 背景图平铺方式(重复方式) */
+			background-repeat: repeat;
+			background-repeat: repeat-x;
+			background-repeat: repeat-y;
+			background-repeat: no-repeat;
+			/* 背景图位置 */
+			background-position: left top;
+			background-position: right bottom;
+			background-position: center;
+			/* 调整具体移动的距离 */
+			background-position: 0 0;
+			/* background-position: 20px 50px;
+			background-position: -20px -50px; */
+
+			/* 背景图大小 */
+			background-size: 100% 400px;
+
+			/* 合并写法 */
+			background: url(img/a.gif) no-repeat center;
+			background-size: 100%;
+		}
+		h1{
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+			/* background: skyblue;
+			background: url(img/e.jpg) no-repeat left bottom; */
+			background: url(img/e.jpg) no-repeat center skyblue;
+			background-size: 300px 300px;
+		}
+	</style>
+</head>
+<body>
+	<p>段落文字，段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字，段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字，段落文字段落文字段落文字</p>
+
+	<div>段落文字，段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字，段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字，段落文字段落文字段落文字</div>
+
+	<h1>标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字</h1>
+</body>
+</html>

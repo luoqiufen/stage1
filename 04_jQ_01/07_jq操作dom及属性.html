@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_jq操作dom及属性</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 1)找到段落1
+			console.log($('.p1'));
+			// 获取align属性
+			console.log($('.p1').attr('align'));//center
+			//添加name属性,title属性;
+			$('.p1').attr({
+				name:'p1-1',
+				title:'段落1'
+			});
+			// 移除name属性
+			$('.p1').attr('name','');
+			$('.p1').removeAttr('name');
+
+			// 2)找第二段的a标签
+			console.log($('.p2 a'));
+			// a添加target='_blank';
+			$('.p2 a').attr('target','_blank');
+		})
+	</script>
+</head>
+<body>
+	<p class="p1" align="center">段落1</p>
+	<p class="p2" align="right">
+		<a href="01_Math对象.html">新闻1</a>
+		<a href="02_计时器.html">新闻2</a>
+		<a href="03_倒计时.html">新闻3</a>
+		<a href="04_动态时间.html">新闻4</a>
+		<a href="05_引入jq文件.html">新闻5</a>
+	</p>
+</body>
+</html>

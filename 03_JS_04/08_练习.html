@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//练习1:生成9*9乘法口诀表(参考图:课前素材-03-js)
+for(var i=1;i<=9;i++){
+	for(var j=1;j<=i;j++){
+		document.write(j+'*'+i+'='+(i*j)+'&nbsp;');
+		if(i*j<10){//结果是一位数,多输出一位空格
+			document.write(' ');
+		}
+	}
+	document.write('<br>');
+}document.write('<hr>');
+
+//练习2:生成5层金字塔
+
+/*
+
+*
+***
+*****
+*******
+*********
+
+*/
+for(var a=1;a<=5;a++){
+	for(var b=1;b<=2*a-1;b++){
+		document.write('*');
+	}document.write('<br>');
+} document.write('<hr>');
+
+//拓展：等腰三角形
+/*
+
+    *
+   ***
+  *****
+ *******
+*********
+
+*/
+// document.write('<p align=center>');
+for(var m=1;m<=5;m++){
+	for(n=1;n<=(5-m);n++){
+		document.write('&ensp;');
+	}
+	for(var n=1;n<=2*m-1;n++){
+		document.write('*');
+	}document.write('<br>');
+}document.write('<hr>');
+// document.write('</p>');
+
+
+// 练习3:打印3位水仙花数
+// 水仙花数: 假如345是水仙花数，需满足
+// 3*3*3+4*4*4+5*5*5 = 345
+
+
+for(var num=100;num<1000;num++){
+	var a=parseInt(num/100);
+	var b=parseInt((num-100*a)/10);
+	var c=(num-100*a-10*b);
+	if(a*a*a+b*b*b+c*c*c==num){
+		document.write(num+'<br>');
+	}
+}document.write('<hr>');
+
+
+for(var a1=1;a1<=9;a1++){
+	for(var b1=0;b1<=9;b1++){
+		for(var c1=0;c1<=9;c1++){
+			if(a1*a1*a1+b1*b1*b1+c1*c1*c1==String(a1)+String(b1)+String(c1)){
+				document.write(String(a1)+String(b1)+String(c1)+'<br>');
+			}
+		}
+	}
+}document.write('<hr>');
+
+
+// 练习4: 百钱买百鸡
+// 公鸡5钱一只，母鸡3钱一只，小鸡一钱3只，问100元钱买100只鸡，能买公鸡，母鸡，小鸡各多少只？共有几种买法？
+// 公鸡:x 
+// 母鸡:y 
+// 小鸡:z  100-x-y
+// x+y+z=100
+// 5x+3y+z/3=100
+for(var x=0;x<=20;x++){
+	for(var y=0;y<=33;y++){
+		for(var z=0;z<=100;z++){
+			if((x+y+z==100)&&(5*x+3*y+z/3==100)){
+				document.write('公鸡数量是：'+x+' 母鸡数量是：'+y+' 小鸡的数量是：'+z+"<br>")
+			}
+
+		}
+	}
+}document.write('<hr>');
+
+
+var count=0;
+for(var x=0;x<=20;x++){
+	for(var y=0;y<=33;y++){
+		var z=100-x-y;
+		if(5*x+3*y+z/3==100){
+			document.write('公鸡数量是：'+x+' 母鸡数量是：'+y+' 小鸡的数量是：'+z+"<br>");
+			count++;
+		}
+	}
+}document.write('共有'+count+'买法');
+
+</script>	
+</body>
+</html>

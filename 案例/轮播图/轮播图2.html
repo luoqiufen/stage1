@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图2</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.rotation{
+			width: 600px;
+			height: 400px;
+			margin: 0 auto;
+			border: 3px solid red;
+			position: relative;
+		}
+		.rotation .pics{
+			width: 3000px;
+			height: 400px;
+		}
+		.rotation .pics a{
+			float: left;
+			width: 600px;
+			height: 400px;
+			line-height: 400px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 200px;
+			color: white;
+		}
+		.rotation .pics a:nth-child(1){background-color: teal;}
+		.rotation .pics a:nth-child(2){background-color:tomato;}
+		.rotation .pics a:nth-child(3){background-color:violet;}
+		.rotation .pics a:nth-child(4){background-color:skyblue;}
+		.rotation .pics a:nth-child(5){background-color:orangered;}
+		.rotation .btns{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 50%;
+			margin-top: -25px;
+			background-color: rgba(0, 0, 0, 0.5);
+			color: white;
+			font-weight: bold;
+			font-size: 25px;
+			line-height: 50px;
+			text-align: center;
+			cursor: pointer;
+			opacity: 0;
+			filter: alpha(opacity=0);/*解决IE兼容问题*/
+		}
+		.rotation .rightBtn{
+			right: 0px;
+		}
+		.rotation:hover .btns{
+			opacity: 0.5;
+			filter: alpha(opacity=0.5);
+		}
+		.rotation .leftBtn:hover{
+			opacity: 1;
+			filter: alpha(opacity=1);
+		}
+		.rotation .rightBtn:hover{
+			opacity: 1;
+			filter: alpha(opacity=1);
+		}
+		.rotation .dats{
+			width: 100%;
+			position: absolute;
+			bottom: 10px;
+			text-align: center;
+		}
+		.rotation .dats span{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-color: gray;
+			margin: 0px 5px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		.rotation .dats span:first-child{
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="rotation">
+		<div class="pics">
+			<a href="#">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>
+		</div>
+		<div class="leftBtn btns">&lt;</div>
+		<div class="rightBtn btns">&gt;</div>
+		<div class="dats">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<script src="jquery-1.6.2.min.js"></script>
+	<script>
+		$(function() {
+			var current = 0;
+			var picWidth = $(".pics a").width();
+			
+			var t = setInterval(changeIndex,3000); //开启计时器
+			// 更换图片函数
+			function changePic() {
+				$(".pics").animate({
+					marginLeft: "-"+picWidth*current
+				});
+				$(".dats span").eq(current).css("background-color","white").siblings().css("background-color","gray");
+			}
+			// 更新下标 并调用更换图片函数
+			function changeIndex() {
+				$(".pics").stop();
+				current++;
+				if(current > $(".pics a").length-1) {
+					current = 0;
+				}
+				changePic();
+			}
+			// 左按钮
+			$(".leftBtn").click(function() {
+				$(".pics").stop();
+				current--;
+				if(current < 0) {
+					current = $(".pics a").length-1;
+				}
+				changePic();
+			});
+			// 右按钮
+			$(".rightBtn").click(changeIndex);
+			// 小圆点
+			$(".dats span").click(function() {
+				current = $(this).index();
+				changePic();
+			});
+			// 鼠标移入移出
+			$(".rotation").hover(function() {
+				clearInterval(t);
+			}, function() {
+				t = setInterval(changeIndex,3000);
+			});
+		});
+	</script>
+</body>
+</html>

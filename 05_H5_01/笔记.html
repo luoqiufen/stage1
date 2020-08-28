@@ -1,0 +1,112 @@
+第五章 HTML5
+第一天
+
+一、HTML介绍
+	1.web变化
+		web1.0 网页:信息展示 - 博客
+		web2.0 网页:交互(数据+动态: js)
+		web3.0 网页:富客户端
+
+	2.HTML5 增加了一些标签
+		1)语义化标签(看到名字就知道含义)
+		2)功能性标签和新型表单控件
+		3)绘图标签canvas(html+js)
+		4)多媒体:音频和视频
+		5)本地存储(结婚后端)
+
+二、HTML语义化标签
+	1)<article></article>:定义文章
+	2)<aside></aside>:定义页面内容之外的内容
+	3)<header></header>:头部/页眉
+	4)<footer></footer>:脚步/页脚
+	5)<nav></nav>:定义导航链接
+
+	特点:
+		同div一样
+		语义化更明确,对于我们搜索引擎更友好
+		HTML发展趋势
+		移动端优先
+
+三、功能性标签
+	1.数据列表
+	<input type="text" list="idName">
+	<datalist id="idName">
+		<option value="值1">
+		<option value="值2">
+		<option value="值3">
+	</datalist>
+
+	2.折叠展开项
+	<details>
+		<summary>标题</summary>
+		<div>详细内容...</div>
+	</details>
+
+	3.标记
+	<mark>内容</mark>
+
+	4.刻度条围条
+	<meter></meter>
+		-value="默认值"
+		-min="最小值"
+		-max="最大值"
+		-low="低预警值"
+		-high="高预警值"
+		-optimum="最佳优化值"
+
+		1) low < optimum < high 黄-绿-黄
+		2) min < optimum < low 绿-黄-红
+		3) high < optimum < max 红-黄-绿
+
+	5)进度条
+	<progress max="最大值" min="最小值"></progress>
+
+	主要集合了html+css+js功能特征:(自己也可以定制模块}
+
+	contenteditable="true/false"
+	 - true:可编辑
+	 - false:不可编辑
+	data-自定义
+		可以存储一些私有数据(跟后端交互用得较多)
+
+四、新型表单控件(type类型)
+	1.邮箱(是否包含@)
+		<input type="email">
+
+	2.网址(是否以http://开头)
+		<input type="url">
+
+	3.数字类型
+		<input type="number" min="最小值" max="最大值" value="默认值" step="步长">
+
+	4.日期(年/月/日)
+		<input type="date">
+		<input type="month">
+
+	5.控制条/滑动条
+		<input type="range" min="最小值" max="最大值" value="默认值" step="步长">
+
+	6.颜色
+		<input type="color">
+	----------------------------------
+
+	新的属性:
+		1)placeholder="背景提示文字"
+		2)required="required"	必填项
+		3)autofocus="autofocus"	自动获取焦点
+		4)form="formeId"			绑定到表单(可以提交表单到外数据)
+			<input type="text" form="form1">
+			<form action="index.php" id="form1">
+		5)pattern="正则验证"
+			指定严谨的验证规则
+			主要验证字符串
+
+五、JS对象:正则对象RegExp
+	1.语法
+	<script>
+		// 1)创建正则对象
+		var reg1 = new RegExp('匹配模式');
+		// 2)字面量
+		var reg2 = /匹配模式/;
+	</script>
+

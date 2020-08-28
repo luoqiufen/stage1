@@ -1,0 +1,145 @@
+第二章 CSS
+第二天
+
+一、CSS选择器
+	选择器:匹配查找标签元素
+
+	1.基本选择器
+		1)标签选择器
+			<style>
+				标签名{}
+				p{} /*--所有的p标签--*/
+				div{}
+				a{}
+			</style>
+
+		2)class类选择器(class名可以多个,空格隔开)
+			<div class="className1 className2 ..."></div>
+			<p class="className2 className2 ..."></p>
+			<style>
+				.类名{}
+				.className1{}
+				.className2{}
+			</style>
+
+		3)id选择器(id名只能有一个)
+			<h1 id="idname"></h1>
+			<style>
+				#id名
+				#idname{}
+			</style>
+
+		4)属性选择器
+			<style>
+				[属性名=值]{}
+				[属性名=值][属性名=值]{}
+				
+				/* 常用写法 */
+				标签名[属性名=值]{}
+				.className[属性名=值]{}
+
+				input[name=uname]{}
+				input[type=password]{}
+			</style>
+
+		5)通配选择器
+			<style>
+				匹配所有标签元素
+				*{}
+			</style>
+
+	2.复合选择器(组合)
+		1)迭代(父子级)
+			<style>
+				/* 1>允许隔代查找 */
+				父级 子级 子级...{}
+				table tr td{}
+				table td{}
+
+				/* 2>不允许隔代,必须逐级查找 */
+				父级>子级>子级>...{}
+				table>tr>td{}
+			</style>
+
+		2)兄弟级选择器(找下一个弟弟)
+			<style>
+				哥哥+弟弟{}
+			</style>
+
+		3)并集选择器(类似于公共类)
+			<style>
+				选择器1,选择器2,选择器3...{}
+			</style>
+
+		4)交集选择器
+			<p class="t1"></p>
+			<h1 class="t1"></h1>
+			<style>
+				选择器1选择器2{}
+				p.t1{}
+				h1.t1{}
+			</style>
+
+	3.伪(类)选择器
+		鼠标操作:
+		1)鼠标经过时
+			<style>
+				:hover{}
+				a:hover{}
+			</style>
+		--补充了解--
+		2)鼠标按下与释放之间
+			<style>
+				:active{}
+			</style>
+		3)鼠标访问过后
+			<style>
+				:visited{}
+			</style>
+		4)默认链接状态 
+			<style>
+				:link{}
+			</style>
+		----------------------------
+		5)获取焦点状态
+			<style>
+				:focus{}
+				input:focus{}
+			</style>
+
+		----------------------------
+		<style>
+			1> :first-child{}  第一个孩子
+			2> :last-child{}   最后一个孩子
+			3> :nth-child(3){} 第三个孩子
+
+			/* 主要适用于段落 */
+			1> :first-line{}   首行
+			2> :first-letter{} 首字符
+
+			/* 添加伪元素 */
+			1> :before{content:"文字内容";}
+			2> :after{content:url(图片地址);}
+
+		</style>
+			
+	4.选择器权重
+
+二、CSS样式
+	1.列表修饰
+		<style>
+			ul{
+				/* 列表符号类型 */
+				list-style-type: circle;
+				/* 列表符号为自定义图片 */
+				list-style-image: url(图地址);
+				/* 列表符号位置:相对于li的位置; */
+				list-style-position: inside;
+				list-style-position: outside; /*默认*/
+
+				/* 把左侧内间距去掉 */
+				padding-left: 0;
+			}
+
+		</style>
+

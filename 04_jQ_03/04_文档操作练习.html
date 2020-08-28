@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_文档操作练习</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+	$(function(){
+		$('input[type=button]').click(function(){
+			var num = $('form p').length+1
+			$(this).before('<p>图片'+num+': <input type="file"></p>');
+
+		})
+
+
+	})
+	</script>
+</head>
+<body>
+	<form action="index.php">
+		<h3>添加图片</h3>
+		<p>图片1: <input type="file"></p>
+		<input type="button" value="添加图片">
+	</form>
+</body>
+</html>

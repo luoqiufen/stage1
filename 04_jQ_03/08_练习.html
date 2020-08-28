@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		// 需求:
+		// - 输入框失去焦点:做验证 不得低于1大于20
+		// - 点击左右按钮：数目+1/-1
+		// - 点击删除按钮：删除该商品
+		// - 点击清空购物车：清空
+		// 注意:每个商品总价要更新
+		
+		$(function(){
+			// 1)验证输入框
+			/*$('input[type=text]').blur(function(){
+				if($(this).val()<1||$(this).val()>20){
+					alert('数量在1-20之间');
+					return;
+				}
+			})*/
+
+			// 2)点击左右按钮,改变数量
+			$('input[value="+"]').click(function(){
+				var value = $(this).prev().val();
+					value++;
+					$(this).prev().val(value);
+
+					sumPrice($(this).prev());//总价
+			})
+
+			$('input[value="-"]').click(function(){
+				var value = $(this).next().val();
+					value--;
+					$(this).next().val(value);
+
+					sumPrice($(this).next());//总价
+			})
+
+			// 点击删除按钮,清空商品
+			$('td a').click(function(){
+				$(this).parent().parent().remove();
+				order();//排序
+			})
+				
+			// 清空购物车效果
+			$('p>a').click(function(){
+				$('table').remove()
+			})
+
+			// 商品总价
+			$('input[type=text]').blur(function(){
+				sumPrice(this);
+			})
+
+			function sumPrice(obj){
+				var price = $(obj).parent().prev().text();
+				var num = $(obj).val();
+
+				// 当数量不符合要求时，数量默认为1或20
+				if (!(num>=1 && num <=20)) {
+					if(num>20){
+						num = 20;
+						$(obj).val(num);
+					}else{
+						num = 1;
+						$(obj).val(num);
+					}
+					alert('数量在1-20之间');
+				}
+				$(obj).parent().next().text(price*num);
+			}
+
+			// 排序
+			function order(){
+				for(k=1;k<$('table tr').length;k++){
+					$('table tr:eq('+k+') td:first-child').text('00'+k);
+				}
+			} 
+			/*function order(){
+				$('table tr').each(function(index, el) {
+				$(el).find('td:first-child')text('00'+k);
+				}
+			}*/
+		})
+	</script>
+</head>
+<body>
+
+<table border="1" borercolor=red cellspacing="0" cellpadding="10">
+	<tr>
+		<td>编号</td>
+		<td>商品名</td>
+		<td>价格</td>
+		<td>数目</td>
+		<td>总价</td>
+		<td>编辑</td>
+	</tr>
+	<tr>
+		<td>001</td>
+		<td>小王子</td>
+		<td>20</td>
+		<td>
+			<input type="button" value="-">
+			<input type="text" value="1">
+			<input type="button" value="+">
+		</td>
+		<td>20</td>
+		<td>
+			<a href="#">删除</a>
+		</td>
+	</tr>
+	<tr>
+		<td>002</td>
+		<td>十万个为什么？</td>
+		<td>25</td>
+		<td>
+			<input type="button" value="-">
+			<input type="text" value="1">
+			<input type="button" value="+">
+		</td>
+		<td>25</td>
+		<td>
+			<a href="#">删除</a>
+		</td>
+	</tr>
+	<tr>
+		<td>003</td>
+		<td>嫌疑人X的献身</td>
+		<td>18</td>
+		<td>
+			<input type="button" value="-">
+			<input type="text" value="1">
+			<input type="button" value="+">
+		</td>
+		<td>18</td>
+		<td>
+			<a href="#">删除</a>
+		</td>
+	</tr>
+</table>	
+<p><a href="#">清空购物车</a></p>
+
+<!-- 作业二:06-文档操作案例：排序问题 -->
+</body>
+</html>

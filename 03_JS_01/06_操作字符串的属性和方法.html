@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_操作字符串的属性和方法</title>
+</head>
+<body>
+	<script>
+		// string类型
+		// 1)声明string变量
+		var str1 = "字符串数据类型";
+		console.log(str1);
+		// 2)获取长度
+		console.log(str1.length);// 7
+
+		// 方法
+		// 1)查找字符 正序
+		// str2.indexOf(找谁[,起始位置0])
+		var str2 = "one world,one dream!";
+		console.log(str2.indexOf('l'));// 7
+		console.log(str2.indexOf('o'));// 0
+		console.log(str2.indexOf('w'));// 4
+		console.log(str2.indexOf('n'));// 1
+
+		console.log(str2.indexOf('t'));// -1
+		console.log(str2.indexOf('p'));// -1
+		console.log(str2.indexOf('n',5));// 11
+
+		// 2)查找字符 倒叙
+		// str2.lastIndexOf(substr[, start])
+		console.log(str2.lastIndexOf('o'));// 10
+		console.log(str2.lastIndexOf('t'));// -1
+
+		// 3)替换字符
+		// str3.replace('旧值', '新值')
+		var str3 = 'html语言,js语言,css语言';
+		console.log(str3);
+		console.log(str3.replace('语言','Language')); // htmlLanguage,js语言,css语言
+		// 当前只替换一次
+		
+		// 4)转换大写
+		var str4 = 'javascript';
+		console.log(str4.toUpperCase());//JAVASCRIPT
+
+		// 5)转换小写
+		var str5 = 'JAVASCRIPT';
+		console.log(str5.toLowerCase());//javascript
+		
+		
+	</script>
+</body>
+</html>

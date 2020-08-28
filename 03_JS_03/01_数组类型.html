@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_数组类型</title>
+</head>
+<body>
+	<script>
+		// 需求:存储班级学生信息
+		// var stu1='小红';stu2='小明',stu4='小华',stu='小梅';
+		
+		// 用数组可以存储多个信息
+		var webClass=['小红','小明','小华','小梅'];
+		console.log(webClass);
+
+		// 取值:根据下标取值 数组名[下标]
+		console.log(webClass[0]);
+		console.log(webClass[2]);
+
+		// 修改值:数组名[下标]=新值
+		// 方法1
+		webClass[2]='小白';
+
+		console.log(webClass);
+
+		// 方法2:声明一个空数组,再往里添加值
+		var arr1=[];
+		console.log(arr1);
+			arr1[0]='Apple';
+			arr1[1]='Banana';
+			arr1[2]='Pear';
+
+		console.log(arr1);
+
+		// 方法3:
+		var arr2=new Array('aa','bb','cc');
+		console.log(arr2)
+
+
+	</script>
+</body>
+</html>

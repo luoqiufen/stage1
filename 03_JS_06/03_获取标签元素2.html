@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_获取标签元素2</title>
+	<style>
+		.item1,.item2{
+			width: 280px;
+			line-height: 40px;
+			margin: 20px 0;
+		}
+		.item1{
+			border: 1px solid #961010;
+		}
+		.item2{
+			border: 1px solid #2B51E9;
+		}
+	</style>
+</head>
+<body>
+	<div class="item1">
+		<h3>国际新闻</h3>
+		<ul>
+			<li>新闻1</li>
+			<li>新闻2</li>
+			<li>新闻3</li>
+		</ul>
+	</div>
+	<div class="item2">
+		<h3>国际新闻</h3>
+		<ul>
+			<li>新闻11</li>
+			<li>新闻22</li>
+			<li>新闻33</li>
+			<li>新闻44</li>
+		</ul>
+	</div>
+
+	<script>
+		// 直接找div盒子1
+		var div_1=document.getElementsByClassName('item1');
+		console.log(div_1[0]);
+		// 找盒子1里面的h3
+		var h3_1=div_1[0].getElementsByTagName('h3');
+		console.log(h3_1[0]);
+		// 找盒子1里面的列表里的每一行
+		var lis_1=div_1[0].getElementsByTagName('li');
+		console.log(lis_1);
+	</script>
+
+	<script>
+		// 找div盒子2
+		var div_2=document.querySelector('.item2');
+		console.log(div_2);
+
+		var div_2=document.querySelectorAll('.item2');
+		console.log(div_2);
+
+		// 找盒子3里面的h3
+		var h3_2=document.querySelector('.item2 h3');
+		console.log(h3_2);
+
+		// 找盒子2里面的列表li
+		var lis_2=document.querySelectorAll('.item2 ul li');
+		console.log(lis_2);
+
+
+	</script>
+</body>
+</html>

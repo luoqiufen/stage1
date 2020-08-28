@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_Math对象</title>
+</head>
+<body>
+<script>
+	// Math数学对象
+	
+	// 向上取整
+	console.log(Math.ceil(10));//=>10
+	console.log(Math.ceil(10.01));//=>11
+	console.log(Math.ceil(10.98));//=>11
+	console.log(Math.ceil(-10.98));//=>-10
+	console.log('-----------------');
+
+	// 向下取整
+	console.log(Math.floor(11.50));//=>11
+	console.log(Math.floor(10.01));//=>10
+	console.log(Math.floor(10.98));//=>10
+	console.log(Math.floor(-10.98));//=>-11
+	console.log('-----------------');
+
+	// 四舍五入取整
+	console.log(Math.round(11.50));//=>12
+	console.log(Math.round(10.01));//=>10
+	console.log(Math.round(10.98));//=>11
+	console.log(Math.round(-10.98));//=>-11
+	console.log('-----------------');
+
+	// 幂运算
+	console.log(Math.pow(2,5));//32
+	console.log(Math.pow(2,3));//8
+	console.log(Math.pow(3,3));//27
+	console.log('-----------------');
+
+	// 随机数 [0,1)
+	console.log(Math.random());
+
+	// 0-20之间的随机(整)数
+	var num1=Math.ceil(Math.random()*20);
+	console.log(num1);//[0,20]
+
+	var num2=Math.floor(Math.random()*20);
+	console.log(num2);//[0,20)
+
+	var num3=Math.round(Math.random()*20);
+	console.log(num3);//[0,20]
+
+	var num4=parseInt(Math.random()*20);
+	console.log(num4);//[0,20)
+	console.log('-----------------');
+
+	// 定义一个数组
+	var arr=['小红','小蓝','小紫','小花','小绿','小橙','小黄','小青','狗蛋','二娃子'];
+
+	// 随机抽一名学生分享
+	// 得到一个随机下标 [0,arr.length-1]
+	console.log(arr.length);//10 [0-11]
+
+	var i=Math.round(Math.random()*(arr.length-1));
+	console.log(i);
+	console.log(arr[i]);
+
+</script>
+</body>
+</html>

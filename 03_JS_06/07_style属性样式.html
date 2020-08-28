@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_style属性样式</title>
+</head>
+<body>
+	<p class="p1" style="border:1px solid red; width:200px;">段落文本1</p>
+
+	<script>
+		// 1)找到p标记
+		var p1_obj=document.querySelector('.p1');
+		console.log(p1_obj);
+		// 找到style
+		console.log(p1_obj.style);//
+		// 修改style样式
+		p1_obj.style="height:100px;background:pink";
+
+		// 获取style里面的单个样式
+		console.log(p1_obj.style.background);//pink
+		console.log(p1_obj.style.height);//100px
+
+		//修改背景色
+		p1_obj.style.background='#97F8C4';
+		p1_obj.style.color='blue';
+		p1_obj.style.fontSize='30px';
+		p1_obj.style.width='300px';
+		p1_obj.style.textAlign='center';
+		p1_obj.style.lineHeight='100px';
+		// p1_obj.style['lineHeight']='100px';
+
+		// 清空样式
+		p1_obj.style.color='';
+
+	</script>
+</body>
+</html>

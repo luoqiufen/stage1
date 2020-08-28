@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_边框</title>
+	<style>
+		/* 1)标签选择器: 标签名{} */
+		h1{
+			border-width: 2px;
+			border-color: rgba(0,0,255,0.3);
+			 border-style: solid;/*实线 */
+		}
+		h2{
+			border-width: 4px;
+			border-color: rgba(255,0,0,0.5);
+			border-style: dashed;/短虚线 */
+		}
+		h3{
+			border-width: 4px;
+			border-color: rgba(0,255,255,1);
+			border-style: dotted;/*点虚线 */
+		}
+		h4{
+			border-width: 4px;
+			border-color: rgba(0,255,255,1);
+			border-style: double;/*双边框 */
+		}
+		hr{
+			order-width: 3px;
+			border-color: orange;
+			border-style: dashed;
+		}
+		h5{
+			border-width: 4px;
+			border-color: rgba(255,255,0,1);
+			border-style: ridge;/*凸槽 */
+		}
+		h6{
+			border-width: 4px;
+			border-color: rgba(0,255,0,1);
+			border-style: groove;/*凹槽 */
+		}
+		div{
+			width: 300px;
+			height: 200px;
+			/* border-top-width: 4px;
+			border-top-color: skyblue;
+			border-top-style: solid;
+
+			border-bottom-width: 4px;
+			border-bottom-color: #2EED55;
+			border-bottom-style: dashed;
+
+			border-left-width: 4px; 
+			border-left-color: #EF3496;
+			border-left-style: dotted;
+
+			border-right-width: 4px;
+			border-right-color: #EE4545;
+			border-right-style: double; */
+
+			/* 合并写法 */
+			border-top: 4px skyblue solid;
+			border-bottom: 4px #2EED55 dashed;
+			border-left: 4px #EF3496 dotted;
+			border-right: 4px #EB5B1D double;
+
+			/* border: 3px blue solid; */
+		}
+
+	</style>
+</head>
+<body>
+	<h1>标题1</h1>
+	<h2>标题2</h2>
+	<h3>标题3</h3>
+	<h4>标题4</h4>
+	<hr>
+	<h5>标题5</h5>
+	<h6>标题6</h6>
+
+	<div></div>
+</body>
+</html>

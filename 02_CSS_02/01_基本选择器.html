@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_基本选择器</title>
+	<style>
+		/* 1.标签选择器 */
+		h1{
+			border: 2px solid blue;
+		}
+		/* 2.class类选择器 */
+		.p1{
+			border: 2px dashed red;
+		}
+		.p2{
+			background: pink;
+		}
+		.p3{
+			width: 300px;
+			height: 100px;
+		}
+		.p5{
+			border: 3px double green;
+			background: #C6F8CC;
+			width: 200px;
+			height: 150px;
+		}
+		/* 3.id选择器 */
+		#box1{
+			width: 400px;
+			height: 120px;
+			border: 2px solid purple;
+		}
+		#box3{
+			width: 500px;
+			height: 180px;
+			border: 2px dotted orange;
+		}
+		.box{
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+			color: red;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<h1>标题1-1</h1>
+	<h1>标题1-2</h1>
+	<h1>标题1-3</h1>
+
+	<p class="p1 p3">段落1</p>
+	<p class="p2 p3">段落2</p>
+	<p class="p1 p3">段落3</p>
+	<p class="p2 p3">段落4</p>
+	<p class="p5">段落5</p>
+
+	<div id="box1" class="box">div盒子1</div>
+	<div id="box1" class="box">div盒子2</div>
+	<div id="box3" class="box">div盒子3</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_选择器筛选</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		// 1)第一行
+		$('.list1 li:first-child').css({
+			'background':'pink',
+		});
+		$('.list1 li:first').css('text-indent','20px');
+		// 2)最后一行
+		$('.list1 li:last-child').css({
+			'background':'skyblue',
+		});
+		$('.list1 li:last-child').css('text-indent','40px');
+		// 3)第四行
+		$('.list1 li:nth-child(4)').css({
+			'background':'orange',
+		});
+		$('.list1 li:eq(3)').css('text-indent','30px');
+		$('.list1 li').eq(3).css('border','2px solid black');
+
+
+		// $('.list1 li:not(.row)').css('background','purple');
+
+		$('ul li:odd').css('background','#D2A0F3');//奇数下标
+		$('ul li:event').css('background','white');//偶数下标
+
+		$('ul li:gt(4)').css('border','2px dashed blue');//下标大于4
+		$('ul li:lt(4)').css('border','2px dashed blue');//下标小于4
+
+
+
+
+	})
+
+
+	</script>
+	<style>
+		.list1{
+			width: 300px;
+			padding-left: 0;
+			border: 1px solid red;
+			list-style-position: inside;
+			line-height: 40px;
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="list1">
+		<li><a href="">标题1</a></li>
+		<li><a href="">标题2</a></li>
+		<li><a href="">标题3</a></li>
+		<li><a href="">标题4</a></li>
+		<li><a href="">标题5</a></li>
+		<li class="row"><a href="">标题6</a></li>
+		<li><a href="">标题7</a></li>
+		<li><a href="">标题8</a></li>
+	</ul>
+</body>
+</html>

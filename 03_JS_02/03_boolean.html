@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_boolean</title>
+</head>
+<body>
+	<script>
+	// boolean类型
+	var boo=true;
+	console.log(boo);//true
+	console.log(typeof(boo));//boolean
+
+	var boo2=false;
+	console.log(boo2);//false
+	console.log(typeof(boo));//boolean
+
+	console.log('true');
+
+	// 比较运算
+	var rs=18<'apple123'.length;
+	console.log(rs);//false
+	console.log(typeof(rs));//boolean
+
+	// 检验用户名是否有特殊字符@
+	var uname=prompt("请输入您的用户名");
+	uname.indexOf('@');
+	console.log(uname.indexOf('@')==-1)
+
+	</script>
+</body>
+</html>

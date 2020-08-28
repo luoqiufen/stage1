@@ -1,0 +1,132 @@
+第二章 CSS
+第一天
+
+一、CSS介绍
+	1.CSS是什么?
+		Cascading Style Sheet:层叠样式表
+
+	2.文件格式：.css
+
+	3.CSS写在哪?
+	  1)写在标签的style属性里：只作用于当前一个标签
+	  	<p style="css样式"></p>
+	  2)写在style双标签里：作用于当前页面匹配的标签
+		<style>
+		  	选择器{css样式}
+		</style>
+	  3)写在外部css文件里：作用于整个项目
+	  	index.css文件
+	  	  选择器{css文件}
+	  	index.html文件
+	  	  <link rel="stylesheet" href="index.css">
+
+	4.注释符
+		  /*  */
+
+二、CSS语法
+	样式名1:值1;样式名2:值2;样式名3:值3;...
+
+三、CSS样式
+	1.宽高
+	  width:100px;
+	  height:100px;
+
+	2.边框样式
+	  border-width:2px;
+	  border-color:red;
+	  			   #FF0000; 十六进制(F4快捷键)
+	  			   rgb(255,0,0)
+	  			   rgba(255,0,0,1) a: 0-1 透明度
+	  			   transparent; 透明
+	  border-style:solid;	实线
+	  			   dashed;	短虚线
+	  			   dotted;	点虚线
+	  			   double;	双边框
+	  			   none;	无
+	  			   ridge;	凸槽
+	  			   groove;	凹槽
+
+	  合并写法：值不分先后顺序
+	  - 单边框：
+	 	border-top: 4px skyblue solid;
+		border-bottom: 4px #2EED55 dashed;
+		border-left: 4px #EF3496 dotted;
+		border-right: 4px #EB5B1D double;
+
+	  - 四个方向一致：
+	  	border: 3px blue solid;
+
+	3.外轮廓(没有方向)
+		outline:1px solid red;
+		outline-offset:2px/-2px;
+
+		border和outline:
+		- border占位置,outline不占位置
+		- border可以有单边框,outline无
+		- border是外边框,outline可以设置内边框
+
+	4.背景
+		1)背景色
+		  background-color:red;
+
+		2)背景图
+		  - 图地址
+		  background-image:url(图地址)
+		  - 平铺方式
+		  background-repeat:repeat;
+							repeat-x;
+							repeat-y;
+							no-repeat;
+		  - 位置:水平 垂直
+		  background-position:left top;
+		  水平:left/center/right/20px/-20px
+		  垂直:top/center/bottom/20px/-20px
+
+		  注:正值	向右向下
+		  	 负值	向左向上
+
+		  固定背景图,不被滚动条拖走
+		  background-attachment: fixed;
+
+		  background-size:宽 高;
+		----------------------------------------
+		合并:
+		  1)background: skyblue;
+		  2)background: url(img/e.jpg) no-repeat left bottom; 
+		  3)background: url(img/e.jpg) no-repeat center skyblue;
+
+	5.文本(可以继承)
+		1)font-size:16px/2em/2rem;		文字大小
+			em: 参考父级
+			rem:参考html
+
+		2)font-family:宋体/微软雅黑;	字体
+		  font-family:"Brush Script Std";
+		  font-family:宋体,Arial;
+
+		3)color:red;					字体颜色
+
+		4)font-weight:bold/nomal;		加粗/去除加粗
+		5)font-style:italic/normal;		倾斜/去除倾斜
+
+		6)text-decoration:overline;		上划线
+						  underline;	下划线
+						  line-through;	删除线
+						  none;			无
+
+		7)line-height:20px;				行高
+		  (单行文字 行高=高度 可实现垂直居中)
+
+		8)text-align:left/center/right;	水平对齐
+
+		9)text-indent:15px/2em;			首行缩进
+
+	拓展:
+		1)word-spacing:20px;		英文单词词间距(识别空格)
+		2)letter-spacing:20px;		字符间距
+
+
+	作业:	1.歌曲
+			2.古诗词
+			4.css样式
+			4.css练习(2个)

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_文档操作案例</title>
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script>
+		$(function(){
+			// 1)点击"添加"增加一项工作经历
+			$('form>input[type=button]').click(function(){
+				$(this).before($('form .item:first').clone(true));
+				order();
+			})
+
+			// 点击"删除",该项被删掉
+			// 至少保留一项
+			$('.item input').click(function(){
+				if($('form .item').length>1){
+					$(this).parent().remove();
+					order();
+				}
+			})
+
+			// 排序
+			function order(){
+				for(k=0;k<$('form .item').length;k++){
+					$('form span').eq(k).text('工作经历'+(k+1)+':');
+				}
+			} 
+		})
+
+	</script>
+	<style>
+		form{
+			width: 400px;
+			border: 1px solid red;
+		}
+		.item{
+			border: 1px solid #F38AFB;
+			margin: 10px;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<form action="index.php">
+		<div class="item">
+			<span>工作经历1:</span>
+			<textarea></textarea>
+			<input type="button" value="删除">
+		</div>
+		<input type="button" value="添加">
+	</form>
+</body>
+</html>

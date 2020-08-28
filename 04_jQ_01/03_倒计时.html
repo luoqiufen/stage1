@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_倒计时</title>
+	<style>
+	.p1{
+		width: 500px;
+		line-height: 40px;
+		border: 1px solid red;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	</style>
+</head>
+<body>
+	<p class="p1">
+		登录成功, <span>5</span> 秒之后跳转到首页
+	</p>
+
+	<script>
+		setInterval(function(){
+			var span=document.querySelector('.p1 span');
+			if(span.innerHTML>0){
+				span.innerHTML--;
+			}else{
+				window.location.href="../03_JS_07/07_导航切换2.html"
+			}
+		},1000)
+
+	</script>
+</body>
+</html>

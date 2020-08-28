@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_画布</title>
+	<style>
+	#can1{
+		border: 1px solid red;
+	}
+	</style>
+</head>
+<body>
+	<canvas id='can1' height="300"></canvas>
+
+	<script>
+		// 1)找到画布
+		var can1 = document.querySelector('#can1');
+		console.log(can1)
+		// 2)确定创建'2d'图像
+		var pic = can1.getContext("2d");
+		// 3)设置属性和挑选工具
+		// 粉色填充,红色描边
+		// 矩形:100*100
+		pic.fillStyle='pink';
+		pic.strokeStyle='red';
+		pic.rect(10, 20, 100, 100);
+		pic.fill();//实际绘制(填充)
+		pic.stroke();//实际绘制(描边)
+	</script>
+</body>
+</html>

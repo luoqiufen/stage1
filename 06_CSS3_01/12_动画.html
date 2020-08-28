@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12_动画</title>
+	<style>
+		.box{
+			width: 60px;
+			height: 60px;
+			background: red;
+			border-radius: 50%;
+			/* 执行动画 */
+			animation:move 2s infinite;
+		}
+
+		/* 定义动画 */
+		@keyframes move{
+			0%{
+				margin-left: 20px;
+				background: green;
+			}
+			20%{
+				margin-left: 200px;
+				background: orange;
+			}
+			50%{
+				margin-top: 200px;
+				background: blue;
+			}
+			75%{
+				margin-left: 0;
+				margin-top: 200px;
+				background: yellow;
+			}
+			100%{
+				margin-left: 0;
+				margin-top: 0;
+				background: red;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

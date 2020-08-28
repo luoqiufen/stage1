@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_数组的循环遍历</title>
+</head>
+<body>
+	<script>
+		var arr1=['aa','bb','cc','dd'];
+
+		for(var i=0;i<arr1.length;i++){
+			document.write('<p>'+arr1[i]+'</p>')
+		}
+
+		// for-in循环
+		// k变量是隐式的指针,会自动的指向下一个
+		for(var k in arr1){//k 就是记录下标
+			console.log(k);
+			console.log(arr1[k]);
+		}
+
+		// 关联数组
+		var arr2=[];
+			arr2['code']='1001';
+			arr2['uname']='apple';
+			arr2['age']=18;
+			arr2['address']='大行宫科巷10号';
+
+		var len=0;//关联数组长度,默认为0
+		for(var j in arr2){
+			len++;//长度+1
+			document.write(j+':'+arr2[j]+'<br>')
+		}
+		document.write('关联数组的长度是'+len);
+		// 如何获取关联数组的信息个数?
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	dl{
+		width: 200px;
+		border:1px solid #333;
+		line-height: 30px;
+		margin:20px;
+		background: #efefef;
+	}
+	/* 一级标题 */
+	dl dt{
+		line-height: 34px;
+		text-indent: 14px;
+		background:#ccc url(img/close.png) no-repeat right center; 
+	}
+	/*展开箭头*/
+	dl dt.current{
+		background:#ccc url(img/open.png) no-repeat right center;
+	}
+
+	/* 二级 */
+	dl dd{
+		border-bottom: 1px dashed #ccc;
+		text-indent: 34px;
+		display: none;
+	}
+	dl dd:last-child{
+		border-bottom: 0;
+	}
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		//1)初始状态：
+		// 第一项展开:
+		// 第一组dd显示，dt加current类
+		$('dl dt').prev().css('border-bottom',0);
+		$('dl dt:first').addClass('current').nextUntil('dt').show();
+		//2)点击dt：
+		//展开二级，关闭其他的二级
+		$('dl dt').click(function(){
+			//当前的图标切换，二级切换			
+			$(this).toggleClass('current');
+			// $('dl dd').hide();
+			$(this).nextUntil('dt').slideToggle();
+			
+			//其他的dt关闭，二级隐藏
+			$(this).siblings('dt').removeClass('current');
+			$(this).siblings('dt').nextUntil('dt').slideUp();				
+		});
+
+	})
+	</script>
+</head>
+<body>
+<dl>
+	<dt>HTML</dt>
+	<dd>HTML标记</dd>
+	<dd>W3C标准</dd>
+	<dd>HTML属性特征</dd>
+
+	<dt>CSS</dt>
+	<dd>CSS语法</dd>
+	<dd>CSS样式</dd>
+	<dd>CSS选择器</dd>
+	
+	<dt>JS</dt>
+	<dd>JS语法</dd>
+	<dd>ECMA标准</dd>
+	<dd>JS流程语句</dd>
+	<dd>JS函数</dd>
+</dl>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_function函数应用2</title>
+</head>
+<body>
+	<input type="button" value="红色" onclick="changeBg('pink');">
+	<input type="button" value="蓝色" onclick="changeBg('#ACDCF6');">
+	<input type="button" value="绿色" id="btn3">
+
+
+
+	<script>
+		// 定义一个函数:改变背景颜色
+		// 命名函数/自定义函数
+		function changeBg(color){
+			document.body.bgColor=color;
+		}
+
+		// 1)点击按钮,变换页面背景
+		// 匿名函数
+		console.log(btn3);
+		btn3.onclick=function(){
+			document.body.bgColor='#9BF7BC';
+		}
+
+
+	</script>
+</body>
+</html>

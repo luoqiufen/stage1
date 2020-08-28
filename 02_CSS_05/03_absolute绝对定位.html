@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_absolute绝对定位</title>
+	<style>
+		html{
+			border: 2px dotted #D704F7;
+			height: 1000px;
+		}
+
+		body{
+			border: 2px dotted #08FBEA;
+			height: 900px;
+			position: absolute;
+		}
+
+		.father{
+			width: 600px;
+			margin: 20px auto;
+			border: 3px solid black;
+			height: 500px;
+			position: absolute;
+		}
+
+		.son{
+			width: 400px;
+			height: 300px;
+			border: 2px dashed skyblue;
+			position: absolute;
+		}
+
+		.son .red{
+			width: 400px;
+			height: 100px;
+			background: red;
+			/* 绝对定位 */
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+		}
+		.son .blue{
+			width: 150px;
+			height: 150px;
+			background: blue;
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			/* 纵深 */
+			z-index: 5;
+		}
+		.son .green{
+			width: 200px;
+			height: 200px;
+			background: green;
+			position: absolute;
+			right: 20px;
+			top: 0;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son">
+			<div class="red"></div>
+			<div class="blue"></div>
+			<div class="green"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车交互</title>
+	<link rel="stylesheet" href="购物车交互.css">
+	<script src="jq/jquery-1.6.2.min.js"></script>
+	<script src="购物车交互.js"></script>
+</head>
+<body>
+	<table >
+		<tr>
+			<td><input type="checkbox" class="checkAll"> 全选</td>
+			<td></td>
+			<td>商品信息</td>
+			<td>单价(元)</td>
+			<td>数量</td>
+			<td>金额(元)</td>
+			<td>操作</td>
+		</tr>
+		<tr>
+			<td width="60"><input type="checkbox" name="book"></td>
+			<td><img src="imgs/01.jpg" height="120" width="120" alt=""></td>
+			<td>三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！</td>
+			<td>&yen;<span>79</span></td>
+			<td>
+				<input type="button" value="-">
+				<input type="text" value="1">
+				<input type="button" value="+">
+			</td>
+			<td>&yen;<span>79</span></td>
+			<td>
+				<a href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="book"></td>
+			<td><img src="imgs/02.jpg" height="120" width="120" alt=""></td>
+			<td>你当像鸟飞往你的山（比尔·盖茨年度特别推荐，登顶《纽约时报》畅销榜80 周！多一个人读到这个真实故事，就多...</td>
+			<td>&yen;<span>59</span></td>
+			<td>
+				<input type="button" value="-">
+				<input type="text" value="1">
+				<input type="button" value="+">
+			</td>
+			<td>&yen;<span>59</span></td>
+			<td>
+				<a href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="book"></td>
+			<td><img src="imgs/03.jpg" height="120" width="120" alt=""></td>
+			<td>汪曾祺图文作品集套装共4册：人间有味+人间小暖+人间有趣+人间草木</td>
+			<td>&yen;<span>69</span></td>
+			<td>
+				<input type="button" value="-">
+				<input type="text" value="1">
+				<input type="button" value="+">
+			</td>
+			<td>&yen;<span>69</span></td>
+			<td>
+				<a href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="book"></td>
+			<td><img src="imgs/04.jpg" height="120" width="120" alt=""></td>
+			<td>雅舍小品 （收录 谈话的艺术 骂人的艺术 时间即友谊等）</td>
+			<td>&yen;<span>56</span></td>
+			<td>
+				<input type="button" value="-">
+				<input type="text" value="1">
+				<input type="button" value="+">
+			</td>
+			<td>&yen;<span>56</span></td>
+			<td>
+				<a href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="checkAll"> 全选</td>
+			<td><a href="#">批量删除</a></td>
+			<td class="choose">已选择 0 件商品</td>
+			<td></td>
+			<td>总计:</td>
+			<td class="sumPriceAll">&yen;0</td>
+			<td>结算</td>
+		</tr>
+	</table>
+</body>
+</html>

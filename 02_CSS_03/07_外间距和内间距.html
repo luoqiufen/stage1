@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_外间距和内间距</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		.box{
+			border: 1px solid red;
+		}
+
+		.box h1{
+			border: 1px solid blue;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.box p{
+			border: 1px solid green;
+		}
+
+		.box ul{
+			border: 1px solid purple;
+		}
+
+		.box ul li{
+			border: 1px dotted orange;
+		}
+
+		.box2{
+			width: 400px;
+			border: 2px solid red;
+			margin-left: 20px;
+			margin-top: 50px;
+			padding-top: 20px;
+		}
+
+		.box2 .box3{
+			width: 400px;
+			height: 150px;
+			background: pink;
+			/* margin-top: 20px; */
+			margin-bottom: 30px;
+			padding-top: 20px;
+			padding-left: 40px;
+			padding-right: 10px;
+			padding-bottom: 15px;
+			/* 合并写 */
+			padding: 10px 20px 30px 40px;/* (上.右.下.左) */
+			padding: 10px 20px 30px;	/* (上. 左右. 下) */
+			padding: 10px 20px;			/* (上下. 左右) */
+			padding: 10px;				/* (上下左右) */
+		}
+
+		.box2 .box4{
+			width: 400px;
+			height: 150px;
+			background: skyblue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>标题</h1>
+		<p>段落</p>
+		<ul>
+			<li>第1行</li>
+			<li>第2行</li>
+			<li>第3行</li>
+		</ul>
+	</div>
+
+	<div class="box2">
+		<div class="box3">盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1盒子1</div>
+		<div class="box4">盒子2</div>
+	</div>
+</body>
+</html>

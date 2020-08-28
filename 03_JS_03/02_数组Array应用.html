@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_数组Array应用</title>
+</head>
+<body>
+	<script>
+		// 存储一名学生的详细信息
+		// 学号 姓名 性别 年龄
+		var stu1=['100','小亮','男',19,'计算机'];
+		console.log(stu1);
+
+		// 获取数组长度
+		console.log(stu1.length);//5
+
+		// 查找数组的值
+		console.log(stu1.indexOf('小亮'));//1
+		console.log(stu1.indexOf('小白'));//-1
+
+		ar arr3 = ['aa','bb','aa','cc','dd'];
+		// 	 0	  1    2    3    4
+		console.log(arr3.indexOf('aa'));//0
+		console.log(arr3.indexOf('aa',2));//2
+
+
+		//定义数组
+		// 值可以是任意类型
+		var arr1 = ['aa',15,true];
+		console.log(arr1);
+
+		var arr2 = [];
+			arr2[2] = 'apple';
+			arr2[4] = 20;
+		console.log(arr2);
+
+
+		// 需求:提供一个输入框,输入用户名
+		// 用户名不能使用已经注册过的
+		
+		var uname=prompt('请输入用户名');
+		vip=['apple','banana','red','blue','green'];
+		// 如果已经注册过的用户名
+		if(vip.indexOf(uname)!=-1){
+			console.log('用户名已被注册,请重新输入!');
+		}
+		
+	</script>
+</body>
+</html>

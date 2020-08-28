@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_显示和隐藏</title>
+	<style>
+		.menu{
+			width: 200px;
+			border: 1px solid #7ABEF6;
+			background: #C7E6F8;
+			padding-left: 0;
+			list-style: none;
+			text-indent: 20px;
+		}
+
+		.menu a{
+			color: #333;
+			text-decoration: none;
+		}
+
+		.menu>li>a{
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		.menu>li>ul{
+			padding-left: 0;
+			list-style-type: none;
+		 	display: none;
+		 	text-indent: 80px;
+		 }
+
+		/* 鼠标经过省份,显示对应的城市 */
+		.menu>li:hover ul{
+		 	display: block;
+		 }
+
+	</style>
+</head>
+<body>
+	<ul class="menu">
+		<li>
+			<a href="">江苏省</a>
+			<ul>
+				<li><a href="">南京</a></li>
+				<li><a href="">苏州</a></li>
+				<li><a href="">无锡</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="">浙江省</a>
+			<ul>
+				<li><a href="">杭州</a></li>
+				<li><a href="">温州</a></li>
+				<li><a href="">金华</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="">安徽省</a>
+			<ul>
+				<li><a href="">合肥</a></li>
+				<li><a href="">黄山</a></li>
+				<li><a href="">安庆</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

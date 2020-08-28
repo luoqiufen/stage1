@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局_移动云页面(5).html</title>
+	<style>
+		/* 初始化 */
+		*{margin: 0;padding: 0;}
+		body{background: #F5F5F5;font-family: 微软雅黑}
+		a{text-decoration: none;}
+
+		/* 公共类 */
+		.mar{
+			width: 1000px;
+			margin: 0 auto;
+		}
+
+		.Right{float: right;}
+		.Left{float: left;}
+		.overFlow{overflow: hidden;}
+
+		/* 头部 head */
+		.head-top{
+			line-height: 38px;
+			font-size: 12px;
+		}
+
+		.head-top p a{
+			color: #625C5C;
+		}
+
+		.head-top form input[type=text]{
+			width: 70px;
+			border: 0;
+			background: none;
+			outline: 0;
+			color: #625C5C;
+		}
+
+		.head-top form input[type=text]:hover{
+			background: white;
+			outline: 1px solid #A0F4F4;
+		}
+
+		.head-center{
+			background: white;
+		}
+
+		.head-center .con{
+			line-height: 86px;
+		}
+
+		.head-center .con img{
+			margin-top: 23px;
+		}
+
+		.head-center .con div a{
+			font-size: 25px;
+			margin-left: 40px;
+			color: #333;
+		}
+
+		.head-center .con div .green{
+			color:  #27AC9C;
+		}
+
+		.head-center .con div a:hover{
+			color: #27AC9C;
+		}
+
+		.head-bottom{
+			background: url(img2/im_02.png) no-repeat;
+			 background-size:100% 100%;
+			 height: 510px;	
+		}
+
+		.head-bottom .con{
+			color: white;
+		}
+
+		.head-bottom .con .row1{
+			margin-top: 140px;
+			font-family: "Segoe Script";
+			font-size: 25px;
+			margin-bottom: 	20px;
+		}
+
+		.head-bottom .con .row2{
+			font-size: 50px;
+			color: #FDEB83;
+			width: 400px;
+			margin-bottom: 20px;
+		}
+
+		.head-bottom .con .row3 a{
+			color: white;
+		}
+
+
+
+		/* 内容 content */
+		.content{
+			font-size:25px;
+			color: #938F8F; 
+			text-align: center;
+		}
+		.content p{
+			margin: 25px 0 20px;
+		}
+
+		.content span{
+			display: inline-block;
+			width: 250px;
+			background: white;
+			float: left;
+			outline: 2px solid #F5F5F5;
+			text-align: center;
+			padding: 25px 0;
+		}
+
+		.content .line{
+			line-height: 78px;
+			margin-bottom: 15px;
+			font-weight: bold;
+		}
+
+		.content .line hr{
+			width: 450px;
+			margin-top: 35px;
+			border: 0;
+			height: 1px;
+			background: #E1DBDB;
+		}
+
+		.content-bottom{
+			background: #019481;
+			padding: 50px 0;
+		}
+
+		.content-bottom .con div{
+			width: 320px;
+			height: 90px;
+			display: inline-block;
+			background: white;
+			margin: 50px 0;
+		}
+
+		.content-bottom .con .row2{
+			margin: 50px 20px;
+		}
+
+		.content-bottom .con img{
+			float: left;
+			margin: 17px;
+		}
+
+
+		
+
+		/* 底部 bottom */
+		.bottom-box1{
+			background: white;
+		}
+
+		.bottom-box1 .con .list{
+			width: 250px;
+			line-height: 25px;
+			color: #444;
+			margin: 30px 0;
+		}
+
+		.bottom-box1 .con .list h3{
+			margin-bottom: 15px;
+		}
+
+		.bottom-box1 .con .list p{
+			font-size: 13px;
+		}
+
+		.bottom-box1 .con .list a{
+			color: #444;
+		}
+
+		.bottom-box1 .con .list1{
+			text-align: right;
+		}
+
+		.bottom-box1 .con .list1 a{
+			display: block;
+		}
+
+		.bottom-box1 .con .list1 .tel{
+			font-size: 35px;
+			margin: 10px 0;
+		}
+
+		.bottom-box2{
+			line-height: 50px;
+			font-size: 12px;
+		}
+
+		.bottom-box2 img{
+			margin-top: 19px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 头部 head --> 
+	<div class="head-top mar overFlow">
+		<p class="Left">
+			<a href="">中文</a> |
+			<a href="">EN</a>
+		</p>
+		<form action="" class="Right">
+			<input type="text" value="搜索一下">
+			<input type="image" src="images/img_03.png">
+		</form>
+	</div>
+
+	<div class="head-center overFlow">
+		<div class="con  mar">
+			<img src="images/img_07.png" height="40" width="216" alt="" class="Left">
+			<div class="Right">
+				<a href="">产品</a>
+				<a href="">方案</a>
+				<a href="">新闻</a>
+				<a href="">下载</a>
+				<a href="">联系</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="head-bottom">
+		<div class="con mar overFlow">
+			<p class="row1">Care First ♥</p>
+			<p class="row2">创新产品彰显患者关爱。</p>
+			<p class="row3"><a href="">查看最新发布产品 &gt;</a></p>
+
+
+		</div>
+	</div>
+
+	<!-- 内容 content -->
+	<div class="content mar overFlow">
+		<p class="p1">最受欢迎的产品</p>
+		<div>
+			<span><img src="img2/im_05.png" height="126" width="183" alt=""></span>
+			<span><img src="img2/im_07.png" height="126" width="183" alt=""></span>
+			<span><img src="img2/im_09.png" height="126" width="183" alt=""></span>
+			<span><img src="img2/im_11.png" height="126" width="183" alt=""></span>
+		</div>
+		<div class="line">
+			<hr class="Left" >
+			<img src="img2/im_18.png" height="27" width="16" alt=""> &nbsp;&nbsp;
+			<img src="img2/im_20.png" height="27" width="16" alt="">
+			<hr class="Right">
+		</div>
+	</div>
+	<div class="content-bottom">
+		<div class="con mar overFlow">
+			<div class="row1 Left">
+				<img src="img2/im_28.png" height="55" width="54" alt="">
+
+			</div>
+			<div class="row2 Left">
+				<img src="img2/im_25.png">
+			</div>
+			<div class="row3 Left">
+				<img src="img2/im_31.png">
+			</div>
+		</div>
+	</div>
+	
+	<!-- 底部 bottom -->
+	<div class="bottom-box1 overFlow">
+		<div class="con mar">
+			<div class="list Left">
+				<h3><a href="">服务与支持</a></h3>
+				<p><a href="">服务优势</a></p>
+				<p><a href="">疑难解答</a></p>
+				<p><a href="">荣誉客户</a></p>
+				<p><a href="">在线咨询</a></p>
+			</div>
+			<div class="list Left">
+				<h3><a href="">人才招聘</a></h3>
+				<p><a href="">人才理念</a></p>
+				<p><a href="">招聘职位</a></p>
+				<p><a href="">简历管理</a></p>
+			</div>
+			<div class="list Left">
+				<h3><a href="">关于公司</a></h3>
+				<p><a href="">公司简介</a></p>
+				<p><a href="">企业文化</a></p>
+				<p><a href="">资质荣誉</a></p>
+				<p><a href="">发展历程</a></p>
+				<p><a href="">公司规模</a></p>
+			</div>
+			<div class="list Right list1">
+				<a href=""><img src="images/img_29.png" width="120" alt=""></a>
+				<p class="tel">400-619-0909</p>
+				<p>周一至周日 9:00-18:00(服务时间)</p>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-box2 mar">
+		<span><font color="#27AC9C">网站条款 &nbsp;版权信息 </font>&nbsp;Copyright &copy; 2005 -2014 www.eims.cc All Rights Reserved</span>
+		<img src="images/img_33.png" height="16" width="50" alt="" class="Right">
+	</div>
+
+</body>
+</html>

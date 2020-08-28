@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="">
+	<p class="p1">用户名: <input type="text" name="uname" value="uname" onblur="fun1()"><span></span></p>
+
+	<p class="p2">密码: <input type="password" name="upass" onblur="fun2()"><span></span></p>
+
+	<p class="p3">确认密码: <input type="password" name="repass" onblur="fun3()"><span></span></p>
+
+	<p class="p4" class="p1">验证码: <input type="password" name="upass" onblur="fun4()"><label>Yt2Elp</label><span></span></p>
+
+	<p class="p5">
+		<input type="button" value="提交">
+	</p>
+</form>	
+<script>
+//失去焦点时：做验证，提示信息显示到后边的span里(红色颜色)
+
+//用户名：
+// - 不为空
+// - 长度不低于4
+// - 不包含@/#
+
+function fun1(){
+	var userName=document.querySelector('.p1 input').value;
+	var mess1=document.querySelector('.p1 span');
+
+	console.log(userName);
+
+	if(userName==''){
+		mess1.innerHTML='<font color="red">用户名不能为空</font>';
+	}else if(userName.length<4){
+		mess1.innerHTML='<font color="red">用户名不能低于4位</font>';
+	}else if((userName.indexOf('@')!=-1)||(userName.indexOf('#')!=-1)){
+		mess1.innerHTML='<font color="red">用户名不能包含@/#</font>';
+	}else{
+		mess1.innerHTML='';
+	}
+}
+
+// 密码：
+// - 不为空
+// - 必须为8位密码
+
+function fun2(){
+	var userPass=document.querySelector('.p2 input').value;
+	var mess2=document.querySelector('.p2 span');
+
+	console.log(userPass);
+
+	if(userPass==''){
+		mess2.innerHTML='<font color="red">密码不能为空</font>';
+	}else if(userPass.length!=8){
+		mess2.innerHTML='<font color="red">密码必须为8位数</font>';
+	}else{
+		mess2.innerHTML='';
+	}
+}
+
+// 确认密码：
+// - 不为空
+// - 必须与密码一致
+
+function fun3(){
+	var userRepass=document.querySelector('.p3 input').value;
+	var mess3=document.querySelector('.p3 span');
+
+	var userPass=document.querySelector('.p2 input').value;
+
+	console.log(userRepass);
+
+	if(userRepass==''){
+		mess3.innerHTML='<font color="red">密码不能为空</font>';
+	}else if(userRepass==userPass){
+		mess3.innerHTML='';
+	}
+	else{
+		mess3.innerHTML='<font color="red">密码不一致，请确认密码</font>';
+	}
+}
+
+// 验证码
+// - 不为空
+// - 不区分大小写
+
+function fun4(){
+	var code=document.querySelector('.p4 input').value;
+	var mess4=document.querySelector('.p4 span');
+
+	var tcode=document.querySelector('.p4 label').innerText;
+
+	console.log(code);
+
+	if(code==''){
+		mess4.innerHTML='<font color="red">验证码不能为空</font>';
+	}else if((code.toUpperCase())==(tcode.toUpperCase())){
+		mess4.innerHTML='';
+	}else{
+		mess4.innerHTML='<font color="red">验证码错误！</font>';
+	}
+}
+
+</script>
+
+
+</body>
+</html>

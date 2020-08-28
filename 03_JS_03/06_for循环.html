@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_for循环</title>
+</head>
+<body>
+	<script>
+		for(var i=5;i>0;i--){
+			document.write('<p>段落</p>');
+		}
+
+		/*
+			i:5		5>=0  执行输出
+			i--:4	4>=0  执行输出
+			i--:3	3>=0  执行输出
+			i--:2	2>=0  执行输出
+			i--:1	1>=0  执行输出
+			i--:0	0>=0  执行输出
+			i--:-1	-1>=0 faulse 直接跳出循环,结束
+		 */
+		
+		// 循环:从1开始,到5结束,每次变换+1
+		for (var j=1;j<=5;j++){
+			document.write('<a href=#>新闻'+j+'</a><br>');
+		}
+
+		// 需求1:换行输出5-10之间的整数
+		for(var k=5;k<=10;k++){
+			document.write('<p>'+k+'</p>');
+		}
+
+		// 需求2:换行输出2-20之间的偶数
+		for(var n=2;n<=20;n++){
+			if(n%2==0){//n是偶数
+				document.write('<p>'+n+'</p>');
+			}
+		}
+			
+		// 需求3:换行输出1990-2020年之间的闰年
+		for(var m=1990;m<=2020;m++){
+			if(m%4==0&&m%100!=0||m%400==0){
+				document.write('<p>'+m+'</p>');
+			}
+		}
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,117 @@
+第三章 JS
+第七天
+
+一、DOM样式
+	1.行内样式
+	<script>
+		// 一次性修饰
+		elem.style='样式名1:值1; 样式名2:值2;...'
+		elem.style='width:100; border:1px solid red;'
+
+		// 单个修饰
+		elem.style.样式名=值;
+		elem.style.width='200px';
+		elem.style.textDecoration='none';
+	</script>
+
+	2.类名操作
+	<script>
+		// 1)获取类名
+		elem.className;//'box1'
+		elem.classList;//['box1']
+		// 2)添加类名
+		elem.className+=' box2 box3';//box1 box2
+		elem.classList.add('box2','box3');
+		// 3)清空类
+		elem.className='';
+		elem.classList.remove('box2','box3');
+		// 4)切换类
+		// 默认有:box1
+		elem.classList.toggle('box2');//box1 box2
+		elem.classList.toggle('box3');//box1 box2 box3
+		elem.classList.toggle('box1');//box2 box3
+	</script>
+
+二、form表单相关DOM
+	<script>
+		// 1)获取表单
+		document.forms;//数组
+		// 2)获取指定的表单(根据name)
+		document.forms['login'];
+		// 3)获取表单里的控件
+		document.forms['login']['uname'];
+
+		// -----------------------------
+		
+		// 单选/复选
+		document.forms['login']['gender'];// [input,input]
+		// checked:true/false	选中/未选中
+		
+		// 2)下拉列表
+		var select_obj=document.querySelector('select[name=province]');//select标签
+		// 获取所有的option选项
+		select_obj.options;//[option,option,option]
+		// 获取选中的选项option的索引值(从0开始)
+		select_obj.options.selectedIndex;
+		select_obj.selectedIndex;
+
+		select_obj.value;//选中的option的 value值
+	</script>	
+
+三、DOM事件
+	1.事件类型
+		1)鼠标单击 onclick
+		2)鼠标双击 ondblclick
+		3)获得焦点 onfocus
+		4)失去焦点 onblur
+		5)内容改变 onchange
+		6)加载完成 onload
+		<script>
+		window.onload=function(){
+			// 窗口加载完成触发的事情
+		}
+		</script>
+		7)表单提交 onsubmit(form)
+
+	2.使用方式
+		1)在标签的属性上应用
+		<div onclick="console.log('单击')"></div>
+
+		<div onclick="init()"></div>
+		<script>
+			// 单击div去做什么事情
+			function init(){
+				// 事情流程...
+			}
+		</script>
+
+		2)在js里添加事件属性
+		<p class="p1"></p>
+		<script>
+			// 1)获取p标签
+			var p_obj=document.querySelector('.p1');
+			// 设置onclick属性
+			p_obj.onclick=function(){
+				// 单击p标签 去做的事情
+			}
+		</script>
+
+	3.this关键字
+		是一个指针
+		指向调用该函数(标签元素)的对象
+		<script>
+			var as_obj=document.querySelectorAll(.nav a);
+			for(var k=0;k<as_obj.length;k++){
+				as_obj[k].onclick=function(){
+					// this ->被单击的a
+				}
+			}
+		</script>
+
+	4.event:事件对象
+		事件在触发时,会调用函数,这个函数就叫做事件处理函数
+		事件处理函数里,会自带event对象:记录了事件操作的相关信息
+
+		事件触发的目标元素:
+			event.srcElement
+			event.target

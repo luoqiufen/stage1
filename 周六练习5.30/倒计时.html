@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" value="5">
+	</form>
+</body>
+<script>
+	function countDown(num,url){
+		var count=document.querySelector('input[type=text]').value;
+		if(count==0){
+			window.location.href="../02_CSS_06/苹果官网/index.html";
+		}else{
+			count=count-1;
+		}
+		document.querySelector('input[type=text]').value=count;
+	}
+	setInterval("countDown()",1000);
+	
+</script>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 可视化区域按设备实际比例缩放 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0}
+	.overflowH{overflow:hidden;}
+	.clearBox:after{content: "";display: block;clear:both;}
+
+	header{
+		/*border:1px solid red;*/
+		background: rgba(217,80,80,1);
+		line-height: 40px;
+		color: white;
+		padding:6px 5%;
+	}
+	header.top{
+		width: 90%;
+		position: fixed;
+		top: 0;
+		background: rgba(0,0,0,0.7);
+	}
+	header p{float: left}
+	header ul{
+		/*border:1px solid green;*/
+		float: right;
+	}
+	header ul li{display: inline-block;margin:0 20px;}
+	header a{color: white;text-decoration: none;}
+
+	header #btns{
+		/*border:1px solid red;*/
+		float: right;
+		display: inline-block;width: 40px;text-align: center;
+		position: relative;top: 0;
+		border-radius: 50px;
+		
+		background: rgba(0,0,0,0.6);
+		display: none;
+
+	}
+	/*header #btns.close{display: none;}*/
+
+	/*.sidebar{
+		width: 200px;
+		height: 200px;background: red;
+		position: absolute;
+		right: -300px;
+		top: 40px;
+	}
+	.sidebar li{display: block;}*/
+
+	.mask{width: 100%;height: 100%;position: fixed;top: 0;left: 0;
+		background: rgba(0,0,0,0.7);
+		/*background: red;*/
+		display: none;
+	}
+
+	
+	.container{padding-bottom: 20px;}
+	.back_to_top{
+		/*border:1px solid red;*/
+		display: block;
+		text-align: center;
+		width: 50px;
+		height: 50px;
+		line-height: 25px;
+		background: black;
+		color: white;
+		text-decoration: none;
+		position: fixed;
+		right: 0;bottom: 10px;
+		border-radius: 5px 0 5px 0;
+
+	}
+		img{
+			/*border-radius: 8px;
+			border-radius: 50%;
+			border: 1px solid red;
+			padding: 5px;*/
+			width: 100%;
+			/*height: auto;*/
+		}
+		
+		.box{
+			/*border: 1px solid red;*/
+			width: 20%;
+			box-shadow: 
+			0 4px 8px 0 rgba(0,0,0,0.2),
+			0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			margin-left: 4%;
+			/*margin-right: 5%;*/
+			margin-top: 15px;
+			float: left;
+		}
+		.box img{width: 100%;}
+		.box .con{text-align: center;line-height: 40px;}
+		.div1{
+			clear: both;
+			width: 90%;
+			border:1px solid #ccc;
+			padding: 10px;
+			margin: 40px auto;
+			column-count: 3;/*列数*/
+			column-gap: 40px;/*间隙*/
+			column-rule:1px #ccc  dotted;
+			word-break:hyphenate;
+			
+		}
+		footer{
+			padding-top: 20px;
+			padding-bottom: 20px;
+			line-height: 40px;
+			text-align: center;
+			background: rgb(217,80,80);
+			color: white;
+		}
+
+		
+		@media screen and (min-width: 768px){
+			/*.box{
+				width: 20%;
+				margin-left:4%;
+				
+			}*/
+			
+		}
+
+		@media screen and (max-width: 768px){
+			.box{
+				width: 40%;
+				margin-left:6.7%;
+				/*margin-right:2.5%;*/
+			}
+			header ul{
+				/*border:1px solid green;*/
+				padding-top: 20px;
+				
+				position: fixed;
+				right: -400px;
+				top: 40px;
+				line-height: 70px;
+				text-align: center;
+				width: 400px;
+				/*right: 50%;
+				margin-right: -200px;*/
+
+
+			}
+			header ul li{display: block;}
+			header ul li a{width:120px;display:inline-block;
+				border-bottom: 1px solid #ccc;}
+
+			header #btns.open{display: block;}
+		}
+
+
+	</style>
+	<script type="text/javascript" src="Js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		var screenH = window.innerHeight;
+		document.title = screenH;
+		window.onresize = function(){
+			screenH = window.innerHeight;
+			document.title = screenH;
+			if(window.innerWidth>768){
+				document.getElementsByClassName('open')[0].style.display = "none";
+			}else{
+				document.getElementsByClassName('open')[0].style.display = "block";
+			}
+		}
+
+		window.onscroll = function(){
+
+			var amount = document.documentElement.scrollTop || document.body.scrollTop;
+			document.title = amount;
+			if(amount>0){
+				document.getElementById('header').classList.add('top');
+			}else{
+				document.getElementById('header').classList.remove('top');
+			}
+
+			if (amount>screenH) {
+				document.getElementsByClassName('back_to_top')[0].style.display = "block";
+			}else{
+				document.getElementsByClassName('back_to_top')[0].style.display = "none";
+			}
+
+			
+		}	
+
+		// window.onload = function(){
+		// 	var other_obj = document.getElementById('other');
+		// 	var sidebar_obj = document.getElementsByClassName('sidebar')[0];
+		// 	other_obj.onclick = function(){
+		// 		sidebar_obj.animate({
+		// 			param1: value1,
+		// 			param2: value2},
+		// 			speed, function() {
+		// 			/* stuff to do after animation is complete */
+		// 		});
+		// 	}
+		// }
+		$(function(){
+
+			$(".open").click(function(){
+				$(".mask").fadeIn();
+				$("header ul").animate({right: "50%","margin-right":"-200px"});
+				$(".close").show();
+				$(this).hide();
+
+			})
+
+			$(".close").click(function(){
+				$(".mask").fadeOut();
+				$("header ul").animate({right: "-400px","margin-right":"0"});
+				$(".open").show();
+				$(this).hide();
+
+			})
+
+		})
+
+
+			
+	</script>
+</head>
+<body>
+		<div class="mask"></div>
+		<header id="header" class="clearBox">
+			<p>我是logo</p>
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">关于我们</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#" id="other">其他</a></li>
+			</ul>
+			<span id="btns" class="open">开</span>
+			<span id="btns" class="close">关</span>
+			
+			</div>
+
+		</header>
+		
+		<img src="timg.jpeg">
+		<div class="container overflowH">
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+			<div class="box">
+				<img src="timg.jpeg">
+				<p class="con">
+					The Girl!
+				</p>
+			</div>
+		</div>
+		<div class="div1">
+			菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程()提供了最全的编程技术基础教程, 介绍了HTML、CSS、Javascript、Python，Java，Ruby，C，PHP , MySQL等各种编程语言的基础知识。 同时本站中也提供了大量的在线实例，通过实例，您可以更好的学习编程。菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程()提供了最全的编程技术基础教程, 介绍了HTML、CSS、Javascript、Python，Java，Ruby，C，PHP , MySQL等各种编程语言的基础知识。 同时本站中也提供了大量的在线实例，通过实例，您可以更好的学习编程。菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程()提供了最全的编程技术基础教程, 介绍了HTML、CSS、Javascript、Python，Java，Ruby，C，PHP , MySQL等各种编程语言的基础知识。 同时本站中也提供了大量的在线实例，通过实例，您可以更好的学习编程。
+		</div>
+		<footer>
+			<p>Copyright © 2015 ActiveBox.All Rights Reserved </p>
+			<p>Made with  by Kamal Chaneman</p>
+		</footer>
+
+
+		<!--  -->
+
+		<a href="#" class="back_to_top">返回<br>顶部</a>
+
+</body>
+</html>

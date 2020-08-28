@@ -1,0 +1,136 @@
+第六章 CSS3
+
+一、CSS3介绍
+	CSS1-CSS2版本
+	CSS3:新的CSS版本
+	增加了新的样式和选择器
+	移动优先
+	PC端兼容性不一定,要去特殊处理
+
+二、CSS3选择器
+	1.属性选择器
+	<style>
+		/* [属性名] */
+		[type] /* 有type属性的 */
+		/* [属性名=值] */
+		[type=text] /* 单行文本框 */
+		/* [属性名^=值] */
+		[name^=u] /* 名字开头是u */
+		/* [属性名$=值] */
+		[name$=s] /* 名字结尾是s */
+		/* [属性名*=值] */
+		[name*=te] /* 名字包含te */
+	</style>
+	
+	2.目标选择器
+		<style>
+			p{display: none;}
+			/* 单击a,找到目标元素 显示 */
+			:target{display: block;}
+		</style>
+		<a href="#p1"></a>
+		<a href="#p2"></a>
+		<a href="#p3"></a>
+		<p id="p1"></p>
+		<p id="p2"></p>
+		<p id="p3"></p>
+
+	3.伪选择器和伪元素选择器
+		<style>
+			/* 1)伪选择器 */
+			:hover{}
+			:focus{}
+			:first-child{}
+			:last-child{}
+			:nth-child(5){}
+			:nth-child(5n){}
+			:nth-child(5n+1){}
+			:nth-child(5n-1){}
+			:nth-child(even){} /* 偶数行 */
+			:nth-child(odd){}  /* 奇数行 */
+
+			/* 2)伪元素选择器 */
+			::before(content:"";)
+			::after(content:"";)
+			::selection{} /*用户选中的内容*/
+
+		</style>
+
+三、CSS3样式
+	1.颜色
+		- 单词: red green blue
+		- 十六进制: #FF0000
+		- rgb(255,255,255)/reba(255,255,255,0.5)
+		- hsla()
+			h:色调	红:0/360 绿:120 蓝:240
+			s:饱和度	0-100%(鲜艳程度)
+			l:亮度	0-100%
+			a:透明度	0-1
+
+	2.文字投影
+		text-shadow: h-shadow v-shadow blur color;
+						 水平位置 垂直位置 模糊度 颜色
+
+	3.边框
+		圆角
+			border-radius: 1-4 length|% / 1-4 length|%;
+		投影
+			box-shadow: h-shadow v-shadow blur spread color inset;
+							水平偏移 垂直偏移 模糊度 扩展 颜色  内部
+
+	4.盒模型
+		1)box-sizing: content-box;
+		大小:width+padding+border
+		2)box-sizing: border-box;
+		大小:padding+border+内容大小
+
+	5.背景图
+		多背景图
+		background:
+
+		渐变背景
+		- 1)线性渐变
+			background-image: -moz-linear-gradient( 90deg, rgb(249,230,0) 5%, rgb(111,21,108) 35%, rgb(253,124,0) 65%, rgb(0,40,116) 95%);
+
+		- 2)径向渐变
+
+
+		兼容不同内核处理
+		1) -moz- :firefox
+		2) -webkit- :safari/chrome
+		3) -o- :opera
+		4) -ms- :IE
+	
+	6.自由变换和过渡
+		transform:
+		1)缩放 scale(x,y)  
+		2)旋转 rotate(angel) 
+		3)位移 translate(x,y) 
+
+		过渡(看到过程)
+		transition: property duration timing-function delay;
+						 样式		 时间			曲线			延迟时间
+
+	7.动画(帧动画)
+		1)创建动画(定义函数)
+			<style>
+				/* 语法1 */
+				@keyframes 动画名1{
+					from{}
+					to{}
+				}
+
+				/* 语法1 */
+				@keyframes 动画名2{
+					0%{}
+					20%{}
+					40%{}
+					60%{}
+					100%{}
+				}
+			</style>
+
+		2)调用动画
+			p{
+				animation:动画名 时间 曲线 延迟时间 次数 反向播放;
+			}

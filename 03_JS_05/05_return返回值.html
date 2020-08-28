@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_return返回值</title>
+</head>
+<body>
+<script>
+	// return 值;
+	// 1)值可以是任意类型
+	// 2)返回值可以用变量接收
+	// 3)一个函数最终只能有一个返回值return,遇到return 跳出函数
+	function fun1(){
+		document.write('<font color=red>红色文字</font>')
+		// return'函数1';
+		// return 20;
+		// return false;
+		return['aa','bb'];
+		document.write('<font color=blue>蓝色文字</font>')
+	}
+	console.log(fun1());
+	document.write(fun1());
+	var str=fun1();
+	console.log(str);
+
+	// 定义一个字符串
+	var uname='apple123banana';
+	console.log(uname.indexOf('n'));
+	var i=uname.indexOf('m');
+	console.log(i)
+
+	// 需求: 使用函数做验证
+	// - 给一个用户名,做验证
+	// - 用户名不能为空
+	// - 不能使用已经注册的用户名
+	function checkUname(uname){
+		var vip=['baby','Anna','tina','Jack']
+		if(uname==''){
+			return'用户名不能为空';
+			// console.log('用户名不能为空');
+		}else if(vip.indexOf(uname)!=-1){
+			return'用户名已被注册,请重新填写';
+			// console.log('用户名已被注册,请重新填写');
+		}else{
+			return'用户名可以使用';
+			// console.log('用户名可以使用');
+		}
+	}
+
+	// 用户1:调用
+	document.write(checkUname('baby'));//显示到页面上
+	// 用户2:调用
+	console.log(checkUname('byebye'));//显示到控制台
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_relative定位</title>
+	<style>
+		.father{
+			width: 600px;
+			border: 3px solid grey;
+			margin: 0 auto;
+		}
+
+		.father .red{
+			width: 100px;
+			height: 100px;
+			background: red;
+			/* 相对定位 */
+			position: relative;
+			left: 50px;
+			top: 50px;
+			z-index: 5;
+		}
+		.father .blue{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			/* 相对定位 */
+			position: relative;
+			left: 20px;
+			z-index: 8;
+		}
+		.father .green{
+			width: 100px;
+			height: 100px;
+			background: green;
+			/* 相对定位 */
+			/* 相对定位 */
+			position: relative;
+			left: 10px;
+			bottom: 30px;
+			z-index: 7;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="red"></div>
+		<div class="blue"></div>
+		<div class="green"></div>
+	</div>
+</body>
+</html>

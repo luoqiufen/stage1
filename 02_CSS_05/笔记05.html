@@ -1,0 +1,53 @@
+第二章 CSS
+第五天
+
+一、CSS样式：显示/隐藏
+	1.display 显示类型
+		display:none;	隐藏  ->不占位置
+		display:inline/inline-block/block;	显示
+
+	2.opacity 透明度
+		opacity: 0;	隐藏  ->占位置
+		opacity: 0.5/1;	显示(0到1)
+
+	3.visibility
+		visibility: visible;  显示
+		visibility: hidden;	 隐藏  ->占位置
+
+二、CSS定位布局 position
+	1.position: relative;	相对定位
+		参考物: 自身位置0
+		不脱离页面流,占位置
+
+	2.position: absolute;	绝对定位
+		参考物: 默认浏览器首屏窗口(会被拖走)
+		指定参考物(父级)	给父级设置position
+		如果多个父级都有position样式,采取就近原则
+		脱离页面流,不占位置
+
+	3.position: fixed;		固定粘贴定位
+		参考物:浏览器窗口(不会被滚动条拖走)
+		脱离页面流,不占位置
+
+	辅助样式:
+		1)top: 10px;
+		2)bottom: 10px;
+		3)left: 10px;
+		4)right: 10px;
+
+	纵深: z-index:1;
+		默认情况下,后定位的元素图层比较靠上[离家留坑]
+		改变图层顺序
+		数值越大,图层越靠上
+
+		-----------------
+		定位居中:
+			position:fixed;
+			left:50%; margin-left:- width/2	宽居中
+			top:50%; margin-top:- height/2	高居中
+		-----------------
+
+		圆角
+		border-radius: 50%;
+
+三、项目目录结构

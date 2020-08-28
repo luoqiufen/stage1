@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_花瓣网布局</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		/* 1)导航条:顶部 */
+		.nav{
+			line-height: 60px;
+			width: 100%;
+			background: #F7B0AF;
+			position: fixed;
+			top: 0;
+		}
+		/* 2)登录层:中间 */
+		.layer{
+			width: 520px;
+			height: 415px;
+			/* background:rgba(164,240,159,0.8); */
+			background: #ECE9E9;
+			position: fixed;
+			left: 50%;
+			margin-left: -260px;
+			top: 50%;
+			margin-top: -207.5px;
+			z-index: 5;
+		}
+		/* 3)底部层:底部 */
+		.bottom{
+			width: 100%;
+			height: 100px;
+			background: rgba(0,0,0,0.5);
+			position: fixed;
+			bottom: 0;
+		}
+		/* 按钮组:右下角 */
+		.btns{
+			width: 60px;
+			height: 150px;
+			background: rgba(168,187,245,0.5);
+			position: fixed;
+			bottom: 110px;
+			right: 10px;
+		}
+
+		/* 5)半透明的遮罩层 */
+		.mask{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 0;
+			background: rgba(0,0,0,0.3);
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 网页内容 -->
+	<img src="下载 (1).jpg" height="1366" width="1280" alt="">
+	<!-- 1)导航条 -->
+	<div class="nav">导航栏部分</div>
+	<!-- 2)登录/注册弹出层 -->
+	<div class="layer">登录弹出层</div>
+	<!-- 3)底部区域 -->
+	<div class="bottom">底部</div>
+	<!-- 4)按钮组 -->
+	<div class="btns">按钮回到顶部</div>
+	<!-- 5)半透明的遮罩层 -->
+	<div class="mask"></div>
+</body>
+</html>

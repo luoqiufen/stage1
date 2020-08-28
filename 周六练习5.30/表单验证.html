@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>表单验证</title>
+        <style>
+            form {
+                width: 450px;
+                border: 1px solid red;
+                padding: 0 15px;
+            }
+
+            input[type=text],input[type=password] {
+                float: right;
+                width: 350px;
+                height: 25px;
+            }
+
+            select {
+                width: 100px;
+                height: 25px;
+            }
+
+            select[name=year] {
+                margin-left: 55px;
+            }
+
+            input[type=submit] {
+                width: 450px;
+                height: 45px;
+                border: 0;
+            }
+
+            .blank {
+                height: 30px;
+                overflow: hidden;
+            }
+
+            .blank p {
+                height: 30px;
+                width: 350px;
+                float: right;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="index.php" onsubmit="return checkForm()">
+            <h2>注册</h2>
+            <p>
+                用户名: <input type="text" name="uname">
+            </p>
+            <div class="blank blank1">
+                <p></p>
+            </div>
+            <p>
+                昵称: <input type="text" name="nickname">
+            </p>
+            <div class="blank">
+                <p></p>
+            </div>
+            <p>
+                密码: <input type="password" name="upass">
+            </p>
+            <div class="blank blank2">
+                <p></p>
+            </div>
+            <p>
+                生日: 
+			<select name="year"></select>
+                <select name="month"></select>
+                <select name="day"></select>
+            </p>
+            <div class="blank blank3">
+                <p></p>
+            </div>
+            <input type="submit" value="注册">
+            <p>
+                <input onchange="checkAgreement()" type="checkbox">阅读并接受《百度用户协议》及《百度隐私权保护声明》
+            </p>
+        </form>
+        <script>
+            var yearArr = ['--请选择--', 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020];
+            var monthArr = ['--请选择--', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+            var large = ['--请选择--', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+            var small = ['--请选择--', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+            var feb = ['--请选择--', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
+            var dayArr = [large, feb, large, small, large, small, large, large, small, large, small, large];
+
+            function checkForm() {
+                var checkNameState = checkUname();
+                var checkUpassState = checkUpass();
+                var checkBirthState = checkBirth();
+                var checkAgreementState = checkAgreement();
+
+                if (checkNameState == true && checkUpassState == true && checkBirthState == true && checkAgreementState == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // 验证用户名
+            function checkUname() {
+                var uname = document.querySelector('input[name=uname]').value;
+                var p_obj = document.querySelector('.blank1 p');
+
+                if (uname == '') {
+                    p_obj.innerHTML = '<font color=red>用户名不能为空</font>';
+                    return false;
+                } else if (uname.indexOf('@') != -1 || uname.indexOf('&') != -1 || uname.indexOf('*') != -1) {
+                    p_obj.innerHTML = '<font color=red>用户名不能包含特殊字符</font>';
+                    return false;
+                } else if (uname.length < 5 || uname.length > 10) {
+                    p_obj.innerHTML = '<font color=red>用户名长度为5-10</font>';
+                    return false;
+                } else {
+                    p_obj.innerHTML = '';
+                    return true;
+                }
+            }
+
+            // 验证密码
+            function checkUpass() {
+                var upass = document.querySelector('input[name=upass]').value;
+                var p_obj = document.querySelector('.blank2 p');
+
+                if (upass == '') {
+                    p_obj.innerHTML = '<font color=red>密码不能为空</font>';
+                    return false;
+                } else if (upass.indexOf('@') != -1 || upass.indexOf('&') != -1 || upass.indexOf('*') != -1) {
+                    p_obj.innerHTML = '<font color=red>密码不能包含特殊字符</font>';
+                    return false;
+                } else if (upass.length != 8) {
+                    p_obj.innerHTML = '<font color=red>密码长度必须为8位</font>';
+                    return false;
+                } else {
+                    p_obj.innerHTML = '';
+                    return true;
+                }
+            }
+
+            // 将年月日放入select中
+            var year = document.querySelector('select[name=year]');
+            var month = document.querySelector('select[name=month]');
+            var day = document.querySelector('select[name=day]');
+
+            function select_obj(arr, select) {
+                for (var k = 0; k < arr.length; k++) {
+                    select.innerHTML += '<option>' + arr[k] + '</option>';
+                }
+            }
+            
+            select_obj(yearArr, year);
+            select_obj(monthArr, month);
+            select_obj(dayArr[0], day);
+
+            month.onchange = function() {
+                var i = month.selectedIndex;
+                day.innerHTML = '';
+                select_obj(dayArr[i], day);
+            }
+
+            // 验证生日
+            function checkBirth() {
+                var birth = document.querySelectorAll('select');
+                var p_obj = document.querySelector('.blank3 p');
+
+                if (birth[0][0].selected == true || birth[1][0].selected == true || birth[2][0].selected == true) {
+                    p_obj.innerHTML = '<font color=red>请选择正确日期</font>';
+                    return false;
+                } else {
+                    p_obj.innerHTML = '';
+                    return true;
+                }
+            }
+
+            function checkAgreement() {
+                var agree = document.querySelector('input[type=checkbox');
+                var p_obj = document.querySelector('.blank4 p');
+                var register = document.querySelector('input[type=submit');
+                console.log(agree.checked);
+                // console.log(register)
+                if (agree.checked == true) {
+                    register.style.color = 'white';
+                    register.style.background = 'red';
+                    // console.log(register.style.background);
+                    // console.log(register.style.color);
+                    return true;
+                } else {
+                    register.style.color = '';
+                    register.style.background = '#DDDDDD';
+                    return false;
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>

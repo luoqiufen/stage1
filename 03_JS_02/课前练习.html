@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//练习1:
+/*
+	弹出一个输入框：输入用户名
+	-显示到页面里
+	-输入用户名的长度
+	-查找有没有@
+*/
+var uname=prompt("输入用户名")
+document.write(uname);
+console.log(uname.length);
+console.log(uname.indexOf('@'));
+	
+// 练习2：
+var num = 10,str = 'apple',str2='20';
+	num += 5;//num = num+5;			num:15;
+	str -= 10;//str = 'apple'-10;	str:NaN;
+	str2 += num + str;
+	//优先级：'+' 优先 '+='
+	//先执行 num+str 15+NaN:NaN;
+	//str2 += NaN;
+	//str2 = str2 + NaN;	'20'+NaN;	str2:20NaN;
+	
+// 输入num,str,str2的结果
+console.log(num,str,str2);
+
+
+
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_定义正则表达式</title>
+</head>
+<body>
+	<script>
+		// 匹配范围:正则表达式
+		// [a-z] 所有小写字母 
+		// [A-z] 所有字母
+		// [A-Z] 所有大写字母 
+		// [0-9] 所有数字
+		
+		// [fhsdgj] 符合当前字母范围,满足一个即可
+		var reg1 = /[apple]/;
+		console.log(reg1.test('acd'));//true
+		console.log(reg1.test('lmd'));//true
+		console.log(reg1.test('md'));//false
+
+		var reg2 = /apple/;//包含apple这个词
+		console.log(reg2.test('app123'));//false
+		console.log(reg2.test('apple123'));//true
+
+		var reg3 = /[359]/;
+		console.log(reg3.test('12sad'));//false
+		console.log(reg3.test('15sad'));//true
+
+		var reg4 = /[^3-6]/;
+		console.log(reg4.test('3'));//false
+		console.log(reg4.test('0'));//true
+		console.log(reg4.test('A'));//true
+
+
+		// 匹配字母
+		// \w ?
+		var reg6 = /\w/; 
+		console.log(reg6.test('4563'));
+
+		// 匹配字母 \d
+		console.log(/\d/.test('4563'));//true
+		console.log(/\d/.test('abf'));//false
+
+		// 匹配空格 \s
+		var str = 'aa bb cc';
+		// 去掉字符串的空格
+		// 替换的方式
+		console.log(str.replace(/\s/g,''));//aabbcc
+
+		// 匹配任意字符 . (除了换行\n)
+		
+
+	</script>
+</body>
+</html>

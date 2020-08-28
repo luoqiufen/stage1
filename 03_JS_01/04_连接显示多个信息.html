@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_连接显示多个信息</title>
+</head>
+<body>
+	<script>
+		// 1)显示
+		document.write("<p>段落1</p>");
+		document.write("<h1>标题1</h1>");
+
+		// document.write("信息1","信息2",...);
+
+		document.write("<ul>",
+				"<li>第一行</li>",
+				"<li>第二行</li>",
+				"<li>第三行</li>",
+			"</ul>");
+
+		// 2)如果有变量
+		var title = "《桃花源记》";
+		// 显示到不同的标题标签里
+		document.write("<h1>",title,"</h1>");
+		document.write("<h2>",title,"</h2>");
+		document.write("<h3>",title,"</h3>");
+
+		// 3)变量链接
+		var uname = "小红";
+		var gender= "女";
+
+		document.write("姓名:",uname,";性别:",gender,"。");
+
+		// 符号使用:放在输出语句里
+		// ,或者+连接
+		document.write("aa",'bb',"cc");
+		document.write("aa"+'bb'+'cc');
+
+		console.log("aa",'bb',"cc");
+		console.log("aa"+'bb'+'cc');
+
+		// 没有放在输出语句里
+		var mess1 = "<p>第一段</p>"
+		var mess2 = "<p>第二段</p>"
+
+		// + 连接
+		var mess3 = "<h4>文章内容:</h4>"+mess1+mess2;
+		document.write(mess3);
+
+	</script>
+</body>
+</html>

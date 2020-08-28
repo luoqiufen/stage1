@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_选择器权重</title>
+	<style>
+
+		/* 5>id选择器 */
+		#idName{
+			border: 10px groove skyblue;
+		}
+		
+		/* 结论:权重,权重高的样式优先使用 */
+		/* !important>style属性>id选择器>属性选择器>=class类选择器>标签选择器>通配* */
+
+		/* class类选择器 */
+		.cName{
+			border: 3px dotted purple;
+		}
+
+		/* 4>属性选择器 */
+		[title=tName]{
+			border: 3px double yellow;
+		}/* 2)标签选择器 */
+		div{
+			width: 300px;
+			height: 200px;
+			border: 2px dashed blue !important;
+			border: 2px dashed green;
+		}
+		
+		/* 1)通配选择器 */
+		*{
+			border: 2px solid red;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="cName" id="idName" title="tName" style="border:3px solid black">选择器权重:要使用哪个颜色?</div>
+</body>
+</html>

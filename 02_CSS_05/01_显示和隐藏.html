@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_显示和隐藏</title>
+	<style>
+		.box1{
+			border: 1px solid red;
+		}
+		.box2{
+			border: 1px dashed blue;
+		}
+		.box3{
+			border: 1px double green;
+		}
+
+		img{
+			display: block;
+		}
+
+		/* 1.display 不占位置 */
+		.box1 img:last-child{
+			display: none;
+		}
+		/* 2.opacity 占位置 */
+		.box2 img:last-child{
+			opacity: 0;
+		}
+
+		/* 2.visibility 占位置 */
+		.box3 img:last-child{
+			visibility: hidden;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<img src="img/a.gif" height="200" width="200" alt="">
+		<img src="img/b.gif" height="200" width="200" alt="">
+	</div>
+	<br>
+	<div class="box2">
+		<img src="img/a.gif" height="200" width="200" alt="">
+		<img src="img/b.gif" height="200" width="200" alt="">
+	</div>
+	<br>
+	<div class="box3">
+		<img src="img/a.gif" height="200" width="200" alt="">
+		<img src="img/b.gif" height="200" width="200" alt="">
+	</div>
+	
+</body>
+</html>

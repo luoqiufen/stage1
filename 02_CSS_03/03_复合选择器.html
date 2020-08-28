@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_复合选择器</title>
+	<style>
+		.box1{
+			width: 300px;
+			border: 2px solid blue;
+			font-size: 18px;
+		}
+
+		.box1 .list a{
+			color: #333;
+			text-decoration: none;
+		}
+
+		.box1 .list a:hover{
+			color: red;
+			text-decoration: underline;
+		}
+
+		.box1 .list #li_2{
+			background: pink;
+		}
+
+		.box1 .list li:nth-child(2){
+			background: skyblue;
+		}
+
+
+		/* 比较权重: 		class类		标签
+		 .box1 .list a{}   	  2			  1
+			a:hover{}		  1			  1
+			.list a:hover{}	  2			  1
+		  */
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<p class="title">段落</p>
+		<ul class="list"> 
+			<li><a href="">新闻1</a><span>2020-5-14</span></li>
+			<li id="li_2"><a href="">新闻2</a><span>2020-5-14</span></li>
+			<li><a href="">新闻3</a><span>2020-5-14</span></li>
+			<li><a href="">新闻4</a><span>2020-5-14</span></li>
+			<li><a href="">新闻5</a><span>2020-5-14</span></li>
+		</ul>
+	</div>
+</body>
+</html>
